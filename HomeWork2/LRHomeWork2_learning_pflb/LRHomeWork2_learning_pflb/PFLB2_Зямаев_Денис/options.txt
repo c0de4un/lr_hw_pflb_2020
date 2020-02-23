@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-ID:\Downloads\Performance.Lab\HomeWork.LoadRunner\HomeWork2\LRHomeWork2_learning_pflb\LRHomeWork2_learning_pflb\PFLB2_Зямаев_Денис
+-ID:\Dev\MicroFocus\LoadRunner\include
+-ed:\downloads\performance.lab\homework.loadrunner\homework2\lrhomework2_learning_pflb\lrhomework2_learning_pflb\pflb2_зямаев_денис\\logfile.log
+d:\downloads\performance.lab\homework.loadrunner\homework2\lrhomework2_learning_pflb\lrhomework2_learning_pflb\pflb2_зямаев_денис\\combined_PFLB2_Зямаев_Денис.c
+d:\downloads\performance.lab\homework.loadrunner\homework2\lrhomework2_learning_pflb\lrhomework2_learning_pflb\pflb2_зямаев_денис\\pre_cci.c

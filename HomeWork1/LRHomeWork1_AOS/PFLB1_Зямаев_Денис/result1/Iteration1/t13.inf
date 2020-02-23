@@ -1,0 +1,20 @@
+[t13]
+FileName2=t5_2_review_right.png
+RawStepEndTime=1582322205195
+FileName4=t5_0_reviewUser.png
+RequestBodyFile=t13_RequestBody.txt
+RawStepName=GetCountriesRequest
+ContentType=application/xml
+URL1=http://advantageonlineshopping.com/accountservice/GetCountriesRequest
+URL2=http://advantageonlineshopping.com/css/images/review_right.png
+URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+ResponseHeaderFile=t13_ResponseHeader.txt
+URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
+SnapshotXmlFile=snapshot_11.xml
+RequestHeaderFile=t13_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1582322193362
+Total=4
+StepName=Custom Request: GetCountriesRequest
+FileName1=t13.xml
+FileName3=t5_1_review_Left_disabled.png

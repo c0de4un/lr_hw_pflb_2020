@@ -1,0 +1,11 @@
+[t58]
+FileName1=t58.xml
+URL1=http://advantageonlineshopping.com/accountservice/AccountUpdateRequest
+Total=1
+RequestHeaderFile=t58_RequestHeader.txt
+RequestBodyFile=t58_RequestBody.txt
+ResponseHeaderFile=t58_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_26.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

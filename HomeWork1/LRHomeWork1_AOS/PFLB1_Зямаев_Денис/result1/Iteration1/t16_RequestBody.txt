@@ -1,0 +1,3 @@
+"{"seaddress":{"addressLine1":"Svobody 173","addressLine2":"","city":"Kazan","country":"ru","po"
+"stalCode":426000,"state":"Tataria"},"secustomerName":"Denis Zaicev","secustomerPhone":"8-800-5"
+"55-4221","senumberOfProducts":1,"setransactionType":"SHIPPING_COST","sessionId":"{sid}"}"

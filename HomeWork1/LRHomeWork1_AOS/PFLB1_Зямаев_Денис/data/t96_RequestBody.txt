@@ -1,0 +1,8 @@
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.o"
+"rg/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http:/"
+"/www.w3.org/2001/XMLSchema\"><soap:Body><AccountUpdateRequest xmlns=\"com.advantage.online.sto"
+"re.accountservice\"><lastName>Zaicev</lastName><firstName>Denis</firstName><accountId>38616565"
+"4</accountId><countryId>Russia,ru</countryId><stateProvince>Tataria</stateProvince><cityName>K"
+"azan</cityName><address>Svobody 173</address><zipcode>426000</zipcode><phoneNumber>8-800-555-4"
+"221</phoneNumber><email>st1nkyc0de@yandex.ru</email><accountType>20</accountType><allowOffersP"
+"romotion>true</allowOffersPromotion></AccountUpdateRequest></soap:Body></soap:Envelope>"

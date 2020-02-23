@@ -1,0 +1,47 @@
+<!--
+<section id="png">
+    <img src="../../../dcss/images/mariaDesigns/order/1Identification.png" />
+</section>
+-->
+
+<nav class="pages fixed fixedImportant">
+    <a translate="HOME" href="#/" ></a>
+    <a translate="SHOPPING_CART" href="#/shoppingCart" ></a>
+    <a class="select" translate="ORDER_PAYMENT"></a>
+</nav>
+
+<section>
+    <article>
+        <h3 class="roboto-regular sticky fixed fixedImportant" translate="ORDER_PAYMENT"></h3>
+
+        <div id="orderPayment" ng-switch="userCookie.response != undefined" ng-hide="paymentEnd">
+            <div ng-switch-when="true">
+                <user-are-login paramsToPass="resolveParams"></user-are-login>
+            </div>
+            <div id="userCart" data-ng-show="(cart | productsCartCount) > 0" >
+                <h5 class="roboto-regular"> {{ mainCtrl.config.spellingMistakes ? 'ORDERR_SUMMARY' : 'ORDER_SUMMARY' | translate}}</h5>
+                <span class="itemsCount roboto-medium" >{{ cart | productsCartCount }} {{ (cart | productsCartCount) > 1 ? 'ITEMS' : 'ITEM' | translate }}</span>
+                <div class="penetrationInCart">
+                    <span class="roboto-regular" >{{ 'PRODUCT' | translate }}</span>
+                    <span class="totalTitle roboto-regular">{{ 'TOTAL' | translate }}</span>
+                </div>
+                <tool-tip-cart id="toolTipCart" ></tool-tip-cart>
+                <div class="penetrationInCart">
+                    <label class="shippingText roboto-regular" ng-class="{ noShipping : shippingCost == null }" >{{ 'SHIPPING' | translate }}<span id="shippingCost" class="shippingValue roboto-light">{{ shippingCost | currency: '$'}}</span></label>
+                    <label class="roboto-bold totalText" >{{ 'TOTAL' | translate }}
+                        <span class="roboto-medium totalValue">{{ cart | productsCartSum:shippingCost | currency:'$' }}</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div ng-show="paymentEnd" >
+            <order-payment-success id="orderPaymentSuccess">
+            </order-payment-success>
+        </div>
+
+        <!--<input type="checkbox" ng-model="userLogin" style="position: fixed; bottom: 8px; left:12px; transform: scale(3);" />-->
+        <!--<input type="checkbox" ng-model="paymentEnd" style="position: fixed; bottom: 42px; left:12px; transform: scale(3);" />-->
+    </article>
+</section>
+
+<social-media-drtv></social-media-drtv>

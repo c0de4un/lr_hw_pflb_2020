@@ -1,0 +1,11 @@
+[t16]
+FileName1=t16_ALL.json
+URL1=http://advantageonlineshopping.com/catalog/api/v1/DemoAppConfig/parameters/by_tool/ALL
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_3.xml
+RequestHeaderFile=t16_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t16_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

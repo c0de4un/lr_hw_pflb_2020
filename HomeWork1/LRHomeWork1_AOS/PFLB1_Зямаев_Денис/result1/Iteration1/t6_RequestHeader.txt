@@ -1,0 +1,13 @@
+POST /order/api/v1/carts/386165654/product/3/color/3683D1?quantity=1 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Referer: http://advantageonlineshopping.com/
+Origin: http://advantageonlineshopping.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
+Accept: */*
+Connection: Keep-Alive
+Host: advantageonlineshopping.com
+Cookie: JSESSIONID=F58BEB2EEA2D76D535C6B7638656A539
+Content-Length: 42
+

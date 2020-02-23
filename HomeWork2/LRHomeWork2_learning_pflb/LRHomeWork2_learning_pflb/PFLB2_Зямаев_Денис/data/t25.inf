@@ -1,0 +1,11 @@
+[t25]
+FileName1=t25.json
+URL1=http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_11.xml
+RequestHeaderFile=t25_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t25_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

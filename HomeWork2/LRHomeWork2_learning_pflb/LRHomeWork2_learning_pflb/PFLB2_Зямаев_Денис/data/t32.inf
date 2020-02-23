@@ -1,0 +1,13 @@
+[t32]
+FileName1=t32_checkLogin.json
+URL1=http://learning2.pflb.ru:56902/api/checkLogin
+Total=2
+ContentType=application/json
+SnapshotXmlFile=snapshot_18.xml
+RequestHeaderFile=t32_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t32_ResponseHeader.txt
+FileName2=t32_jqueryformplugin.html
+URL2=http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367862805
+[ProtocolInfo]
+ProtocolId=QTWeb

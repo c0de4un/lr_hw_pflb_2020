@@ -1,0 +1,11 @@
+[t45]
+FileName1=t45.xml
+URL1=http://advantageonlineshopping.com/accountservice/GetAccountByIdRequest
+Total=1
+RequestHeaderFile=t45_RequestHeader.txt
+RequestBodyFile=t45_RequestBody.txt
+ResponseHeaderFile=t45_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_19.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,13 @@
+[t3]
+FileName1=t3.html
+URL1=http://learning2.pflb.ru:56902/api/login
+Total=2
+RequestHeaderFile=t3_RequestHeader.txt
+RequestBodyFile=t3_RequestBody.txt
+ResponseHeaderFile=t3_ResponseHeader.txt
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_3.xml
+FileName2=t3_jqueryformplugin.html
+URL2=http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874
+[ProtocolInfo]
+ProtocolId=QTWeb

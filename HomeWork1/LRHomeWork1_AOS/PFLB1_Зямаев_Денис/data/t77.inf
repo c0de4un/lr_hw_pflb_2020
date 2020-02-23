@@ -1,0 +1,11 @@
+[t77]
+FileName1=t77.xml
+URL1=http://advantageonlineshopping.com/accountservice/GetAccountConfigurationRequest
+Total=1
+RequestHeaderFile=t77_RequestHeader.txt
+RequestBodyFile=t77_RequestBody.txt
+ResponseHeaderFile=t77_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_39.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

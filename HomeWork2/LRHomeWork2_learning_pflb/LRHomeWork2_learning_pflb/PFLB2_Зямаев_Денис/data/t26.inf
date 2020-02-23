@@ -1,0 +1,15 @@
+[t26]
+FileName1=t26_treeview.json
+URL1=http://learning2.pflb.ru:56902/api/user/catalog/treeview
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_12.xml
+RequestHeaderFile=t26_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t26_ResponseHeader.txt
+FileName2=t26_catalog.html
+URL2=http://learning2.pflb.ru:56902/director/catalog/catalog.dust
+FileName3=t26_catalog.html
+URL3=http://learning2.pflb.ru:56902/director/catalog/catalog.js
+[ProtocolInfo]
+ProtocolId=QTWeb

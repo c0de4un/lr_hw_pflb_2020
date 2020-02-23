@@ -1,0 +1,14 @@
+POST /accountservice/GetCountriesRequest HTTP/1.1
+Content-Type: text/xml; charset=UTF-8
+Referer: http://advantageonlineshopping.com/
+SOAPAction: com.advantage.online.store.accountserviceGetCountriesRequest
+Origin: http://advantageonlineshopping.com
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
+Accept: */*
+Connection: Keep-Alive
+Host: advantageonlineshopping.com
+Content-Length: 339
+

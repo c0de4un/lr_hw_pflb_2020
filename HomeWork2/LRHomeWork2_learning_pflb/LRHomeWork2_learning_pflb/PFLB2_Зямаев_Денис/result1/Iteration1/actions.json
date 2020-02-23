@@ -1,0 +1,58 @@
+[
+    {
+        "actionName": "Action",
+        "steps": [
+            {
+                "stepId": "STEP5",
+                "stepName": "Url: children",
+                "infFile": "t8.inf",
+                "time": 1582466472787
+            },
+            {
+                "stepId": "STEP6",
+                "stepName": "Url: treeview",
+                "infFile": "t9.inf",
+                "time": 1582466473235
+            },
+            {
+                "stepId": "STEP7",
+                "stepName": "Url: children_2",
+                "infFile": "t11.inf",
+                "time": 1582466473362
+            },
+            {
+                "stepId": "STEP8",
+                "stepName": "Url: children_3",
+                "infFile": "t13.inf",
+                "time": 1582466473485
+            },
+            {
+                "stepId": "STEP9",
+                "stepName": "Url: children_4",
+                "infFile": "t15.inf",
+                "time": 1582466473610
+            },
+            {
+                "stepId": "STEP10",
+                "stepName": "Url: inventoryNumbers",
+                "infFile": "t16.inf",
+                "time": 1582466473753
+            },
+            {
+                "stepId": "STEP11",
+                "stepName": "Custom Request: ticket_2",
+                "infFile": "t17.inf",
+                "time": 1582466474275
+            }
+        ],
+        "transactions": [
+            {
+                "transactionName": "UC_02_Incidents_Добавление_инцидента",
+                "rawStartTime": 1582466472660,
+                "rawEndTime": 1582466474276,
+                "thinkTime": 0.0,
+                "wastedTime": 0.2818470001220703
+            }
+        ]
+    }
+]

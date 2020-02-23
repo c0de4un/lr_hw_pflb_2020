@@ -1,0 +1,15 @@
+<div id="catalog-wrapper"></div>
+<div id="messageModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12" style="text-align: right;">
+                <a href="/" class="modal-action modal-close waves-effect waves-green btn-flat" id="add_ticket_left_decline">Ок</a>
+            </div>
+        </div>
+    </div>
+</div>

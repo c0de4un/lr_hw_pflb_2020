@@ -1,0 +1,27 @@
+Virtual User Script started at: 22.02.2020 0:38:04
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Replay user agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103  	[MsgId: MMSG-26988]
+Runtime Settings file: "D:\Downloads\Performance.Lab\HomeWork.LoadRunner\HomeWork1\LRHomeWork1_AOS\PFLB1_Зямаев_Денис\\default.cfg"  	[MsgId: MMSG-27141]
+vuser_init.c(12): Notify: Transaction "UC_01_AOS_Login" started.
+vuser_init.c(14): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+vuser_init.c(14): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(17): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+vuser_init.c(17): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(20): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+vuser_init.c(20): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(24): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
+vuser_init.c(24): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
+vuser_init.c(31): web_reg_save_param started  	[MsgId: MMSG-26355]
+vuser_init.c(31): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+vuser_init.c(36): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
+vuser_init.c(36): web_custom_request("AccountLoginRequest") was successful, 800 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(49): web_set_sockets_option started  	[MsgId: MMSG-26355]
+vuser_init.c(49): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+vuser_init.c(61): web_reg_save_param_regexp started  	[MsgId: MMSG-26355]
+vuser_init.c(61): Registering web_reg_save_param_regexp was successful  	[MsgId: MMSG-26390]
+vuser_init.c(68): web_url("load_carts") started  	[MsgId: MMSG-26355]
+vuser_init.c(68): web_url("load_carts") was successful, 111 body bytes, 347 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(76): Notify: Transaction "UC_01_AOS_Login" ended with a "Stop" status (Duration: 30,6165 Wasted Time: 0,2307).
+Abort was called from an action.

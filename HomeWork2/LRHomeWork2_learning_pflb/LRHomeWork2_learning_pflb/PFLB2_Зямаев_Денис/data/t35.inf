@@ -1,0 +1,11 @@
+[t35]
+FileName1=t35.json
+URL1=http://learning2.pflb.ru:56902/api/ticket/countByState/
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_21.xml
+RequestHeaderFile=t35_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t35_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

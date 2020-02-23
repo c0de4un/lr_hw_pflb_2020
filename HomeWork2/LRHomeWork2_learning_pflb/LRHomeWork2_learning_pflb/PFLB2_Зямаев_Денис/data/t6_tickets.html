@@ -1,0 +1,533 @@
+//Конструктор выгрузки таблицы заявок
+function tickets(template) {
+    dust.renderSource(template, {}, function (err, out) {
+        var $mainWrapper = $("#main_wrapper");
+        $mainWrapper.empty();
+        $mainWrapper.append(template);
+
+        //Показываем боковое меню (убирается в catalog.js)
+        showSideNav();
+
+        var router = $.Router();
+        //Управление раскраской пунктов меню
+        var menuActiveItems = $('.menu-item-active'),
+            $breadWrapper = $('#bread_wrapper');
+        var page = router.args ? router.args['page'] ? router.args['page'] : 1 : 1;
+        var state = router.args ? router.args['state'] ? router.args['state'] : "default" : "default";
+        var stateArr = "";
+        var currentStateArr = "";
+        var $filterPanel = $('#nav-mobile .collapsible');
+        var isCorrectDate = true;
+        var isReset = false;
+
+        menuActiveItems.removeClass('menu-item-active');
+
+        //Очистка хлебных крошек
+        breadcrumbs = [];
+        $breadWrapper.empty();
+
+        //При смене вкладки сброс фильтров
+        $filterPanel.find('.switch input[type=checkbox]').prop('checked', true);
+        $filterPanel.find('.switch.card-panel').toggleClass('inactive', false);
+        $filterPanel.find('.alert').removeClass('alert');
+        $filterPanel.find('input[type=text]').val('');
+        $filterPanel.find('#themeSelect').val(null).trigger('change');
+        $filterPanel.find('#overdue').prop('checked', false);
+        $filterPanel.find('label > div').toggleClass('hide', false);
+        $filterPanel.find('#catlvl1').val(null).trigger('change');
+        $filterPanel.find('#catlvl2').val(null).trigger('change');
+        $filterPanel.find('#catlvl3').val(null).trigger('change');
+        $filterPanel.find('#catlvl4').val(null).trigger('change');
+        $filterPanel.find('#theme').val(null).trigger('change');
+        $filterPanel.find('#smhoSelect').val(null).trigger('change');
+
+        // восстановление фильтров
+        if (!~previuosUrl.indexOf('tickets')){
+            var filterSetting = $.cookie('filterSetting') ? JSON.parse($.cookie('filterSetting')) : null;
+            if (filterSetting) {
+                if (location.href !== filterSetting.page) {
+                    location.href = filterSetting.page;
+                    currentUrl = '';
+                } else {
+                    $('#dateStart').val(filterSetting.dateStart).trigger('change');
+                    $('#dateEnd').val(filterSetting.dateEnd).trigger('change');
+                    $('#overdue').prop('checked', filterSetting.overdue);
+                    for (var filterName in filterSetting.filters) {
+                        if (filterSetting.filters.hasOwnProperty(filterName)) {
+                            if (!filterSetting.filters[filterName]) {
+                                $('label[for="' + filterName + '"]').trigger('click');
+                            }
+                        }
+                    }
+                    $('#smhoSelect').val(filterSetting.smho).trigger('change');
+                    // Востановление темы обращения
+                    if (filterSetting.cat1) {
+                        var $cat1 = $('#catlvl1');
+                        $cat1.empty().append('<option value="' + filterSetting.cat1.value + '">'
+                            + filterSetting.cat1.text  + '</option>').val(filterSetting.cat1.value)
+                        if (filterSetting.cat1.services) {
+                            $cat1.trigger({
+                                type: 'select2:select',
+                                params: {
+                                    data: filterSetting.cat1
+                                }
+                            });
+                            initTheme(filterSetting.cat1.services);
+                        } else {
+                            $cat1.trigger('change');
+                        }
+                        if (filterSetting.cat2) {
+                            var $cat2 = $('#catlvl2');
+                            $cat2.empty().append('<option value="' + filterSetting.cat2.value + '">'
+                                + filterSetting.cat2.text  + '</option>').val(filterSetting.cat2.value);
+                            if (filterSetting.cat2.services) {
+                                $cat2.trigger({
+                                    type: 'select2:select',
+                                    params: {
+                                        data: filterSetting.cat2
+                                    }
+                                });
+                                initTheme(filterSetting.cat2.services);
+                            } else {
+                                $cat2.trigger('change');
+                            }
+                            if (filterSetting.cat3) {
+                                var $cat3 = $('#catlvl3');
+                                $cat3.empty().append('<option value="' + filterSetting.cat3.value + '">'
+                                    + filterSetting.cat3.text  + '</option>').val(filterSetting.cat3.value);
+                                if (filterSetting.cat3.services) {
+                                    $cat3.trigger({
+                                        type: 'select2:select',
+                                        params: {
+                                            data: filterSetting.cat3
+                                        }
+                                    });
+                                    initTheme(filterSetting.cat3.services);
+                                } else {
+                                    $cat3.trigger('change');
+                                }
+                                if (filterSetting.cat4) {
+                                    var $cat4 = $('#catlvl4');
+                                    $cat4.empty().append('<option value="' + filterSetting.cat4.value + '">'
+                                        + filterSetting.cat4.text  + '</option>').val(filterSetting.cat4.value);
+                                    if (filterSetting.cat4.services) {
+                                        $cat4.trigger({
+                                            type: 'select2:select',
+                                            params: {
+                                                data: filterSetting.cat4
+                                            }
+                                        });
+                                        initTheme(filterSetting.cat4.services);
+                                    } else {
+                                        $cat4.trigger('change');
+                                    }
+                                }
+                            }
+                        }
+                        function initTheme (services) {
+                            var theme = $('#theme');
+                            theme.parent().show();
+                            if (theme.hasClass("select2-hidden-accessible")) {
+                                theme.select2('destroy');
+                            }
+                            theme.select2({
+                                containerCssClass: 'select-wrapper margins',
+                                placeholder: "Выберите тему",
+                                data: services,
+                                allowClear: true,
+                                minimumResultsForSearch: 'infinity',
+                                escapeMarkup: function (markup) {
+                                    return markup;
+                                }, // let our custom formatter work
+                                templateResult: function (group) {
+                                    return group.name;
+                                },
+                                templateSelection: function (group) {
+                                    return group.name ? group.name : group.text;
+                                },
+                                width: "100%"
+                            });
+                            theme.val(filterSetting.theme ? filterSetting.theme.value : null).trigger('change');
+                        }
+
+                    }
+                    isReset = true;
+                }
+                if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 992) {
+                    if (filterSetting.hideSideNav) {
+                        $hideNavBar.trigger('click');
+                    } else {
+                        $showNavBar.trigger('click');
+                    }
+                }
+            }
+        }
+
+        //Обработка даты
+        $filterPanel.find('.datepicker').unbind('change');
+        $filterPanel.find('.datepicker').on('change', function(){
+            var $startDate = $('#dateStart');
+            var $endDate = $('#dateEnd');
+            if ($startDate.val() && $endDate.val()) {
+                isCorrectDate = Date.parse(
+                    $startDate.val().split('.').reverse().join('-')) <=
+                    Date.parse($endDate.val().split('.').reverse().join('-'));
+                $filterPanel.find('.datepicker').toggleClass('alert', !isCorrectDate);
+
+            }
+        });
+
+        //Обработчик фильтров
+        var $commitTicketsFilter = $('#commit-tickets-filter');
+        $commitTicketsFilter.unbind('click');
+        $commitTicketsFilter.on('click', function(){
+            var query = '';
+            var filters = [];
+            $filterPanel.find('.card-panel:not(.inactive):not(.hide) input[data-filter]').each(function(){
+                filters.push($(this).attr('data-filter'));
+            });
+            query = filters.length > 0 ? '?state=' + filters.join(',') : stateArr;
+            for (var i=1; i<5; i++) {
+                var option = $filterPanel.find('#catlvl' + i).val();
+                query += option ? '&cat' + i + '=' + option : '';
+            }
+            var service = $('#theme').val();
+            query += service ? '&service=' + service : '';
+            var dateStart = $filterPanel.find('#dateStart').val();
+            dateStart = dateStart ? Date.parse(dateStart.split('.').reverse().join('-')) : '';
+            var dateFinish = $filterPanel.find('#dateEnd').val();
+            dateFinish = dateFinish ? Date.parse(dateFinish.split('.').reverse().join('-')) : '';
+            if (isCorrectDate && (dateStart || dateFinish)) {
+                if(dateStart){
+                    query += '&dateStart=' + dateStart;
+                }
+                if(dateFinish) {
+                    query += '&dateFinish=' + dateFinish;
+                }
+            }
+            var isOnlyoVerdue = $filterPanel.find('#overdue').prop('checked'),
+                smho = $('#smhoSelect').val();
+            query += isOnlyoVerdue ? '&expired=' + isOnlyoVerdue : '';
+            if (smho === '0') {
+                query += '&withoutSmho=true';
+            } else {
+                query += smho ? '&smhoClassIn=' + smho : '';
+            }
+            saveFilters();
+            renderTable(query, page);
+        });
+
+        switch (state) {
+            /*case "archive":
+                stateArr = "?state=5&scope=my";
+                var ticketsArchived = $('#tickets_archived');
+                if (!ticketsArchived.hasClass('menu-item-active')) ticketsArchived.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?archive' class='breadcrumb'>Закрытые инциденты</a>");
+
+                break;
+            case "new":
+                stateArr = "?state=0&scope=my";
+                var ticketsPaused = $('#tickets_new');
+                if (!ticketsPaused.hasClass('menu-item-active')) ticketsPaused.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?archive' class='breadcrumb'>Новые инциденты</a>");
+
+                break;*/
+            case "opened":
+                stateArr = "?state=-1,0,1,5";
+                $('#tickets_assigned').toggleClass('menu-item-active', true);
+                $breadWrapper.append("<a class='breadcrumb'>Открытые инциденты</a>");
+                setCount();
+                $filterPanel.find('label[for=resolvedCheckbox] > div, label[for=closedCheckbox] > div, label[for=canceledCheckbox] > div').toggleClass('hide', true);
+                break;
+            /*case "cancelled":
+                stateArr = "?state=6&scope=my";
+                var ticketsCancelled = $('#tickets_cancelled');
+                if (!ticketsCancelled.hasClass('menu-item-active')) ticketsCancelled.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?canceled' class='breadcrumb'>Отмененные инциденты</a>");
+
+                break;
+            case "solved":
+                stateArr = "?state=4&scope=my";
+                var ticketsEnded = $('#tickets_solved');
+                if (!ticketsEnded.hasClass('menu-item-active')) ticketsEnded.addClass('menu-item-active');
+                $breadWrapper.append("<a href='/#tickets?end' class='breadcrumb'>Решенные инциденты</a>");
+
+                break;*/
+            case "archive":
+                stateArr = "?state=2,3,4";
+                $('#tickets_in_work').toggleClass('menu-item-active', true);
+                $breadWrapper.append("<a class='breadcrumb'>Архив инцидентов</a>");
+                setCount();
+                $filterPanel.find('label[for=newCheckbox] > div, label[for=appointedCheckbox] > div, label[for=performedCheckbox] > div, label[for=controlCheckbox] > div').toggleClass('hide', true);
+                break;
+            case "all":
+                stateArr = "?state=-1,0,1,2,3,4,5";
+                $('#tickets_all').toggleClass('menu-item-active', true);
+                setCount();
+                $breadWrapper.append("<a class='breadcrumb'>Все инциденты</a>");
+        }
+
+        function setCount() {
+            $filterPanel.find('input[data-filter]').html(0);
+            $.ajax({
+                type: 'GET',
+                url: '/api/ticket/countByState/'
+            }).done(function(statesInfo){
+                var assigned = 0, inWork = 0, all = 0;
+                statesInfo.forEach(function(el){
+                    $filterPanel.find('input[data-filter=' + el.stateId + ']')
+                        .parent().find('b').html(el.count);
+                    all += el.count;
+                    switch (el.stateId) {
+                        case -1:
+                        case 0:
+                        case 5:
+                        case 1: assigned += el.count; break;
+                        case 2:
+                        case 3:
+                        case 4: inWork += el.count; break;
+                    }
+                });
+                $('#tickets_assigned').find('span').text(assigned);
+                $('#tickets_in_work').find('span').text(inWork);
+                $('#tickets_all').find('span').text(all);
+            });
+        }
+
+        if (isReset) {
+            $commitTicketsFilter.trigger('click');
+        } else {
+            renderTable(stateArr, page);
+        }
+
+        function saveFilters( url ){
+            if ($('ul.pagination li.active').length > 0) {
+                var filters = $('#nav-mobile').find('.card-panel.switch:not(.hide)');
+                var $cat1 = $('#catlvl1'), $cat2 = $('#catlvl2'),
+                    $cat3 = $('#catlvl3'), $cat4 = $('#catlvl4'), $theme = $('#theme');
+                $cat1 = $cat1.hasClass("select2-hidden-accessible") ? $cat1.select2('data')[0] : null;
+                $cat2 = $cat2.hasClass("select2-hidden-accessible") ? $cat2.select2('data')[0] : null;
+                $cat3 = $cat3.hasClass("select2-hidden-accessible") ? $cat3.select2('data')[0] : null;
+                $cat4 = $cat4.hasClass("select2-hidden-accessible") ? $cat4.select2('data')[0] : null;
+                $theme = $theme.hasClass("select2-hidden-accessible") ? $theme.select2('data')[0] : null;
+                var filterSetting = {
+                    page: url ? url : location.href,
+                    smho: $('#smhoSelect').val(),
+                    dateStart: $('#dateStart').val(),
+                    dateEnd: $('#dateEnd').val(),
+                    cat1: $cat1 ? {
+                        value: $cat1.id,
+                        text: $cat1.name ? $cat1.name : $cat1.text,
+                        services: $cat1.services
+                    } : null,
+                    cat2: $cat2 ? {
+                        value: $cat2.id,
+                        text: $cat2.name,
+                        services: $cat2.services
+                    } : null,
+                    cat3: $cat3 ? {
+                        value: $cat3.id,
+                        text: $cat3.name,
+                        services: $cat3.services
+                    } : null,
+                    cat4: $cat4 ? {
+                        value: $cat4.id,
+                        text: $cat4.name,
+                        services: $cat4.services
+                    } : null,
+                    theme: $theme ? {
+                        value: $theme.id,
+                        text: $theme.name
+                    } : null,
+                    overdue: $('#overdue').prop('checked'),
+                    filters: {}
+                };
+                if (!~filterSetting.page.indexOf('page')) {
+                    filterSetting.page += "&page=" + $('ul.pagination li.active').data('page');
+                } else {
+                    filterSetting.page = filterSetting.page.slice(0, filterSetting.page.indexOf('page') - 1) + "&page=" + $('ul.pagination li.active').data('page');
+                }
+                filters.each(function (index, element) {
+                    filterSetting.filters[$(element).parent().attr('for')] = $(element).find('input[type="checkbox"]').prop('checked');
+                });
+                if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 992 && $sidenav.css('display') === 'none') {
+                    filterSetting.hideSideNav = true;
+                }
+                $.cookie('filterSetting', JSON.stringify(filterSetting));
+            }
+        }
+
+        window.onhashchange = function() {
+            if (!~location.hash.indexOf('tickets')) {
+                window.onhashchange = loadContent;
+                saveFilters(currentUrl);
+            } else {
+                saveFilters();
+            }
+            loadContent();
+        };
+    });
+}
+
+//Метод отрисовывает таблицу с заданным условием фильтрации
+function renderTable(stateArr, page) {
+    var table = new materialTable("table_wrapper",
+        {
+            search: {
+                placeholder: "Поиск по инцидентам"
+            },
+            tableClasses: [
+                "tickets-table"
+            ],
+            columns: [
+                {
+                    name: "Номер инцидента",
+                    data: "id",
+                    width: "11%",
+                    mobileView: true,
+                    render: function (data, row) {
+                        var description = "";
+                        if (row.hasAttachments) {
+                            description += "<i class=\"material-icons inherit-font\">attach_file</i>";
+                        }
+                        description += "INC_" + data;
+                        return description;
+                    }
+                },
+                {
+                    name: "Статус",
+                    data: "state",
+                    width: "9%",
+                    mobileView: true,
+                    render: function (data, row) {
+                        return '<p class="state-color-badge state-color-' + row.ticketStateId + '">' + row.ticketState + '</p>'
+                    }
+                },
+                {
+                    name: "Описание инцидента",
+                    data: "header",
+                    width: "13%",
+                    mobileView: true,
+                    render: function (data, row) {
+                        var description = "<div class='desc_clamp'><p class='table-header-theme'>" + row.header + "</p>";
+
+                        if (row.text && row.text.trim()) {
+                            description += "<p class='table-header-description'>" + row.text + "</p>";
+                        }
+                        description += "</div>";
+                        return description;
+                    }
+                },
+                {
+                    name: "Категория",
+                    data: "category1",
+                    width: "13%",
+                    render: function (data, row) {
+                        var description = "";
+                        if (row.category1) {
+                            description += "<ul class='categorisation'><li>" + row.category1;
+                            if (row.category2) {
+                                description += "</li><li>" + row.category2;
+                                if (row.category3) {
+                                    description += "</li><li>" + row.category3;
+                                    if (row.category4) {
+                                        description += "</li><li>" + row.category4;
+                                    }
+                                }
+                            }
+                            description += "</li></ul>";
+                        }
+                        if (row.smhoClass) {
+                            description += "<p class='smho " + (row.openCommunications === 0 ? "green" : "") + "'> " +
+                                "Класс СМХО: " + row.smhoClass + " (" + row.openCommunications + "/" + row.totalCommunications + ")</p>"
+                        }
+                        return description
+                    }
+                },
+                {
+                    name: "Инженер",
+                    data: "engineerName",
+                    width: "9%"
+                },
+                {
+                    name: "Приезда специалиста",
+                    data: "specialistDate",
+                    width: "7%",
+                    group: "Дата"
+                },
+                {
+                    name: "Решения (план.)",
+                    data: "slaDate",
+                    width: "7%",
+                    group: "Дата",
+                    render: function (data, row) {
+                        //Если время меньше 10 минут и инцидент находится в статусе выполняется или назначен, выводим кнопку "Отменить"
+                        var minutes = Math.floor((row.slaDateTimestamp - Date.now()) / 60000);
+                        var answer = "<p class='table-header-theme'>" + data;
+                        if (row.slaDateAmended) {
+                            answer += '<i class="material-icons inherit-font sla-blue-icon">access_time</i>';
+                        }
+                        answer += "</p>";
+                        if (minutes > 0 && minutes < 480) {
+                            var badgeTime = minutes > 60 ? Math.floor(minutes / 60) + 'ч ' + minutes%60 + 'м' : minutes + 'м';
+                            answer += "<p class='red-badge'>" + badgeTime + "</p>";
+                        }
+                        return answer;
+                    }
+                },
+                {
+                    name: "Создания",
+                    data: "createDate",
+                    width: "7%",
+                    group: "Дата"
+                }
+            ],
+            ajax: {
+                url: 'api/ticket/' + stateArr,
+                pagePar: "page",
+                sizePar: "size",
+                page: page
+            },
+            afterRender: function () {
+                var $tableRow = $('table.tickets-table tbody tr');
+                $tableRow.unbind('click');
+                $tableRow.each(function(index, value) {
+                    // меняем tr на a, чтобы строка была ссылкой
+                    $(value).children().unwrap().wrapAll('<a class="' + $(value).attr('class') + ' table-row" style="display: table-row" href="#ticket/' + $(value).data('id') + '"></a>');
+                });
+
+                var $module = $(".desc_clamp > p");
+                $module.each(function (index) {
+                    $clamp($module[index], {clamp: 3});
+                });
+            }/*,
+            afterRowRender: function ($targetRow, row) {
+                if (window.outerWidth < 400){
+                    var $firstTD = $targetRow.find('td:first-child');
+                    switch (row.ticketStateId){
+                        case 0:
+                            $firstTD.addClass('mobile-sla-0');
+                            break;
+                        case 1:
+                            $firstTD.addClass('mobile-sla-1');
+                            break;
+                        case 2:
+                            $firstTD.addClass('mobile-sla-2');
+                            break;
+                        case 3:
+                            $firstTD.addClass('mobile-sla-3');
+                            break;
+                        case 4:
+                            $firstTD.addClass('mobile-sla-4');
+                            break;
+                        case 5:
+                            $firstTD.addClass('mobile-sla-5');
+                            break;
+                        case 6:
+                            $firstTD.addClass('mobile-sla-6');
+                            break;
+                    }
+                }
+            }*/
+        });
+}

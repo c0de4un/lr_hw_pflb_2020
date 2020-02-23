@@ -1,0 +1,226 @@
+<header>
+    <nav class="top-nav">
+        <div class="nav-wrapper">
+            <a href="#" data-activates="nav-mobile" class="button-collapse hamburger full hide-on-large-only"><i style="height: 64px; line-height: 64px; margin-right: 10px;" class="material-icons">&#xE5D2;</i></a>
+            <div class="container" style="width: 90%; position: relative">
+
+                <div class="card ee-menu-card ee-hidden corporate-menu-color">
+                    <div class="card-content" style="padding: 0;">
+
+                        <ul id="" class="main-menu-ul">
+                            {@arrayContainsAny id=roles array="ROLE_SUPPORT"}
+                            <li class="no-padding main-menu-li">
+                                <a href="/support"><i class="material-icons left">work</i>Консоль исполнителя</a>
+                            </li>
+                            {/arrayContainsAny}
+                            {@arrayContainsAny id=roles array="ROLE_ADMIN,ROLE_ARTICLE_EDITOR,ROLE_NEWS_EDITOR,ROLE_CATALOG_EDITOR,ROLE_CATALOG_OBSERVER"}
+                            <li class="no-padding main-menu-li">
+                                <a href="/admin"><i class="material-icons left">settings</i>Администрирование</a>
+                            </li>
+                            {/arrayContainsAny}
+                            <li class="no-padding main-menu-li">
+                                <a id="m_version"><i class="material-icons left">info_outline</i>О программе</a>
+                            </li>
+                            <li class="no-padding main-menu-li">
+                                <a href="/director/instruction.docx"><i class="material-icons left">format_list_bulleted</i>Инструкция</a>
+                            </li>
+                            <li class="no-padding main-menu-li">
+                                <a href="http://opros.PFLB.ru/operation/"><i class="material-icons left">delete_sweep</i>Клининг</a>
+                            </li>
+                            <li class="no-padding main-menu-li">
+                                <a id="m_logout"><i class="material-icons left">power_settings_new</i>Выход</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a title="Открыть меню" id="ee-menu-button" class="person-identity"><i class="material-icons left" style="margin-right: 5px;">home</i><span class="menu-username">{location}</span><i class="material-icons right" style="margin-left: 5px;">keyboard_arrow_down</i></a>
+                <i id="hideNavBar" class="material-icons toggle_navbar">&#xE5D2;</i><i id="showNavBar" style="display: none;" class="material-icons toggle_navbar">&#xE5D2;</i><div id="bread_wrapper" class="col s12"></div>
+            </div>
+        </div>
+    </nav>
+    <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo">
+            <a id="logo-container" href="/" class="brand-logo"><img src="images/logo_2.png"></a>
+        </li>
+
+        <li class="new-ticket-button">
+            <a href="/#catalog" class="waves-effect waves-light btn new-ticket" style="padding: 0 10px"><i class="material-icons left">add</i>Новый инцидент</a>
+        </li>
+
+       <li> <ul class="collapsible grey darken-1" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header active">
+                    Фильтры
+                    <span class="badge"><i class="small material-icons open">play_arrow</i></span>
+                </div>
+                <div class="collapsible-body">
+                    <h6>Класс инцидента СМХО</h6>
+                    <div class="input-field col s12">
+                        <select id="smhoSelect">
+
+                        </select>
+                    </div>
+                    <h6>Статус инцидента</h6>
+                    <label for="newCheckbox">
+                        <div class="card-panel inactive switch">
+                            Новый
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="-1" type="checkbox" id="newCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="appointedCheckbox">
+                        <div class="card-panel inactive switch">
+                            Назначен
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="0" type="checkbox" id="appointedCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="performedCheckbox">
+                        <div class="card-panel inactive switch">
+                            Выполняется
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="1" type="checkbox" id="performedCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="controlCheckbox">
+                        <div class="card-panel inactive switch">
+                            Контроль
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="5" type="checkbox" id="controlCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="resolvedCheckbox">
+                        <div class="card-panel inactive switch">
+                            Решен
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="2" type="checkbox" id="resolvedCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="closedCheckbox">
+                        <div class="card-panel inactive switch">
+                            Закрыт
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="3" type="checkbox" id="closedCheckbox">
+                                  <span class="lever"></span>
+
+                                </label>
+                              </span>
+                        </div>
+                    </label>
+                    <label for="canceledCheckbox">
+                        <div class="card-panel inactive switch">
+                            Отменен
+                            <span class="badge switch">
+                                <label>
+                                    <b>0</b>
+                                  <input data-filter="4" type="checkbox" id="canceledCheckbox">
+                                  <span class="lever"></span>
+                                </label>
+                            </span>
+                        </div>
+                    </label>
+                    <h6>Тема обращения</h6>
+                    <div class="input-field col s12">
+                        <select id="catlvl1">
+
+                        </select>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="catlvl2">
+
+                        </select>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="catlvl3">
+
+                        </select>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="catlvl4">
+
+                        </select>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="theme">
+
+                        </select>
+                    </div>
+                    <h6>Дата создания</h6>
+                    <div class="flex-wrapper"><input id="dateStart" type="text" class="datepicker"> — <input id="dateEnd" type="text" class="datepicker"></div>
+                    <label for="overdue"><div class="card-panel grey lighten-5 checkbox">Только просроченные<span class="badge"><input type="checkbox" id="overdue"/><label for="overdue"></label></span></div></label>
+                    <a id="commit-tickets-filter" class="waves-effect waves-light btn full-width">Показать</a>
+                </div>
+            </li>
+        </ul>
+       </li>
+    </ul>
+</header>
+{#unreadState}
+    <div class="no-more-fixed-action-bar">
+        <div class="collection">
+            <div class="container" style="width: 90%;">
+                <a href="#tickets?end" class="collection-item no-more-item"><span data-badge-caption="новых" class="new badge red">{unreadCount}</span>Выполненные заявки, требующие вашего подтверждения:</a>
+            </div>
+        </div>
+    </div>
+{/unreadState}
+<main id="main_wrapper"></main>
+
+<div id="version_modal" class="modal" style="width: 300px;">
+    <i class="material-icons modal-close close-modal-cross">close</i>
+    <div class="modal-content" style="text-align: center;"></div>
+</div>
+
+{#actions}
+    {@stateHide id=CREATE_TICKET array="extended"}
+        <div id="user_ticket_modal" class="modal">
+            <i class="material-icons modal-close close-modal-cross">close</i>
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        <h4>Выбор пользователя</h4>
+                        <p>Выберите пользователя, от лица которого вы хотите создать заявку:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        <select id="otherUsersSelect" searchable="Поиск по пользователям.."></select>
+                        <label for="otherUsersSelect">Выберите пользователя</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12" style="text-align: right">
+                        <a style="float: none;" class="modal-action modal-close waves-effect waves-light btn corporate-colour-button" id="userConfirm">Готово</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {/stateHide}
+{/actions}

@@ -1,0 +1,15 @@
+[t36]
+FileName1=t36.json
+URL1=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_22.xml
+RequestHeaderFile=t36_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t36_ResponseHeader.txt
+FileName2=t36_tickets.html
+URL2=http://learning2.pflb.ru:56902/director/tickets/tickets.dust
+FileName3=t36_tickets.html
+URL3=http://learning2.pflb.ru:56902/director/tickets/tickets.js
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,2 @@
+"{"text":"Че, рандом пацаны","header":"Уничтожение клопов","tick"
+"etStateId":0,"serviceId":"3196","files":[],"inventoryNumberId":null}"

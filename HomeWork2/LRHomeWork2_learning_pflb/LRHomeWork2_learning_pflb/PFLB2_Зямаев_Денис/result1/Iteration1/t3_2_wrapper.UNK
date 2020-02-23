@@ -1,0 +1,440 @@
+var menuStateCookiesName = "menuState";
+var $sidenav;
+var $hideNavBar;
+var $showNavBar;
+var $headerFooterMain;
+var isHiddenNav;
+
+
+function showSideNav() {
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 992) {
+        $sidenav.toggleClass('crutch', false);
+        $sidenav.sideNav('hide');
+        $sidenav.show();
+    } else {
+        if ($sidenav.css('display') === 'none') {
+            $showNavBar.show();
+        } else {
+            $hideNavBar.show();
+        }
+    }
+    $('a.button-collapse.hamburger').show(0);
+    isHiddenNav = false;
+}
+function hideSideNav() {
+    $sidenav.sideNav('hide');
+    $sidenav.hide();
+    $showNavBar.hide();
+    $hideNavBar.hide();
+    $('a.button-collapse.hamburger').css('display', 'none');
+    $headerFooterMain.css('padding-left', '0');
+    isHiddenNav = true;
+}
+
+function wrapper(template, user, rights){
+    var mainContainerData = {};
+    mainContainerData['location'] = user.userLabel;
+
+    $.ajax({
+        type: 'GET',
+        url: 'api/ticket/countByState/4'
+    }).done(function (unreadTicketsCount) {
+        var unreadCount = unreadTicketsCount && unreadTicketsCount.count ? unreadTicketsCount.count : 0;
+        renderMain(unreadCount);
+    }).fail(function () {
+        renderMain(0);
+    });
+
+    function renderMain(unreadTicketsCount) {
+        if (unreadTicketsCount > 0) {
+            mainContainerData["unreadCount"] = unreadTicketsCount;
+            /*if (router.path[0] != "main") {
+                mainContainerData.unreadState = true;
+            }*/
+        }
+        //Загружаем информацию о странице из Cookie
+        mainContainerData.actions = rights.actions;
+        mainContainerData.roles = rights.roles;
+        mainContainerData.companyId = $.cookie("currentCompany");
+
+        var menuState = getMenuStateFromJson();
+        for(var menuName in menuState) {
+            if (menuState[menuName] === 'opened') {
+                mainContainerData[menuName] = "display: block";
+                mainContainerData[menuName + "sign"] = "remove";
+            } else {
+                mainContainerData[menuName] = "";
+                mainContainerData[menuName + "sign"] = "add";
+            }
+        }
+
+
+        dust.renderSource(template, mainContainerData, function (err, out) {
+            var $bodyWrapper = $('#app');
+            $bodyWrapper.empty();
+            $bodyWrapper.append(out);
+
+            $sidenav = $('#nav-mobile');
+            $hideNavBar = $('#hideNavBar');
+            $showNavBar = $('#showNavBar');
+            $headerFooterMain = $('header, footer, main');
+            //Инициализация плагина SideNav (Боковое меню)
+            var prevWidth;
+            if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 992) {
+                $sidenav.toggleClass('crutch', true);
+            } else {
+                $hideNavBar.hide();
+                $showNavBar.hide();
+            }
+            $(window).resize(function () {
+                var currentWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                if (prevWidth <= 992 && currentWidth > 992 && !isHiddenNav){
+                    $sidenav.toggleClass('crutch', true);
+                    $showNavBar.trigger('click');
+                } else if (prevWidth > 992 && currentWidth <= 992 && !isHiddenNav) {
+                    $sidenav.toggleClass('crutch', false);
+                    $hideNavBar.hide();
+                    $showNavBar.hide();
+                    $sidenav.show();
+                    $sidenav.sideNav('hide');
+                    $headerFooterMain.css('padding-left', '0');
+                }
+                prevWidth = currentWidth;
+            });
+            $(".button-collapse").sideNav({
+                onOpen: function(){
+                    $sidenav.toggleClass('crutch', true);
+                    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 992) {
+                        $hideNavBar.show();
+                    }
+                },
+                onClose: function(){
+                    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 992) {
+                        $sidenav.toggleClass('crutch', false);
+                    }
+                }
+            });
+
+
+            $hideNavBar.on('click', function () {
+                $sidenav.hide();
+                $('main, footer, header').css('padding-left', '0');
+                $hideNavBar.hide();
+                $showNavBar.show()
+            });
+
+            $showNavBar.on('click', function () {
+                $sidenav.show();
+                $('main, footer, header').css('padding-left', '300px');
+                $hideNavBar.show();
+                $showNavBar.hide();
+            });
+
+            var $eeMenu = $('.ee-menu-card');
+
+            //Показываем или прячем меню
+            $('#ee-menu-button').on('click', function (e) {
+                e.stopPropagation();
+                $eeMenu.toggleClass('ee-hidden');
+            });
+
+            $('body').on('click', function () {
+                if (!$eeMenu.hasClass('ee-hidden')){$eeMenu.addClass('ee-hidden')}
+            });
+
+            //Событие нажатия кнопки открывающей модал с версией сборки
+            $('#m_version').on('click', function () {
+                versionControl();
+            });
+
+            //Инициализация кнопки выхода
+            $('#m_logout').on('click', function (e) {
+                e.stopPropagation();
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/logout',
+                    success: function () {
+                        $.cookie('sessionExpired', false);
+                        window.location = '/login';
+                    }
+                });
+            });
+
+            //Контроллер раскрытия меню
+            (function () {
+                var collapsibleMenu = $('.collapsible-header');
+                collapsibleMenu.each(function () {
+                    if (!$(this).find('i.collapce-icon').text()) {
+                        $(this).find('i.collapce-icon').text('add')
+                    }
+                });
+
+                collapsibleMenu.on('click', function (e) {
+                    e.preventDefault();
+                    var menuOption = $(this);
+                    var menuState = getMenuStateFromJson();
+                    if (menuOption.nextAll('div').css('display') == 'none') {
+                        menuOption.find('i.collapce-icon').text('remove');
+                        menuOption.nextAll('div').css('display', 'block');
+                        menuState[menuOption.data('linkname')] = 'opened';
+                    } else {
+                        menuOption.find('i.collapce-icon').text('add');
+                        menuOption.nextAll('div').css('display', 'none');
+                        menuState[menuOption.data('linkname')] = 'collapsed';
+                    }
+                    $.cookie(menuStateCookiesName, JSON.stringify(menuState));
+                });
+            })();
+
+            var $breadWrapper = $('#bread_wrapper');
+            $breadWrapper.empty();
+
+            //Меняем положение стрелки при колапсе фильтров
+            $sidenav.find('.collapsible').collapsible({
+                onOpen: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', true); }, // Callback for Collapsible open
+                onClose: function(el) { $sidenav.find('.collapsible-header .badge i').toggleClass('open', false); } // Callback for Collapsible close
+            });
+
+            //Меняем цвет цифр при переключении свитча
+            $sidenav.find('.switch input[type="checkbox"]').on('change', function(){
+                if (!$(this).prop('checked') && $sidenav.find('.card-panel.switch:not(.inactive):not(.hide)').length <= 1)
+                        $(this).prop('checked', true);
+                else $(this).closest('.card-panel').toggleClass('inactive');
+            });
+
+            //Инициализация datapicker
+            $sidenav.find('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                closeOnSelect: false, // Close upon selecting a date,
+                // Правки для достижения кроссбраузерности
+                onOpen: function () {
+                    $sidenav.css('overflow', 'hidden').css('position', 'absolute')
+                        .css('top', window.scrollY).css('z-index', 'unset');
+                },
+                onClose: function () {
+                    $sidenav.css('overflow', 'auto').css('position', 'fixed')
+                        .css('top', '0').css('z-index', '999');
+                    // Убираем активный элемент, чтобы при фокусе не открывался календарь
+                    document.activeElement.blur();
+                }
+            });
+
+            // Выбор темы селект 2
+            $('#themeSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите тему обращения",
+                ajax: {
+                    url: "/api/service/",
+                    dataType: 'json',
+                    type: "GET",
+                    data: function (params) {
+                        return {
+                            q : params.term ? params.term : "",
+                            page : (params.page || 1) - 1
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results : data.content,
+                            pagination : {
+                                more: !data.last
+                            }
+                        };
+                    }
+                },
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.name;
+                },
+                templateSelection: function (group) {
+                    return group.name ? group.name : group.text;
+                },
+                width: "100%"
+            });
+
+            // Работа с фильтрами категоризации
+            (function categoriesSelect2() {
+                var catlvl1 = $('#catlvl1'),
+                    catlvl2 = $('#catlvl2'),
+                    catlvl3 = $('#catlvl3'),
+                    catlvl4 = $('#catlvl4'),
+                    theme = $('#theme'),
+                    ajaxData = [];
+                var getSelect2Object = function(url, classes) {
+                    return {
+                        containerCssClass: 'select-wrapper ' + (classes ? classes : ''),
+                        placeholder: "Выберите категорию",
+                        ajax: {
+                            url: url,
+                            dataType: 'json',
+                            type: "GET",
+                            data: function (params) {
+                                return {
+                                    q: params.term ? params.term : "",
+                                    page: (params.page || 1) - 1
+                                };
+                            },
+                            processResults: function (data, params) {
+                                data.content.forEach(function (el) {
+                                    ajaxData.push(el);
+                                });
+                                return {
+                                    results: data.content,
+                                    pagination: {
+                                        more: !data.last
+                                    }
+                                };
+                            }
+                        },
+                        allowClear: true,
+                        escapeMarkup: function (markup) {
+                            return markup;
+                        }, // let our custom formatter work
+                        templateResult: function (group) {
+                            return group.name;
+                        },
+                        templateSelection: function (group) {
+                            return group.name ? group.name : group.text;
+                        },
+                        width: "100%"
+                    };
+                };
+
+                catlvl2.parent().hide(0);
+                catlvl3.parent().hide(0);
+                catlvl4.parent().hide(0);
+                theme.parent().hide(0);
+
+
+                catlvl1.select2(getSelect2Object("api/user/catalog/node/0/children/pageable"));
+
+                initCat(catlvl1, catlvl2);
+                initCat(catlvl2, catlvl3);
+                initCat(catlvl3, catlvl4);
+                initCat(catlvl4, theme);
+
+                // Функция инициализации n+1 ступени категоризации
+                function initCat(parentCat, childCat){
+                    parentCat.find('option:not([value="' + parentCat.val() + '"])').remove();
+                    parentCat.on("change", function () {
+                        theme.val(null);
+                        childCat.val(null).trigger('change');
+                        if (!parentCat.val()) {
+                            childCat.parent().hide(0);
+                            theme.parent().hide(0);
+                        } else {
+                            childCat.parent().show(0);
+                            var services = checkServices(parentCat.val());
+                            if (services) {
+                                childCat.parent().hide(0);
+                                initTheme(services)
+                            } else {
+                                theme.parent().hide(0);
+                                if (childCat.hasClass("select2-hidden-accessible")) {
+                                    childCat.select2('destroy');
+                                    //Если не очищать, от внутри селекта остаются выбранные в прошлый раз options и при выборе их в повторный раз имя не отображается ¯\(o_o)/¯
+                                    childCat.empty();
+                                }
+                                childCat.select2(getSelect2Object("api/user/catalog/node/" + parentCat.val() + "/children/pageable", 'margins'));
+                            }
+                        }
+                    });
+                }
+
+                function checkServices(id){
+                    if (ajaxData) {
+                        return ajaxData.find(function(el){
+                            if (el.id === +id) {
+                                return el.services;
+                            }
+                        });
+                    }
+                    return false;
+                }
+
+                function initTheme(services){
+                    theme.parent().show();
+                    if (theme.hasClass("select2-hidden-accessible")) {
+                        theme.select2('destroy');
+                    }
+                    theme.select2({
+                        containerCssClass: 'select-wrapper margins',
+                        placeholder: "Выберите тему",
+                        data: services.services,
+                        allowClear: true,
+                        minimumResultsForSearch: 'infinity',
+                        escapeMarkup: function (markup) {
+                            return markup;
+                        }, // let our custom formatter work
+                        templateResult: function (group) {
+                            return group.name;
+                        },
+                        templateSelection: function (group) {
+                            return group.name ? group.name : group.text;
+                        },
+                        width: "100%"
+                    });
+                    theme.val(null).trigger('change');
+                }
+            })();
+
+
+            // выбор класса СМХО
+            var smhoData = [
+                { id:'B', text: 'Класс B', fullText: 'Класс инцидента B'},
+                { id:'C', text: 'Класс C', fullText: 'Класс инцидента C'},
+                { id:'D', text: 'Класс D', fullText: 'Класс инцидента D'},
+                { id:'A,B,C,D', text: 'Только СМХО', fullText: 'Только инциденты СМХО'},
+                { id:'0', text: 'Без СМХО', fullText: 'Без инцидентов СМХО'}
+            ];
+            $('#smhoSelect').select2({
+                containerCssClass: 'select-wrapper',
+                placeholder: "Выберите класс СМХО",
+                data: smhoData,
+                allowClear: true,
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                templateResult: function (group) {
+                    return group.fullText ? group.fullText : group.text;
+                },
+                templateSelection: function (group) {
+                    return group.text;
+                },
+                multiple: false,
+                width: "100%"
+            }).val(null).trigger('change');
+            loadContent();
+        });
+    }
+}
+function getMenuStateFromJson() {
+    var menuStateString = $.cookie(menuStateCookiesName);
+    if (menuStateString && menuStateString == 'null') {
+        $.removeCookie(menuStateCookiesName);
+        return {};
+    }
+    if (menuStateString) {
+        try {
+            return JSON.parse(menuStateString);
+        }catch (e) {
+            $.removeCookie(menuStateCookiesName);
+            return {};
+        }
+    } else {
+        $.removeCookie(menuStateCookiesName);
+        return {};
+    }
+}
+//Функция, вызывающая модал с текущей версией сборки
+function versionControl() {
+    $.ajax({
+        url: 'api/appInfo',
+        type: 'GET'
+    }).done(function (versionData) {
+        var $versionModal = $('#version_modal');
+        $versionModal.children('div').empty();
+        $versionModal.children('div').append("<h5>" + versionData.name + "</h5><hr><p>" + versionData.version + "</p><p>" + versionData.buildTimestamp + "</p>");
+        $versionModal.modal('open');
+    });
+}

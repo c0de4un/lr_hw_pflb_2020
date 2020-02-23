@@ -1,0 +1,12 @@
+HTTP/1.1 200 
+Server: nginx/1.14.0 (Ubuntu)
+Date: Fri, 21 Feb 2020 17:13:46 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Expires: 0
+Cache-control: no-store
+Set-Cookie: JSESSIONID=F08D48AF2DBC53420765ECFFAF1ADED4; Path=/order; HttpOnly
+vary: accept-encoding
+Content-Encoding: gzip
+

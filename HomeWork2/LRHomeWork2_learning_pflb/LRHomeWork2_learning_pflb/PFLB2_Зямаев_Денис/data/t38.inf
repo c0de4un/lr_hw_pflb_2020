@@ -1,0 +1,11 @@
+[t38]
+FileName1=t38.json
+URL1=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_24.xml
+RequestHeaderFile=t38_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t38_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

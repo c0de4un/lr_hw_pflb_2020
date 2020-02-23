@@ -1,0 +1,11 @@
+[t39]
+FileName1=t39_logout.html
+URL1=http://learning2.pflb.ru:56902/api/logout
+Total=1
+ContentType=
+SnapshotXmlFile=snapshot_25.xml
+RequestHeaderFile=t39_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t39_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

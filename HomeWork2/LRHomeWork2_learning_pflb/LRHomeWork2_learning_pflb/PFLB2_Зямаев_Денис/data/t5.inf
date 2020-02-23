@@ -1,0 +1,15 @@
+[t5]
+FileName1=t5_info.json
+URL1=http://learning2.pflb.ru:56902/api/user/info
+Total=3
+ContentType=application/json
+SnapshotXmlFile=snapshot_5.xml
+RequestHeaderFile=t5_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t5_ResponseHeader.txt
+FileName2=t5_wrapper.html
+URL2=http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust
+FileName3=t5_wrapper.html
+URL3=http://learning2.pflb.ru:56902/director/wrapper/wrapper.js
+[ProtocolInfo]
+ProtocolId=QTWeb

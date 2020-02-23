@@ -1,0 +1,11 @@
+[t44]
+FileName1=t44.json
+URL1=http://advantageonlineshopping.com/order/api/v1/carts/386165654/product/3/color/FCC23D?quantity=1
+Total=1
+RequestHeaderFile=t44_RequestHeader.txt
+RequestBodyFile=t44_RequestBody.txt
+ResponseHeaderFile=t44_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_18.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

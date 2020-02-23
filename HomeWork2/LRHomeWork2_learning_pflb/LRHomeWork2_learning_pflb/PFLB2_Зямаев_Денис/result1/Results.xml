@@ -1,0 +1,482 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED SolManSolutionId CDATA #IMPLIED SolManProjectId CDATA #IMPLIED SolManTestPlanId CDATA #IMPLIED SolManTestPackageId CDATA #IMPLIED SolManUserInfoData CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,ConfName?,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Doc*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC|BPTWrapperTest|Flow|Group|Action) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT ConfName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step*,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*, Summary,ActionMaintenanceSummary*, NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,DataMapping?, Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED isCountable (False|True) "False" >
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*, DataMapping?, NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT DataMapping ( DataMappedItem* )>
+<!ELEMENT DataMappedItem EMPTY >
+<!ATTLIST DataMappedItem dsName CDATA #REQUIRED >
+<!ATTLIST DataMappedItem rowId CDATA #REQUIRED >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?,ExtendedInfo? )>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED UserNote CDATA #IMPLIED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED StepFlowItemKey CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT ExtendedInfo ( StepData ) >
+
+<!ATTLIST ExtendedInfo StepType CDATA #REQUIRED>
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="RTZ 3 (зима)">
+<General productName="Vugen" productVer="2020" os="" host="DESKTOP-ELUQ07C"><DocLocation><![CDATA[D:\Downloads\Performance.Lab\HomeWork.LoadRunner\HomeWork2\LRHomeWork2_learning_pflb\LRHomeWork2_learning_pflb\PFLB2_Зямаев_Денис]]></DocLocation></General>
+<Doc rID="T1"   productName= "Vugen"  >
+<DName><![CDATA[PFLB2_Зямаев_Денис]]></DName>
+<Res><![CDATA[result1]]></Res>
+<Action rID="T2">
+<AName><![CDATA[vuser_init]]></AName>
+<Step rID="T3">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>sessionExpired=false; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:10]]></Time>
+<TimeTick>1582466470</TimeTick>
+<NodeArgs eType="General" icon="3" nRep="6" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T4">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>PFLB.pre.login.link=null; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:10]]></Time>
+<TimeTick>1582466470</TimeTick>
+<NodeArgs eType="General" icon="3" nRep="7" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://learning2.pflb.ru:56902</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:10]]></Time>
+<TimeTick>1582466470</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="8" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:10]]></Time>
+<TimeTick>1582466470</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="9" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:10]]></Time>
+<TimeTick>1582466470</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="10" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:11]]></Time>
+<TimeTick>1582466471</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="11" status="Passed" >
+<Disp><![CDATA[Submit Data: login_2]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[Url: checkLogin]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:11]]></Time>
+<TimeTick>1582466471</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="12" status="Passed" >
+<Disp><![CDATA[Url: checkLogin]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA[Url: info]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:11]]></Time>
+<TimeTick>1582466471</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="13" status="Passed" >
+<Disp><![CDATA[Url: info]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Url: 4]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:11]]></Time>
+<TimeTick>1582466471</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="14" status="Passed" >
+<Disp><![CDATA[Url: 4]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Url: countByState]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:11]]></Time>
+<TimeTick>1582466471</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="15" status="Passed" >
+<Disp><![CDATA[Url: countByState]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t5.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Custom Request: ticket]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="16" status="Passed" >
+<Disp><![CDATA[Custom Request: ticket]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t6.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="23.02.2020 - 18:01:10" eTime="23.02.2020 - 18:01:12" passed="6" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" status="Passed" >
+<Disp><![CDATA[vuser_init Summary]]></Disp>
+</NodeArgs>
+</Action>
+<DIter rID="T14" iterID="1" >
+<Action rID="T15">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>filterSetting=%7B%22page%22%3A%22http%3A%2F%2Flearning2.pflb.ru%3A56902%2F%23tickets%3Fstate%3Dopened%26page%3D1%22%2C%22smho%22%3Anull%2C%22dateStart%22%3A%22%22%2C%22dateEnd%22%3A%22%22%2C%22cat1%22%3Anull%2C%22cat2%22%3Anull%2C%22cat3%22%3Anull%2C%22cat4%22%3Anull%2C%22theme%22%3Anull%2C%22overdue%22%3Afalse%2C%22filters%22%3A%7B%22newCheckbox%22%3Atrue%2C%22appointedCheckbox%22%3Atrue%2C%22performedCheckbox%22%3Atrue%2C%22controlCheckbox%22%3Atrue%7D%7D; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="3" nRep="20" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="21" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T18">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="22" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T19">
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Root_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="23" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20">
+<Obj plainTxt="False" ><![CDATA[Url: children]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:12]]></Time>
+<TimeTick>1582466472</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="24" status="Passed" >
+<Disp><![CDATA[Url: children]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t8.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[Url: treeview]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="25" status="Passed" >
+<Disp><![CDATA[Url: treeview]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t9.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl2_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="26" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T23">
+<Obj plainTxt="False" ><![CDATA[Url: children_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="27" status="Passed" >
+<Disp><![CDATA[Url: children_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t11.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T24">
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl3_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="28" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T25">
+<Obj plainTxt="False" ><![CDATA[Url: children_3]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="29" status="Passed" >
+<Disp><![CDATA[Url: children_3]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t13.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T26">
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl4_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="30" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Url: children_4]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="31" status="Passed" >
+<Disp><![CDATA[Url: children_4]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t15.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T28">
+<Obj plainTxt="False" ><![CDATA[Url: inventoryNumbers]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="32" status="Passed" >
+<Disp><![CDATA[Url: inventoryNumbers]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t16.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T29">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://learning2.pflb.ru:56902</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:13]]></Time>
+<TimeTick>1582466473</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="33" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Custom Request: ticket_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:14]]></Time>
+<TimeTick>1582466474</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="34" status="Passed" >
+<Disp><![CDATA[Custom Request: ticket_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t17.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="23.02.2020 - 18:01:12" eTime="23.02.2020 - 18:01:14" passed="7" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="19" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="9" nRep="18" status="Passed" >
+<Disp><![CDATA[PFLB2_Зямаев_Денис Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Action rID="T31">
+<AName><![CDATA[vuser_end]]></AName>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:14]]></Time>
+<TimeTick>1582466474</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="38" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T33">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:14]]></Time>
+<TimeTick>1582466474</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="39" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T34">
+<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:14]]></Time>
+<TimeTick>1582466474</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="40" status="Passed" >
+<Disp><![CDATA[Url: logout]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Upgrade-Insecure-Requests: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:14]]></Time>
+<TimeTick>1582466474</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="41" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T36">
+<Obj plainTxt="False" ><![CDATA[Url: login_3]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[23.02.2020 - 18:01:15]]></Time>
+<TimeTick>1582466475</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="42" status="Passed" >
+<Disp><![CDATA[Url: login_3]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t19.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="23.02.2020 - 18:01:14" eTime="23.02.2020 - 18:01:15" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="37" status="Passed" >
+<Disp><![CDATA[vuser_end Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Summary sTime="23.02.2020 - 18:01:10" eTime="23.02.2020 - 18:01:15" passed="15" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
+<Disp><![CDATA[Test PFLB2_Зямаев_Денис Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>

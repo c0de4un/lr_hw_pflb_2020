@@ -1,0 +1,4 @@
+"{\"seaddress\":{\"addressLine1\":\"Svobody 173\",\"addressLine2\":\"\",\"city\":\"Kazan\",\"co"
+"untry\":\"ru\",\"postalCode\":426000,\"state\":\"Tataria\"},\"secustomerName\":\"Denis Zaicev\""
+",\"secustomerPhone\":\"8-800-555-4221\",\"senumberOfProducts\":1,\"setransactionType\":\"SHIPP"
+"ING_COST\",\"sessionId\":\"F08D48AF2DBC53420765ECFFAF1ADED4\"}"

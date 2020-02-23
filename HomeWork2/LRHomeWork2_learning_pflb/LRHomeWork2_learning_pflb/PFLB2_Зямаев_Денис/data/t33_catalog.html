@@ -1,0 +1,1137 @@
+var glValidator = true;
+
+//Конструктор. Выполняется при переходе по URL /#catalog.
+function catalog(router) {
+    loadCatalog(router);
+}
+
+//Функция получает из базы срез каталога в зависимости от ID родительского элемента
+function loadCatalog(template) {
+    //debugger;
+    dust.renderSource(template, {}, function (err, out) {
+        var appWrapper = $('#main_wrapper');
+        appWrapper.empty();
+        appWrapper.append(template);
+
+        $('#bread_wrapper').html('<a href=\'/#\' class=\'header-logo\'><img src=\'../../images/logo-5ka.png\'></a><span>Создание нового инцидента</span>');
+        //Прячем боковое меню
+        hideSideNav();
+
+        var router = $.Router();
+        var query = router.args ? router.args["search"] ? router.args["search"] : "" : "";
+        if (query) {
+            if (query === "") {
+                location.href = "#catalog";
+            } else {
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/user/catalog/search?q=' + query
+                }).done(function (data) {
+                    showLevel(data.nodes, decodeURIComponent(query), router, data.services);
+                });
+            }
+        } else {
+            var currentLevel = router.path[1] ? router.path[1] : 0;
+            if (window.outerWidth > 400) {
+                //renderBreadcrumbs(currentLevel, router);
+            }
+            $.ajax({
+                type: 'GET',
+                url: 'api/user/catalog/node/' + currentLevel + '/children/'
+            }).done(function (data) {
+                if (data == "") {
+                    if (currentLevel !== 0) {
+                        $.ajax({
+                            type: 'GET',
+                            url: 'api/user/catalog/node/' + currentLevel + '/service/'
+                        }).done(function (services) {
+                            $.ajax({
+                                type: 'GET',
+                                url: 'api/user/catalog/breadcrumbs/' + currentLevel
+                            }).done(function(breadcrumbs) {
+                                var data = {services: services, breadcrumbs: breadcrumbs};
+                                showForm(data, router);
+                            });
+                        })
+                    }
+                } else {
+                    showLevel(data, undefined, router);
+                }
+            })
+        }
+    });
+}
+
+//Функция отрисовывает сервисы при поиске
+function showServices(services, query) {
+    var $mainWrapper = $('#catalog-wrapper');
+    if (services.length > 0) {
+        var serviceList = '<div class="row"><div class="col l12 m12 s12"><p class="catalog-subtext">Результаты поиска по <strong>типам</strong> запросов: \"' + query + '\"</p></div></div><div class="row"><div class="col l12 m12 s12"><ul class="collection">';
+        services.forEach(function (service) {
+            serviceList += '<li data-id="' + service.id + '" data-parent="' + service.parentId + '" class="collection-item search-service-li">' + service.parentName + ' -> ' + service.name + '</li>';
+        });
+        serviceList += '</ul></div></div>';
+
+        $mainWrapper.children("div").append(serviceList);
+
+        var $searchService = $('.search-service-li');
+        $searchService.unbind('click');
+        $searchService.on('click', function () {
+            var parentId = $(this).data('parent');
+            var serviceId = $(this).data('id');
+            location.href = '/#catalog/' + parentId + '?service=' + serviceId;
+        });
+    } else {
+        $mainWrapper.children("div").append('<div class="row"><div class="col l12 m12 s12"><p class="catalog-subtext">По запросу "' + query + '" ничего не найдено. Воспользуйтесь каталогом.</p></div></div>');
+    }
+}
+
+//Функция отрисовывает срез каталога на экране
+function showLevel(data, query, router, serviceQuery) {
+    $.ajax({
+        type: "GET",
+        url: "api/user/catalog/treeview"
+    }).done(function (data) {
+        // Объект для поиска ссылки на создание по тексту сервиса
+        var serviceLinks = [];
+        //Чистим враппер
+        var $mainWrapper = $("#catalog-wrapper");
+        $mainWrapper.empty();
+
+        //Собираем шапку раздела с каталогом
+        $mainWrapper.append("<div class='container' style='margin-top: 30px;'>");
+        $mainWrapper.children("div").append("<div class='row'>" +
+            "<div class='col l12 m12 s12'>" +
+            "<h1 class='catalog-header'>По какому вопросу вам требуется помощь?</h1>" +
+            "<p class='catalog-subtext'>Выполните поиск или выберите тему из каталога ниже</p>" +
+            "</div>" +
+            "<div class='col l12 m12 s12'>" +
+            "<div class='catalog-search-wrapper search-wrapper'><input class='PL_10_BS_BB' id='search' placeholder='Поиск по темам' value ='" + (query ? query : "") + "'><i id='search_button' class='material-icons'>search</i><i id='clear_search' class='" + (query ? "" : "ee-hidden ") + "search-clear material-icons'>close</i></div></div>");
+
+
+        var nestedAccordion = "";
+
+        if (data !== []) {
+            drawAccordionLevel(data);
+        }
+
+        //Я <3 Рекурсивные вызовы, они показывают степень моей крутизны
+        function drawAccordionLevel(data) {
+            nestedAccordion += '<ul class="collapsible catalog-ul" data-collapsible="expandable">';
+            data.forEach(function (node) {
+                nestedAccordion += '<li><div data-id="' + node.id + '" class="collapsible-header">' + node.name + '</div><div class="catalog-collapsible collapsible-body">';
+                if (node.hasOwnProperty("children")) {
+                    drawAccordionLevel(node.children);
+                } else if (node.hasOwnProperty("services")) {
+                    nestedAccordion += '<ul class="nested-services">';
+                    node.services.forEach(function (service) {
+                        serviceLinks.push({name: service.name, link: '/#catalog/' + node.id + '?service=' + service.id});
+                        nestedAccordion += '<li><a href="/#catalog/' + service.parentId + '?service=' + service.id + '">' + service.name + '</a></li>';
+                    });
+                }
+                nestedAccordion += '</div></li>';
+            });
+            nestedAccordion += '</ul>';
+        }
+        nestedAccordion += '<div class="button-left"><a href="/#tickets?state=opened" class="waves-effect waves-light btn">Назад</a></div>';
+        $mainWrapper.children("div").append(nestedAccordion);
+
+        //Если есть пул сервисов то рисуем их результат поиска
+        if (serviceQuery !== undefined) {
+            showServices(serviceQuery, decodeURIComponent(query));
+        }
+
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+
+        //Поиск по нажатию на лупу
+        $('#search_button').click(function () {
+            var searchText = $("#search").val();
+            if (searchText !== "") {
+                breadcrumbs = [];
+                location.href = "#catalog?search=" + encodeURIComponent(searchText) + ((router.args["user"]) ? ("&user=" + router.args["user"]) : (""));
+            } else if (searchText === "") {
+                breadcrumbs = [];
+                location.href = "#catalog" + ((router.args["user"]) ? ("?user=" + router.args["user"]) : (""));
+            }
+        });
+
+        //Крестик
+        var clearSearch = $('#clear_search'),
+            searchInput = $("#search");
+
+        //Поиск по Enter
+        searchInput.on('keypress', function (evt) {
+            var searchText = $("#search").val();
+
+            var key = evt.which || evt.charCode || evt.keyCode || 0;
+
+            if ((key == 13) && (searchText != "")) {
+                breadcrumbs = [];
+                location.href = "#catalog?search=" + encodeURIComponent(searchText) + ((router.args["user"]) ? ("&user=" + router.args["user"]) : (""));
+            } else if ((key == 13) && (searchText == "")) {
+                breadcrumbs = [];
+                location.href = "#catalog" + ((router.args["user"]) ? ("?user=" + router.args["user"]) : (""));
+            }
+        });
+
+        // Подсказки
+        var autocomplete;
+
+        var names = {};
+        serviceLinks.forEach(function (value) {
+            names[value.name] = null;
+        });
+        searchInput.autocomplete({
+            data: names,
+            onAutocomplete: function (val) {
+                serviceLinks.forEach(function (value) {
+                    if(val === value.name) {
+                        location.href = value.link;
+                        return;
+                    }
+                })
+            }
+        });
+
+        //Чистим строку поиска по нажатии на крестик
+        clearSearch.on('click', function (e) {
+            searchInput.val("");
+            if (!clearSearch.hasClass("ee-hidden")) clearSearch.addClass("ee-hidden");
+            breadcrumbs = [];
+            location.href = "#catalog" + ((router.args["user"]) ? ("?user=" + router.args["user"]) : (""));
+        });
+
+        //Показываем крестик в зависимости от состоянии поиска или скрываем
+        searchInput.on('input', function () {
+            if (searchInput.val() !== "") {
+                if (clearSearch.hasClass("ee-hidden")) clearSearch.removeClass("ee-hidden");
+            } else {
+                if (!clearSearch.hasClass("ee-hidden")) clearSearch.addClass("ee-hidden");
+            }
+        })
+    });
+}
+
+//Функция отрисовывает шаблон заведения заявки
+function showForm(data, router) {
+    // Список тем с обязательным прикреплением файла
+    var reqiredFileList = [ 'Вывоз мусора', 'Заказ дополнительного вывоза мусора', 'Бункер для КГМ 8 куб.м',
+        'Требуется замена внутренней навигации (указать что именно)' ];
+    if(router.args.user){
+        $.ajax({
+            type: "GET",
+            url: "api/user/" + router.args.user + "/info"
+        }).done(function (userInfo) {
+            drawForm(userInfo);
+        })
+    } else {
+        drawForm(undefined);
+    }
+    function drawForm(userInfo) {
+        var serviceId;
+        var isInventory = false;
+        var rootServiceId;
+        var serviceIdCandidate;
+        var questionResult = [];
+        $.ajax({
+            url: 'director/addticket.dust',
+            contentType: "charset=utf-8"
+        }).done(function (template) {
+            if (userInfo !== undefined){
+                data.otherFullName = userInfo.fullName;
+            }
+            dust.renderSource(template, data, function (err, out) {
+                var $mainWrapper = $("#catalog-wrapper");
+                $mainWrapper.empty();
+                $mainWrapper.append(out);
+                var addTicketPath = window.location.hash;
+                window.scrollTo(0, 0);
+
+                /*var cookieDraft = $.cookie('ticket.draft.' + router.path[1]);
+                if(cookieDraft !== undefined){
+                    var $draftContainer = $('#draftContainer');
+                    $draftContainer.empty().append("<div class='row'><div class='col l12 m12 s12'><ul class='collection'><li class='collection-item'><div>У вас имеется сохраненный черновик для данной заявки. Восстановить заполненные поля?<a id='restoreFromDraft' class='secondary-content'><i class='restore-icon material-icons'>replay</i></a></div></li></ul></div></div>");
+                    var $restoreFromDraft = $('#restoreFromDraft');
+                    $restoreFromDraft.unbind('click');
+                    $restoreFromDraft.on('click', function () {
+                        //restoreDraft(cookieDraft, router);
+                        $draftContainer.empty();
+                    })
+                }*/
+
+                //Проверяем уход со страницы при наличии заполненного описания
+                /*window.onhashchange = function () {
+                    var $ticketDescription = $('#ticket_description');
+                    if ($ticketDescription.val() != "" && $ticketDescription.length == 1 && addTicketPath != window.location.hash) {
+                        $('#add_ticket_left').modal('open');
+
+                        var $acceptLeft = $('#add_ticket_left_confirm'),
+                            $declineLeft = $('#add_ticket_left_decline');
+
+                        $acceptLeft.unbind("click");
+                        $acceptLeft.click(function () {
+                            $('#add_ticket_left').modal('close');
+                            loadContent();
+                        });
+
+                        $declineLeft.unbind("click");
+                        $declineLeft.click(function () {
+                            $('#add_ticket_left').modal('close');
+                            window.location.hash = addTicketPath;
+                        });
+                    } else {
+                        if (addTicketPath != window.location.hash || $ticketDescription.val() == undefined) {
+                            loadContent();
+                        }
+                    }
+                }*/
+            });
+
+            /*var $contact = $('#contact');
+            $contact.on('change', function () {
+                saveDraftToObject(router);
+            });*/
+
+            //Подсказка при наведении на i
+            /*$('.tooltipped').tooltip({
+                delay: 50,
+                tooltip: "Максимально подробно опишите причину вашего обращения, внимательно заполните все поля формы для скорейшего рассмотрения вашего обращения.",
+                position: "bottom"
+            });*/
+            //$('select:not(#inventory_num)')
+
+            var $inventoryNum = $('#inventory_num');
+            //Маска
+            //$('#task_phone').mask("8(999) 999-9999");
+
+            //Инициализация селектора
+            var problemSelector = $('#ticket_name');
+            //Обработчики с таймаутом для сохранения драфта
+           /* var timeoutDescription;
+            var $ticketDescription = $('#ticket_description');
+            $ticketDescription.unbind('keyup');
+            $ticketDescription.on('keyup', function () {
+                if(timeoutDescription) {
+                    clearTimeout(timeoutDescription);
+                }
+                timeoutDescription = setTimeout(function () {
+                    saveDraftToObject(router);
+                }, 600);
+
+            });*/
+
+            /*//Обработчики с таймаутом для сохранения драфта
+            var timeoutName;
+            var $ticketUserName = $('#task_username');
+            $ticketUserName.unbind('keyup');
+            $ticketUserName.on('keyup', function () {
+                if(timeoutName) {
+                    clearTimeout(timeoutName);
+                }
+                timeoutName = setTimeout(function () {
+                    saveDraftToObject(router);
+                }, 600);
+
+            });*/
+
+            /*//Обработчики с таймаутом для сохранения драфта
+            var timeoutPhone;
+            var $ticketPhone = $('#task_phone');
+            $ticketPhone.unbind('keyup');
+            $ticketPhone.on('keyup', function () {
+                if(timeoutPhone) {
+                    clearTimeout(timeoutPhone);
+                }
+                timeoutPhone = setTimeout(function () {
+                    saveDraftToObject(router);
+                }, 600);
+
+            });
+
+            //Обработчики с таймаутом для сохранения драфта
+            var timeoutMail;
+            var $ticketMail = $('#task_mail');
+            $ticketMail.unbind('keyup');
+            $ticketMail.on('keyup', function () {
+                if(timeoutMail) {
+                    clearTimeout(timeoutMail);
+                }
+                timeoutMail = setTimeout(function () {
+                    saveDraftToObject(router);
+                }, 600);
+
+            });*/
+
+            var templateWrapper = $('#service_template');
+            problemSelector.unbind('change');
+            problemSelector.on('change', function () {
+                //checkInventary($(this).val());
+                //checkDuplicates($(this).val()); TODO: Переделать проверку дубликатов под бизнес-процесс ТС5
+                //saveDraftToObject(router);
+
+                $('.ajax-upload-dragdrop').removeClass('red-dotted-border');
+
+                if (templateWrapper.hasClass('template-ext')) {
+                    templateWrapper.removeClass('template-ext')
+                }
+
+                templateWrapper.empty();
+                serviceId = $(this).val();
+                rootServiceId = $(this).val();
+
+                if ($inventoryNum.hasClass("select2-hidden-accessible")) {
+                    $inventoryNum.val(null);
+                    $inventoryNum.select2('destroy');
+                    //Если не очищать, от внутри селекта остаются выбранные в прошлый раз options и при выборе их в повторный раз имя не отображается ¯\(o_o)/¯
+                    $inventoryNum.empty();
+                }
+
+                $.ajax({
+                    url: "/api/inventoryNumbers?serviceId=" + serviceId,
+                    dataType: 'json',
+                    type: "GET"
+                }).done(function(data) {
+                    if (data.content && data.content.length > 0) {
+                        $inventoryNum.val(null);
+                        $inventoryNum.empty();
+                        $inventoryNum.select2({
+                            containerCssClass: 'material_like',
+                            placeholder: "Выберите инвентарный номер",
+                            disabled: false,
+                            ajax: {
+                                url: "api/inventoryNumbers",
+                                dataType: 'json',
+                                type: "GET",
+                                data: function (params) {
+                                    return {
+                                        serviceId: serviceId,
+                                        q: params.term ? params.term : "",
+                                        page: (params.page || 1) - 1
+                                    };
+                                },
+                                processResults: function (data, params) {
+                                    return {
+                                        results: data.content,
+                                        pagination: {
+                                            more: !data.last
+                                        }
+                                    };
+                                }
+                            },
+                            escapeMarkup: function (markup) {
+                                return markup;
+                            }, // let our custom formatter work
+                            templateResult: function (group) {
+                                return group.number + " — " + group.name;
+                            },
+                            templateSelection: function (group) {
+                                return group.number ? group.number + " — " + group.name : group.text;
+                            },
+                            width: "100%"
+                        });
+                    } else {
+                        $inventoryNum.select2({
+                            containerCssClass: 'material_like',
+                            placeholder: "Инвентарные номера отсутствуют",
+                            disabled: true,
+                            width: "100%"
+                        });
+                    }
+                });
+
+
+
+                for (var i = 0; i < data.services.length; i++) {
+                    if ($(this).val() == data.services[i].id) {
+                        var alertMessage = $('#ticket_alert');
+                        //Заявка является аварией, выводим данжер мессадж
+                        if (data.services[i].danger) {
+                            if (alertMessage.hasClass('ee-hidden')) alertMessage.removeClass('ee-hidden');
+                        } else {
+                            if (!alertMessage.hasClass('ee-hidden')) alertMessage.addClass('ee-hidden');
+                        }
+                        //Если у сервиса есть шаблон, отправляем его на инициализацию
+                        if (data.services[i].template != undefined) {
+
+                            templateWrapper.append("<div class='row'><div class='col l12 m12 s12'><strong class='ee-st-label'>Пожалуйста, уточните информацию</strong></div></div>");
+                            if (!templateWrapper.hasClass('template-ext')) {
+                                templateWrapper.addClass('template-ext')
+                            }
+                            initTemplateLevel(templateWrapper, data.services[i].template, data.services[i].template);
+                        }
+                        //renderArticles(serviceId);
+                        requiredDescriptionCheck();
+                    }
+                }
+            });
+
+            problemSelector.val(null).select2({
+                containerCssClass: 'material_like',
+                width: "100%",
+                minimumResultsForSearch: Infinity,
+                placeholder: 'Выберите тип проблемы'
+            });
+
+            //Если приходим вместе с сервисом
+            if (router.args){
+                problemSelector.val(router.args['service']);
+                //problemSelector.material_select();
+                problemSelector.trigger('change');
+            }
+
+            /*//Проверка на дубликаты
+            function checkDuplicates(id) {
+                if (id) {
+                    $.ajax({
+                        type: "GET",
+                        url: "api/service/" + id + "/tickets/?state=0,1,2,3"
+                    }).done(function (duplicates) {
+                        var $duplicateAlert = $("#duplicateAlert");
+                        if (duplicates.numberOfElements > 0) {
+                            if ($duplicateAlert.hasClass("ee-hidden")){$duplicateAlert.removeClass("ee-hidden")}
+                        } else {
+                            if (!$duplicateAlert.hasClass("ee-hidden")){$duplicateAlert.addClass("ee-hidden")}
+                        }
+                    });
+                }
+            }*/
+
+            /*function renderArticles(serviceId) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/user/article/?services=' + serviceId
+                }).done(function (articles) {
+
+                    var $addTicketCol = $('#addTicketCol'),
+                        $articlesCol = $('#articlesCol');
+
+                    var articleWrapper = $('#article_wrapper');
+                    articleWrapper.empty();
+                    if (articles && articles.length > 0) {
+                        var articlesList = "<div class='articles-collection'>";
+                        $addTicketCol.removeClass('l12 m12 s12').addClass('l8 m8 s12');
+                        $articlesCol.show();
+
+                        if(window.outerWidth < 400) {
+                            var $ticketNameBlock = $('#ticketNameBlock');
+                            $ticketNameBlock.append('<a id="articlesAnchor">Читать статьи по вашей проблеме</a>');
+
+                            var $articlesAnchor = $('#articlesAnchor');
+                            $articlesAnchor.unbind('click');
+                            $articlesAnchor.on('click', function () {
+                                var $article_wrapper = $('#article_wrapper');
+                                $('html, body').animate({scrollTop: $article_wrapper.offset().top}, 1000);
+
+                            });
+
+                        }
+
+                        $articlesCol.removeClass('blank-articles');
+
+                        articles.forEach(function (article) {
+                            articlesList += "<div class='article-item'><a class='article-item-header' href='#article/" + article.id + "/'>" + article.header + "<p class='article-preview' style='max-width: inherit; margin-top: 15px'>" + article.html.replace(/<\/?[^>]+>/g,'') + "</p><p class='article-read-more'>Читать далее...<span class='article-item-counter'><span style='vertical-align: super;'>" + article.viewCount + " " + "</span><i class='material-icons'>visibility</i></span></p></a></div>";
+                        });
+                        articlesList += "</div>";
+
+                        articleWrapper.append(articlesList);
+
+                        var $module = $(".article-preview");
+                        $module.each(function (index) {
+                            $clamp($module[index], {clamp: 5});
+                        });
+
+                    } else {
+                        //articleWrapper.append('<h6>Не найдено статей по данной теме...</h6>');
+                        $addTicketCol.removeClass('l8 m8 s12').addClass('l12 m12 s12');
+                        $articlesCol.hide();
+
+                        $('#articlesAnchor').remove();
+
+                        $articlesCol.addClass('blank-articles');
+                    }
+
+                });
+            }*/
+
+            function initTemplateLevel(templateWrapper, level, template) {
+                var question = level.question;
+                if (question) {
+                    var answers = question.answers;
+                    if (answers) {
+                        var options = "<option value='' disabled selected>Выберите вариант</option>";
+                        for (var i = 0; i < answers.length; i++) {
+                            options += "<option data-index='" + i + "' value='" + answers[i].value + "'>" + answers[i].value + "</option>";
+                        }
+                        var questionDOM = "<div id=t_row_question_" + question.id + " class='row'>" +
+                            "<div class='col l12 s12 m12'><p class='template-question' style='margin: 0; color: rgba(0, 0, 0, 0.87);'>" + question.name + (question.required ? "<span style='color: red;'> *</span>" : "") +"</p>" +
+                            "<div class='input-field'>" +
+                            "<select class='t_control browser-default "+ (question.required ? "required" : "") + "' " + (question.template ? 'data-template = "' + question.template + '"' : 'data-name = "' + encodeURIComponent(question.name) + '"') + " id=t_select_question_" + question.id + ">" + options + "</select>" +
+                            "</div>" +
+                            "</div>" +
+                            "</div>";
+                        templateWrapper.append(questionDOM);
+                        var currentQuestion = $("#t_select_question_" + question.id);
+                        currentQuestion.material_select();
+                        currentQuestion.change(function () {
+
+                            if(!$(this).hasClass('question-valid')){
+                                $(this).addClass('question-valid');
+                            }
+
+                            //saveDraftToObject(router);
+
+                            var questionId = question.id;
+                            var answer = answers[$(this).find('option:selected').data("index")];
+
+                            var oldQuestions = $("#t_row_question_" + questionId).nextAll();
+
+                            if (answer.serviceId) {
+                                serviceId = answer.serviceId;
+                            } else {
+                                if (oldQuestions.length > 0) {
+                                    serviceIdCandidate = undefined;
+                                    searchNearServiceId(questionId, template);
+                                    if (serviceIdCandidate) {
+                                        serviceId = serviceIdCandidate;
+                                    } else {
+                                        serviceId = rootServiceId;
+                                    }
+                                }
+                            }
+                            oldQuestions.remove();
+
+                            //console.log(serviceId);
+                            initTemplateLevel(templateWrapper, answer, template);
+                            var fileRequiredCounter = $('.file-required').length;
+                            if(fileRequiredCounter > 0){
+                                $('.ajax-file-upload').next('span').find('span').text('Для решения данной проблемы необходимо приложить файлы').append('<span style="color: red"> *</span>');
+                            } else {
+                                $('.ajax-file-upload').next('span').find('span').text('Приложите файлы для скорейшего решения вашей проблемы');
+                            }
+                        })
+                    } else {
+                        //console.log("Bad question")
+                    }
+                } else {
+                    var fields = level.fields;
+                    if (fields && fields.length > 0) {
+                        fieldGenerator(fields, templateWrapper);
+                    }
+                }
+
+                function searchNearServiceId(questionId, template) {
+
+                    var question = template.question;
+                    if (question && question.answers) {
+                        if (question.id == questionId) {
+                            serviceId = serviceIdCandidate;
+                        } else {
+                            for (var i = 0; i < question.answers.length; i++) {
+                                if (question.answers[i].serviceId && question.answers[i].question) {
+                                    serviceIdCandidate = question.answers[i].serviceId;
+                                    searchNearServiceId(question.answers[i].question.id, question.answers[i])
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Подсказка на кнопку нового контакта
+            var newContactBtn = $("#new_contact");
+            newContactBtn.tooltip({
+                delay: 50,
+                tooltip: "Добавить новый контакт при создании заявки",
+                position: "bottom"
+            });
+            var newContactContainer = $("#new_contact_container");
+            var contactSelector = $("#contact");
+
+            //Нажатие кнопки нового контакта
+            newContactBtn.click(function () {
+                if (newContactContainer.hasClass("hide")) {
+                    newContactContainer.removeClass("hide");
+                }
+                if (contactSelector.length) {
+                    contactSelector.val(0);
+                    contactSelector.material_select();
+                }
+            });
+
+            if (contactSelector.length) {
+                contactSelector.change(function () {
+                    if (!newContactContainer.hasClass("hide")) {
+                        newContactContainer.addClass("hide");
+                    }
+                });
+            }
+
+            //Работа с плагином Fileupload
+            var fileIdArray = [];
+            var maxFileSize = {max:10485760, current:0};
+            $("#fileuploader").uploadFile({
+                maxFileCount: 6,
+                maxFileSize: 10485760,
+                dragDropStr: "<span><span style='margin-left: 15px;'>Приложите файлы для скорейшего решения вашей проблемы</span></span>",
+                showDelete: true,
+                url: "api/ticket/file/",
+                fileName: "files",
+                sequential: false,
+                sequentialCount: 6,
+                enctype: "multipart/form-data",
+                deleteCallback: function (obj) {
+                    var fileName = toTranslit(obj[0].name);
+                    maxFileSize.current -= maxFileSize[fileName];
+                    delete maxFileSize[fileName];
+                    //console.log(maxFileSize);
+                    $.ajax({
+                        url: 'api/ticket/file/' + obj[0].id,
+                        type: 'DELETE'
+                    }).always(function () {
+                        for (var i = 0; i < fileIdArray.length; i++) {
+                            if (obj[0].id === fileIdArray[i]) {
+                                fileIdArray.splice(i, 1);
+                                break;
+                            }
+                        }
+                    })
+                },
+                onSelect:function (files) {
+                    //debugger;
+                    var totalSize = 0;
+                    $.each(files, function (i, file) {
+                        totalSize += file.size;
+                    });
+                    if(maxFileSize.current + totalSize > maxFileSize.max){
+                        Materialize.toast('Общий размер файлов не должен превышать 10 Мегабайт', 3000);
+                        //console.log(maxFileSize);
+                        return false;
+                    } else {
+                        $.each(files, function (i, file) {
+                            maxFileSize[toTranslit(file.name)] = file.size
+                        });
+
+                        maxFileSize.current += totalSize;
+                        //console.log(maxFileSize);
+                        return true;
+                    }
+                },
+                onSuccess:function(files,data)
+                {
+                    Materialize.toast('Файл успешно добавлен', 3000);
+                    fileIdArray.push(data[0].id);
+                    $('.ajax-upload-dragdrop').removeClass('red-dotted-border');
+                },
+                onError: function(files,status,errMsg,pd)
+                {
+                    Materialize.toast('Ошибка ', 3000);
+                }
+            });
+
+            //Свитч, генерирующий поля
+            function fieldGenerator(fields, templateWrapper) {
+                var templateForm = "";
+                for (var i = 0; i < fields.length; i++) {
+                    var answ = fields[i].template ? 'data-template = "' + fields[i].template + '"' : 'data-name = "' + encodeURIComponent(fields[i].name) + '"';
+                    switch (fields[i].type) {
+                        case "TEXT":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'>" +
+                                "   <div class='col l12 s12 m12'><p class='template-question'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "") +"</p>" +
+                                "       <input class='t_control " + (fields[i].required ? "required" : "") + "' " + answ + " id=t_text_" + fields[i].id + " type='text'>" +
+                                "   </div>" +
+                                "</div>";
+                            break;
+                        case "SELECT":
+                            var options = "<option value='' disabled selected>Выберите вариант</option>";
+                            for (var j = 0; j < fields[i].values.length; j++) {
+                                options += "<option value='" + fields[i].values[j] + "'>" + fields[i].values[j] + "</option>";
+                            }
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'>" +
+                                "<div class='col l12 s12 m12'>" +
+                                "   <p class='template-question'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "") + "</p>" +
+                                "   <div class='input-field'>" +
+                                "       <select class='browser-default t_control " + (fields[i].required ? "required" : "") + "' " + answ + " id=t_select_" + fields[i].id + ">" + options + "</select>" +
+                                "   </div>" +
+                                "</div>" +
+                                "</div>";
+                            break;
+                        case "MULTI_SELECT":
+                            var multipleOptions = "<option value='' disabled selected>Выберите вариант</option>";
+                            for (var z = 0; z < fields[i].values.length; z++) {
+                                multipleOptions += "<option value='" + z + "'>" + fields[i].values[z] + "</option>";
+                            }
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'>" +
+                                "<div class='col l12 s12 m12'>" +
+                                "   <p class='template-question'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "") + "</p>" +
+                                "   <div class='input-field'>" +
+                                "       <select multiple style='height: 100px;' class='t_control " + (fields[i].required ? "required" : "") + "' " + answ + " id=t_multiple_" + fields[i].id + ">" + multipleOptions + "</select>" +
+                                "   </div>" +
+                                "   </div>" +
+                                "</div>";
+                            break;
+                        case "CHECKBOX":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row checkbox-row'>" +
+                                "<div class='input-field col l12 s12 m12'>" +
+                                "   <input class='t_control t_check' " + answ + " type='checkbox' id=t_check_" + fields[i].id + ">" +
+                                "<label style='color: rgba(0, 0, 0, 0.87);' for='t_check_" + fields[i].id + "'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "") + "</label>" +
+                                "</div></div>";
+                            break;
+                        case "DATE":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'>" +
+                                "<div class='input-field col l12 s12 m12'>" +
+                                "   <p class='template-question'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "")  + "</p>" +
+                                "   <input placeholder='Выберите дату' class='t_control datepicker " + (fields[i].required ? "required" : "") + "' " + answ + " id=t_data_" + fields[i].id + " type='date'>" +
+                                "</div>" +
+                                "</div>";
+                            break;
+                        case "DATE_RANG":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'>" +
+                                "<div class='col l12 m12 s12'>" +
+                                "   <p class='template-question'>" + fields[i].name + (fields[i].required ? "<span style='color: red;'> *</span>" : "")  + "</p>" +
+                                "</div>" +
+                                "<div class='col l6 m6 s12 input-field'>" +
+                                "   <p style='margin: 0; color: rgba(0, 0, 0, 0.87);'>С</p>" +
+                                "   <input data-id='" + fields[i].id + "' class='t_data_range t_control datepicker " + (fields[i].required ? "required" : "") + "' " + answ + " id='t_datarange_left_" + fields[i].id + "' type='date'>" +
+                                "</div>" +
+                                "<div class='col l6 m6 s12 input-field'>" +
+                                "   <p style='margin: 0; color: rgba(0, 0, 0, 0.87);'>По</p>" +
+                                "   <input data-id='" + fields[i].id + "' class='t_data_range t_control datepicker " + (fields[i].required ? "required" : "") + "' " + answ + "  id='t_datarange_right_" + fields[i].id + "' type='date'>" +
+                                "</div>" +
+                                "   <div class='datarange_error ee-hidden col l12 s12 m12'>" +
+                                "   <p style='color: red; margin: 0;'>Дата окончания промежутка не может быть меньше даты его начала!</p>" +
+                                "</div></div>";
+                            break;
+                        case "INFO":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'><div class='col l12 m12 s12'><p class='template-question" + (fields[i].required ? " alert-ticket-message info-required" : "")+  "'>" + fields[i].name + "</p></div></div>";
+                            break;
+                        case "FILE":
+                            templateForm += "<div id='t_row_field_" + fields[i].id + "' class='row'><div class='col l12 m12 s12'><p class='template-question file-required'>" + fields[i].name + "</p></div></div>";
+                            break;
+                    }
+                }
+                templateWrapper.append(templateForm);
+                requiredDescriptionCheck();
+
+                var $tControl = $('input.t_control');
+                $tControl.unbind('change.special');
+                $tControl.on('change.special', function () {
+                    //saveDraftToObject(router);
+                    if(!$(this).hasClass('question-valid') && $(this).val() !== ""){
+                        $(this).addClass('question-valid');
+                    } else {
+                        $(this).removeClass('question-valid');
+                    }
+                });
+
+                var $StControl = $('select.t_control');
+                $StControl.unbind('change.special');
+                $StControl.on('change.special', function () {
+                    //saveDraftToObject(router);
+                    if($(this).hasClass('question-valid') && ($(this).val() !== "" || $(this).val() !== [])){
+                        if($(this).hasClass('initialized')){
+                            $(this).prevAll('input').addClass('question-valid');
+                        } else {
+                            $(this).addClass('question-valid');
+                        }
+                    } else {
+                        if($(this).hasClass('initialized')){
+                            $(this).prevAll('input').removeClass('question-valid');
+                        } else {
+                            $(this).removeClass('question-valid');
+                        }
+                    }
+                });
+
+                var fileRequiredCounter = $('.file-required').length;
+                if(fileRequiredCounter > 0){
+                    //console.log('TIME TO REQUIRE FILES AMIGO (BROWSER)');
+                    $('.ajax-file-upload').next('span').find('span').text('Для решения данной проблемы необходимо приложить файлы').append('<span style="color: red"> *</span>');;
+                } else {
+                    $('.ajax-file-upload').next('span').find('span').text('Приложите файлы для скорейшего решения вашей проблемы');
+                }
+
+                $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15 // Creates a dropdown of 15 years to control year,
+                });
+
+                $('.t_data_range').change(function () {
+
+                    var currentDataRangeId = $(this).data('id');
+                    var currentDataRange = $('.t_data_range[data-id=' + currentDataRangeId + ']');
+                    var dateParts = currentDataRange[0].value.split(".");
+                    var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+                    var leftValue = dateObject;
+                    dateParts = currentDataRange[1].value.split(".");
+                    dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+                    var rightValue = dateObject;
+                    if (rightValue !== "" && leftValue !== "" && (rightValue < leftValue)) {
+                        currentDataRange.each(function () {
+                            if (!$(this).hasClass('invalid')) $(this).addClass('invalid');
+                            var rangeErr = $('.datarange_error');
+                            if (rangeErr.hasClass('ee-hidden')) rangeErr.removeClass('ee-hidden');
+                        });
+                    } else {
+                        currentDataRange.each(function () {
+                            if ($(this).hasClass('invalid')) $(this).removeClass('invalid');
+                            var rangeErr = $('.datarange_error');
+                            if (!rangeErr.hasClass('ee-hidden')) rangeErr.addClass('ee-hidden');
+                        });
+                    }
+                });
+
+                $('select').material_select();
+            }
+
+            //Отправляем заявку
+            $('#ticket_send').submit(function (event) {
+                event.preventDefault();
+
+                var $messageModal = $('#messageModal');
+
+                var themeSelector = $('#ticket_name'),
+                    inventoryNum = $('#inventory_num'),
+                    contactMail = $('#task_mail'),
+                    contactPhone = $('#task_phone'),
+                    contactSelector = $("#contact"),
+                    ticketDescription = $('#ticket_description');
+
+                //Собираем информацию из полей шаблона
+
+                var templateFields = $('select.t_control, input.t_control');
+                var templateOutput = getResultFromField(templateFields);
+
+                if (templateOutput && templateOutput.length > 0) {
+                    templateOutput = (ticketDescription.val() === "" ? "" : "\n\n") + templateOutput.join("\n");
+                } else templateOutput = "";
+
+                var isFileRequired = false;
+                var testText = $('.ticket-breabcrumbs').text();
+                for (var i = 0, length = reqiredFileList.length; i < length; i++) {
+                    if (~testText.indexOf(reqiredFileList[i])) {
+                        isFileRequired = true;
+                        break;
+                    }
+                }
+
+                if (formValidation(themeSelector, contactSelector, inventoryNum, contactPhone, ticketDescription, templateFields, fileIdArray, isInventory, isFileRequired)) {
+
+                    $('#add_ticket_set').prop('disabled', true);
+                    var progress = $('#new_ticket_progress');
+                    if (progress.hasClass('ee-hidden')) progress.removeClass('ee-hidden');
+                    var ticket = {
+                        text: ticketDescription.val() + templateOutput,
+                        header: themeSelector.children(':selected').text(),
+                        ticketStateId: 0,
+                        serviceId: serviceId,
+                        files: fileIdArray,
+                        inventoryNumberId: inventoryNum.val()
+                    };
+
+                    //Инвентарник
+                    /* var $inventarySelector = $("#inventarySelector");
+                    if ($inventarySelector.val() !== null) {
+                        ticket.inventoryNumberId = $inventarySelector.val();
+                    } */
+
+                    if (router.args["user"]) {
+                        ticket.userId = router.args["user"];
+                    }
+                    if (contactSelector.length && contactSelector.val()) {
+                        ticket.contact = {
+                            id: contactSelector.val()
+                        };
+                    } else {
+                        /*ticket.contact = {
+                            fullName: "Алексей Смышляев",
+                            email: "a.smyshliaev@gmail.com",
+                            phone: "+7 977 833 44 86"
+                        };*/
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: 'api/ticket/',
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(ticket)
+                    }).done(function (data) {
+                        $messageModal.find('p').html('Новый инцидент INC_' + data.id +' успешно создан<br>' +
+                            'Отмена возможна в течение 10 минут после создания в разделе просмотра ' +
+                            '<a class="modal-action modal-close" href="/#ticket/' + data.id + '">инцидента</a>');
+                        $messageModal.find('a').last().attr('href', '/');
+                        $messageModal.modal('open');
+                        $('.modal-overlay').unbind('click');
+
+                        $.removeCookie('ticket.draft.' + router.path[1]);
+                    }).fail(function (error) {
+                        if (!progress.hasClass('ee-hidden')) progress.addClass('ee-hidden');
+
+                        $messageModal.find('p').text(error.responseJSON.message);
+                        $messageModal.find('a').attr('href', '/');
+                        $messageModal.modal('open');
+                        $('#add_ticket_set').prop('disabled', false);
+                    });
+                }
+            });
+        })
+    }
+}
+
+//Полноценная валидация формы создания заявки
+function formValidation(themeSelector, contactSelector, inventoryNum, contactPhone, ticketDescription, templateFields, fileIdArray, isInventory, isFileRequired) {
+    var fileSelector = $('#fileuploader').find('> div:first-child');
+    var $messageModal = $('#messageModal');
+    var fields = [];
+    var isValid = true;
+
+    var removeThemeSelectorInvalidClassHandler = function(){themeSelector.parent().find('.material_like').toggleClass('invalid-textarea', false);};
+    themeSelector.unbind('change', removeThemeSelectorInvalidClassHandler);
+    themeSelector.on('change', removeThemeSelectorInvalidClassHandler);
+
+    /*var removeTicketDescriptionInvalidClassHandler = function() {
+        if (ticketDescription.hasClass('invalid-textarea')) ticketDescription.removeClass('invalid-textarea');
+    };
+    ticketDescription.unbind('change',removeTicketDescriptionInvalidClassHandler);
+    ticketDescription.on('change', removeTicketDescriptionInvalidClassHandler);*/
+
+    var removeContactSelectorInvalidClassHandler = function(){contactSelector.toggleClass('invalid-textarea', false);};
+    contactSelector.unbind('change', removeContactSelectorInvalidClassHandler);
+    contactSelector.on('change', removeContactSelectorInvalidClassHandler);
+
+    var removeContactNameInvalidClassHandler = function(){inventoryNum.parent().find('.material_like').toggleClass('invalid-textarea', false);};
+    inventoryNum.unbind('change',removeContactNameInvalidClassHandler);
+    inventoryNum.on('change', removeContactNameInvalidClassHandler);
+
+    var removeContactPhoneInvalidClassHandler = function(){contactPhone.toggleClass('invalid-textarea', false);};
+    contactPhone.unbind('change', removeContactPhoneInvalidClassHandler);
+    contactPhone.on('change', removeContactPhoneInvalidClassHandler);
+
+    var removeContactPhoneInvalidClassHandler = function(){contactPhone.toggleClass('invalid-textarea', false);};
+    contactPhone.unbind('change', removeContactPhoneInvalidClassHandler);
+    contactPhone.on('change', removeContactPhoneInvalidClassHandler);
+
+    var removeFileInvalidClassHandler = function(){fileSelector.toggleClass('invalid-textarea', false);};
+    fileSelector.unbind('change', removeFileInvalidClassHandler);
+    fileSelector.on('change', removeFileInvalidClassHandler);
+
+    if (themeSelector.val() == null) {
+        themeSelector.parent().find('.material_like').toggleClass('invalid-textarea', true);
+        isValid = false;
+        fields.push('тема');
+    }
+    if (isInventory && !inventoryNum.val()) {
+        isValid = false;
+        fields.push('инвентарный номер');
+        inventoryNum.parent().find('.material_like').toggleClass('invalid-textarea', true);
+    }
+    if (isFileRequired && (!fileIdArray || !fileIdArray.length)) {
+        isValid = false;
+        fields.push('файл');
+        fileSelector.toggleClass('invalid-textarea', true);
+    }
+    if (!isValid) {
+        if (fields.length > 1) {
+            $messageModal.find('p').text('Поля ' + fields.join(', ') + ' необходимы для заполнения');
+        } else {
+            $messageModal.find('p').text('Поле ' + fields[0] + ' необходимо для заполнения');
+        }
+        $messageModal.find('a').removeAttr('href');
+        $messageModal.modal('open');
+    }
+    return isValid;
+}
+
+//Собираем информацию с шаблона и запуливаем ее в description
+function getResultFromField(templateFields) {
+    //console.log(templateFields);
+    var result = [];
+    var rangeVal = "", rangeValIterator = 0;
+    templateFields.each(function (index) {
+        var fieldAnswer = "";
+        if ($(this).hasClass('t_check')) {
+            if ($(this).prop('checked') == true) {
+                fieldAnswer = 'Да';
+            } else {
+                fieldAnswer = 'Нет';
+            }
+        } else if ($(this).hasClass('t_data_range')) {
+            if($(this).val() !== ""){
+                if (rangeValIterator == 0) {
+                    rangeVal += $(this).val();
+                    rangeVal += "—";
+                    rangeValIterator = 1;
+
+                } else {
+                    rangeVal += $(this).val();
+                    fieldAnswer = rangeVal;
+                    rangeVal = "";
+                    rangeValIterator = 0;
+                }
+            } else {
+                fieldAnswer = null;
+            }
+
+        } else {
+            if(typeof $(this).attr('multiple') !== typeof undefined && typeof $(this).attr('multiple') !== false) {
+                fieldAnswer = [];
+                $(this).find('option:selected').each(function () {
+                    if(!$(this).is(':disabled')){
+                        fieldAnswer.push($(this).text());
+                    }
+                });
+                if(!fieldAnswer.length) fieldAnswer = null;
+            } else {
+                fieldAnswer = $(this).val();
+            }
+
+        }
+        if (rangeValIterator == 0 && fieldAnswer !== null && fieldAnswer !== "") {
+            var template = $(this).data("template");
+            if (template) {
+                if (template instanceof Object) {
+                    template = "";
+                } else {
+                    template = "" + template;
+                }
+                if (template.indexOf("[]") != -1) {
+                    result.push(template.replace("[]", fieldAnswer));
+                } else {
+                    result.push(template + " - " + fieldAnswer);
+                }
+            } else {
+                result.push(decodeURIComponent($(this).data("name")) + " - " + fieldAnswer);
+            }
+        }
+
+    });
+    return result;
+}
+
+function requiredDescriptionCheck() {
+    var $variableRequirement = $('#variableRequirement');
+    var $requiredTemplateFields = $('.required');
+    if($requiredTemplateFields.length > 0){
+        $variableRequirement.empty();
+        glValidator = false;
+    } else {
+        $variableRequirement.empty().append("*");
+        glValidator = true;
+    }
+}
+
+function toTranslit(text) {
+    return text.replace(/([а-яё])/gi,
+        function (all, ch, i) {
+            var code = ch.charCodeAt(0),
+                index = code == 1025 || code == 1105 ? 0 :
+                    code > 1071 ? code - 1071 : code - 1039,
+                t = ['yo', 'a', 'b', 'v', 'g', 'd', 'e', 'zh',
+                    'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p',
+                    'r', 's', 't', 'u', 'f', 'h', 'c', 'ch', 'sh',
+                    'shch', '', 'y', '', 'e', 'yu', 'ya'
+                ];
+            return t[index];
+        })
+}

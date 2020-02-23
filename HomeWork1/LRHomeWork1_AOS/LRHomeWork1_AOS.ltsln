@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+# SharpDevelop 4.1.3.0-trunk
+Project("2567F387-1D3B-4405-A80C-ABBDF3B35670") = "PFLB1_Зямаев_Денис", "PFLB1_Зямаев_Денис\PFLB1_Зямаев_Денис.usr", "2567F387-1D3B-4405-A80C-ABBDF3B35670"
+	ProjectSection(CustomLoading) = Data
+		Token = PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8UGVyc2lzdGVuY2VUb2tlbj4NCiAgPExvYWREYXRhPkQ6XERvd25sb2Fkc1xQZXJmb3JtYW5jZS5MYWJcSG9tZVdvcmsuTG9hZFJ1bm5lclxIb21lV29yazFcTFJIb21lV29yazFfQU9TXFBGTEIxX9CX0Y/QvNCw0LXQsl/QlNC10L3QuNGBXFBGTEIxX9CX0Y/QvNCw0LXQsl/QlNC10L3QuNGBLnVzcjwvTG9hZERhdGE+DQogIDxGaWxlcz4NCiAgICA8RmlsZT5EOlxEb3dubG9hZHNcUGVyZm9ybWFuY2UuTGFiXEhvbWVXb3JrLkxvYWRSdW5uZXJcSG9tZVdvcmsxXExSSG9tZVdvcmsxX0FPU1xQRkxCMV/Ql9GP0LzQsNC10LJf0JTQtdC90LjRgVxQRkxCMV/Ql9GP0LzQsNC10LJf0JTQtdC90LjRgS51c3I8L0ZpbGU+DQogIDwvRmlsZXM+DQogIDxNb2RpZmllZD4yMDIwLTAyLTIxVDEwOjE3OjQ4LjEzNzk4NTQrMDQ6MDA8L01vZGlmaWVkPg0KPC9QZXJzaXN0ZW5jZVRva2VuPg__
+	EndProjectSection
+	ProjectSection(ExpandInVugen) = Data
+		Value = True
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		2567F387-1D3B-4405-A80C-ABBDF3B35670.Debug|Any CPU.Build.0 = Debug|Any CPU
+		2567F387-1D3B-4405-A80C-ABBDF3B35670.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		2567F387-1D3B-4405-A80C-ABBDF3B35670.Release|Any CPU.Build.0 = Release|Any CPU
+		2567F387-1D3B-4405-A80C-ABBDF3B35670.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,113 @@
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col l12 m12 s12" id="addTicketCol">
+            <h5 class="entry-page-title">Создать новый инцидент</h5>
+            <div id="draftContainer"></div>
+            <div id="ticket_alert" class="alert-ticket-message ee-hidden">
+                <p>Внимание! Инцидент категории «Авария», после создания инцидента свяжитесь с подрядчиком (контакты в разделе <a href="/#info">Справочная информация</a>)</p>
+            </div>
+            <div id="duplicateAlert" class="alert-ticket-message ee-hidden">
+                <p>Внимание! У вас уже имеются созданные инциденты по данной проблеме. Убедитесь, что вы не создаете копию.</p>
+            </div>
+
+            <form id="ticket_send">
+                <fieldset id="add_ticket_set">
+                    <div class="row">
+                        <div class="col s12">
+                            <p class="ticket-breabcrumbs">{#breadcrumbs}{.name} {@sep}<i class="material-icons">chevron_right</i>{/sep} {/breadcrumbs}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l2 m2 s12">
+                            <div style="margin-top: 10px; margin-bottom: 20px">
+                                <strong class="ee-st-label">Тема</strong>
+                            </div>
+                        </div>
+                        <div class="col l10 m10 s12" id="ticketNameBlock">
+                            <div class="input-field" style="margin: 0;">
+                                <select class="browser-default" id="ticket_name">
+                                    {#services}
+                                        <option value="{.id}">{.name}</option>
+                                    {/services}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="ticketInventaryBlock">
+                        <div class="col l2 m2 s12">
+                            <div style="margin-bottom: 20px; margin-top: 10px;">
+                                <strong class="ee-st-label">Инвентарный номер</strong>
+                            </div>
+                        </div>
+                        <div class="col l10 m10 s12">
+                            <div class="input-field" style="margin: 0;">
+                                <select  id="inventory_num" type="text" class="validate"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="service_template"></div>
+
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <strong class="ee-st-label">Описание</strong>
+                        </div>
+                        <div class="col l12 m12 s12">
+                            <div class="input-field">
+                                <textarea id="ticket_description" placeholder="Максимально подробно опишите вашу проблему" class="materialize-textarea ee-st-comment-area"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <div id="fileuploader">Upload</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col l12 m12 s12">
+                            <div id="new_ticket_progress" class="progress ee-hidden">
+                                <div class="indeterminate"></div>
+                            </div>
+                            <ul class="button-holder">
+                                <li>
+                                    <a onclick="history.back();" class="waves-effect waves-light btn blank-button">Назад</a>
+                                </li>
+                                <li>
+                                    <button type="submit" class="waves-effect waves-light btn corporate-colour-button">Создать</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col l4 m4 s12 blank-articles" id="articlesCol" style="display: none">
+            <div class="row">
+                <div class="col l12 m12 s12">
+                    <p class="articles-header">Информация по вашей проблеме:</p>
+                    <div id="article_wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add_ticket_left" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <h4>Переход на другую страницу</h4>
+                <p>Вы уверены что хотите перейти на другую страницу? Все данные будут потеряны.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12" style="text-align: right;">
+                <a class="waves-effect waves-green btn-flat" id="add_ticket_left_decline">Отменить</a>
+                <a class="waves-effect waves-red red btn-flat" id="add_ticket_left_confirm">Перейти</a>
+            </div>
+        </div>
+    </div>
+</div>

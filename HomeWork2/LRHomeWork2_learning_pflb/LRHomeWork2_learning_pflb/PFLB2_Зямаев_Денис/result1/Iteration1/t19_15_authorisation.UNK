@@ -1,0 +1,92 @@
+$(document).ready(function () {
+    $.cookie('filterSetting', '', { expires: -1 });
+    $.ajax({
+        url: 'tpl/login/login.dust',
+        contentType: "charset=utf-8"
+    }).done(function (template) {
+        var companyId;
+        $.cookie('currentCompany') != undefined ? companyId = $.cookie('currentCompany') : companyId = 0;
+        dust.renderSource(template, {company: companyId}, function (err, out) {
+            var $login = $("#login_page_wrapper");
+            $login.empty();
+            $login.append(out);
+        });
+
+        if ($.cookie('sessionExpired') == "true") {
+            Materialize.toast('Сессия истекла, пожалуйста, авторизуйтесь', 3000);
+            $.cookie('sessionExpired', false);
+        }
+
+        var loginField = $('#login_field');
+        var passwordField = $('#password_field');
+        var rememberMeField = $('#remember_me_field');
+        $('#auth_form').submit(function (event) {
+
+            event.preventDefault();
+            if (formValidation(loginField, passwordField)) {
+                $.ajax({
+                    type: "POST",
+                    url: "api/login",
+                    data: {
+                        login: loginField.val(),
+                        password: passwordField.val(),
+                        rememberMe: rememberMeField.prop("checked")
+                    }
+                }).done(function (data) {
+                    //debugger;
+                    //Получаем пользовательские данные
+                    var user = JSON.parse(data),
+                        companyId = user.companyId ? user.companyId : 0,
+                        userName = user.fullName ? user.fullName : user.login;
+
+                    //Ловим сапа
+                    var userSupport = false;
+                    if (user.roles) {
+                        user.roles.forEach(function (role) {
+                            if (role.name == "ROLE_SUPPORT") {
+                                userSupport = true;
+                            }
+                        });
+                    }
+                    $.cookie('currentCompany', companyId, {expires: 666});
+                    $.cookie('currentUser', userName, {expires: 666});
+
+                    if (loginField.hasClass('invalid')) loginField.removeClass('invalid');
+                    if (passwordField.hasClass('invalid')) passwordField.removeClass('invalid');
+                    try {
+                        var preLoginLink = JSON.parse($.cookie('PFLB.pre.login.link'));
+                        if (preLoginLink.url || preLoginLink.url != 'undefined') {
+                            window.location = preLoginLink.url + window.location.hash;
+                        } else {
+                            window.location = window.location.host;
+                        }
+
+                    } catch (e) {
+                        window.location = '/';
+
+                    } finally {
+                        $.cookie('PFLB.pre.login.link', null);
+                    }
+
+                }).fail(function (XHR) {
+                    if (!loginField.hasClass('invalid')) loginField.addClass('invalid');
+                    if (!passwordField.hasClass('invalid')) passwordField.addClass('invalid');
+                    Materialize.toast(XHR.responseJSON.message, 3000);
+                })
+            }
+        });
+    });
+});
+
+//Валидируем форму авторизации
+function formValidation(loginField, passwordField) {
+    if (loginField.val() == '') {
+        Materialize.toast('Введите имя пользователя', 3000);
+        if (!loginField.hasClass('invalid')) loginField.addClass('invalid');
+        return false;
+    } else if (passwordField.val() == '') {
+        Materialize.toast('Введите пароль', 3000);
+        if (!passwordField.hasClass('invalid')) passwordField.addClass('invalid');
+        return false;
+    } else return true;
+}

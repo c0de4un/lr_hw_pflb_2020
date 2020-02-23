@@ -1,0 +1,11 @@
+[t62]
+FileName1=t62.json
+URL1=http://advantageonlineshopping.com/order/api/v1/shippingcost/
+Total=1
+RequestHeaderFile=t62_RequestHeader.txt
+RequestBodyFile=t62_RequestBody.txt
+ResponseHeaderFile=t62_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_28.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

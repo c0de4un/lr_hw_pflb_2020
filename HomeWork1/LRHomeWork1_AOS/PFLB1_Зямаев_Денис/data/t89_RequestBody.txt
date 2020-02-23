@@ -1,0 +1,5 @@
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.o"
+"rg/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http:/"
+"/www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountByIdRequest xmlns=\"com.advantage.online.st"
+"ore.accountservice\"><accountId>386165654</accountId><base64Token>Basic c3Qxbmt5YzBkZTpoYUgxTG"
+"s4</base64Token></GetAccountByIdRequest></soap:Body></soap:Envelope>"

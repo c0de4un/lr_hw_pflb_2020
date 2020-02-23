@@ -1,0 +1,11 @@
+[t38]
+FileName1=t38_all_data.json
+URL1=http://advantageonlineshopping.com/catalog/api/v1/categories/all_data
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_12.xml
+RequestHeaderFile=t38_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t38_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

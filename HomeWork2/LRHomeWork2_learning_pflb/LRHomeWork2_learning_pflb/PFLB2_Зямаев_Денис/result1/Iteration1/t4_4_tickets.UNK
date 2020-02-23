@@ -1,0 +1,12 @@
+<div class="container table-container main-tabs">
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a id="tickets_assigned" class="menu-al" href="#tickets?state=opened">Открытые<span class="badge"></span></a></li>
+                <li class="tab col s3"><a id="tickets_in_work" class="menu-al" href="#tickets?state=archive">Архив<span class="badge"></span></a></li>
+                <li class="tab col s3"><a id="tickets_all" class="menu-al" href="#tickets?state=all">Все<span class="badge"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class='container table-container'><div id='table_wrapper'></div></div>

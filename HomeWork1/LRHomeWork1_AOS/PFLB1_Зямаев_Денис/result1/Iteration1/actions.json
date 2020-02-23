@@ -1,0 +1,106 @@
+[
+    {
+        "actionName": "Action",
+        "steps": [
+            {
+                "stepId": "STEP3",
+                "stepName": "Url: product-page.html",
+                "infFile": "t5.inf",
+                "time": 1582322190905
+            },
+            {
+                "stepId": "STEP4",
+                "stepName": "Submit Data: 3683D1",
+                "infFile": "t6.inf",
+                "time": 1582322191407
+            },
+            {
+                "stepId": "STEP5",
+                "stepName": "Custom Request: GetAccountByIdRequest",
+                "infFile": "t7.inf",
+                "time": 1582322191701
+            },
+            {
+                "stepId": "STEP6",
+                "stepName": "Custom Request: GetAccountByIdNewRequest",
+                "infFile": "t8.inf",
+                "time": 1582322192039
+            },
+            {
+                "stepId": "STEP7",
+                "stepName": "Url: {tmp_uid_param}_2",
+                "infFile": "t9.inf",
+                "time": 1582322192451
+            },
+            {
+                "stepId": "STEP8",
+                "stepName": "Custom Request: shippingcost",
+                "infFile": "t10.inf",
+                "time": 1582322192766
+            },
+            {
+                "stepId": "STEP9",
+                "stepName": "Custom Request: GetAccountPaymentPreferencesRequest",
+                "infFile": "t11.inf",
+                "time": 1582322193069
+            },
+            {
+                "stepId": "STEP10",
+                "stepName": "Url: orderPayment-page.html",
+                "infFile": "t12.inf",
+                "time": 1582322193349
+            },
+            {
+                "stepId": "STEP11",
+                "stepName": "Custom Request: GetCountriesRequest",
+                "infFile": "t13.inf",
+                "time": 1582322205215
+            },
+            {
+                "stepId": "STEP12",
+                "stepName": "Custom Request: AccountUpdateRequest",
+                "infFile": "t14.inf",
+                "time": 1582322205526
+            },
+            {
+                "stepId": "STEP13",
+                "stepName": "Url: {tmp_uid_param}_3",
+                "infFile": "t15.inf",
+                "time": 1582322205868
+            },
+            {
+                "stepId": "STEP14",
+                "stepName": "Custom Request: shippingcost_2",
+                "infFile": "t16.inf",
+                "time": 1582322206167
+            },
+            {
+                "stepId": "STEP15",
+                "stepName": "Custom Request: UpdateSafePayMethodRequest",
+                "infFile": "t17.inf",
+                "time": 1582322206467
+            },
+            {
+                "stepId": "STEP16",
+                "stepName": "Custom Request: {tmp_uid_param}_4",
+                "infFile": "t18.inf",
+                "time": 1582322206878
+            },
+            {
+                "stepId": "STEP17",
+                "stepName": "Custom Request: {tmp_uid_param}_5",
+                "infFile": "t19.inf",
+                "time": 1582322207124
+            }
+        ],
+        "transactions": [
+            {
+                "transactionName": "UC_01_AOS_Buy",
+                "rawStartTime": 1582322190262,
+                "rawEndTime": 1582322207126,
+                "thinkTime": 0.0,
+                "wastedTime": 0.9432735443115234
+            }
+        ]
+    }
+]

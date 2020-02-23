@@ -1,0 +1,11 @@
+[t99]
+FileName1=t99.xml
+URL1=http://advantageonlineshopping.com/accountservice/UpdateSafePayMethodRequest
+Total=1
+RequestHeaderFile=t99_RequestHeader.txt
+RequestBodyFile=t99_RequestBody.txt
+ResponseHeaderFile=t99_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_61.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

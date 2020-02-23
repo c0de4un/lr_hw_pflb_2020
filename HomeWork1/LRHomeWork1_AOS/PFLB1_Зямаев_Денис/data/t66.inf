@@ -1,0 +1,11 @@
+[t66]
+FileName1=t66.json
+URL1=http://advantageonlineshopping.com/order/api/v1/orders/users/386165654
+Total=1
+RequestHeaderFile=t66_RequestHeader.txt
+RequestBodyFile=t66_RequestBody.txt
+ResponseHeaderFile=t66_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_30.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

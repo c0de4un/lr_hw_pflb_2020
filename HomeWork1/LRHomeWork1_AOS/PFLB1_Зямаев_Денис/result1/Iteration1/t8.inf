@@ -1,0 +1,20 @@
+[t8]
+FileName2=t5_2_review_right.png
+RawStepEndTime=1582322192018
+FileName4=t5_0_reviewUser.png
+RequestBodyFile=t8_RequestBody.txt
+RawStepName=GetAccountByIdNewRequest
+ContentType=application/xml
+URL1=http://advantageonlineshopping.com/accountservice/GetAccountByIdNewRequest
+URL2=http://advantageonlineshopping.com/css/images/review_right.png
+URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+ResponseHeaderFile=t8_ResponseHeader.txt
+URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
+SnapshotXmlFile=snapshot_6.xml
+RequestHeaderFile=t8_RequestHeader.txt
+SaveSnapshotResources=1
+RawStepStartTime=1582322191707
+Total=4
+StepName=Custom Request: GetAccountByIdNewRequest
+FileName1=t8.xml
+FileName3=t5_1_review_Left_disabled.png

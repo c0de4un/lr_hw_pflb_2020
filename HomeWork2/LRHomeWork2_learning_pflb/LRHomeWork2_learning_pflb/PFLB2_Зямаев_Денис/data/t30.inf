@@ -1,0 +1,11 @@
+[t30]
+FileName1=t30_inventoryNumbers.json
+URL1=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId=2808
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_16.xml
+RequestHeaderFile=t30_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t30_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

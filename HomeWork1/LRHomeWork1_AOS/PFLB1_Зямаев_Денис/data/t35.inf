@@ -1,0 +1,11 @@
+[t35]
+FileName1=t35_search.json
+URL1=http://advantageonlineshopping.com/catalog/api/v1/deals/search?dealOfTheDay=true
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_9.xml
+RequestHeaderFile=t35_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t35_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

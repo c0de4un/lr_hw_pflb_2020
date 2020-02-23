@@ -1,0 +1,14 @@
+[
+    {
+        "actionName": "vuser_end",
+        "steps": [
+            {
+                "stepId": "STEP18",
+                "stepName": "Custom Request: AccountLogoutRequest",
+                "infFile": "t20.inf",
+                "time": 1582322207444
+            }
+        ],
+        "transactions": []
+    }
+]

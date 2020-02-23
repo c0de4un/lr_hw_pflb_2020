@@ -1,0 +1,12 @@
+GET /api/inventoryNumbers?serviceId=3196 HTTP/1.1
+Referer: http://learning2.pflb.ru:56902/
+X-Requested-With: XMLHttpRequest
+dnt: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
+Accept: */*
+Connection: Keep-Alive
+Host: learning2.pflb.ru:56902
+Cookie: sessionExpired=false; PFLB.pre.login.link=null; SESSION=40ba4cde-748e-4973-9736-4a75e82f9467; filterSetting=%7B%22page%22%3A%22http%3A%2F%2Flearning2.pflb.ru%3A56902%2F%23tickets%3Fstate%3Dopened%26page%3D1%22%2C%22smho%22%3Anull%2C%22dateStart%22%3A%22%22%2C%22dateEnd%22%3A%22%22%2C%22cat1%22%3Anull%2C%22cat2%22%3Anull%2C%22cat3%22%3Anull%2C%22cat4%22%3Anull%2C%22theme%22%3Anull%2C%22overdue%22%3Afalse%2C%22filters%22%3A%7B%22newCheckbox%22%3Atrue%2C%22appointedCheckbox%22%3Atrue%2C%22performedCheckbox%22%3Atrue%2C%22controlCheckbox%22%3Atrue%7D%7D
+

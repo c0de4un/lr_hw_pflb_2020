@@ -1,0 +1,7 @@
+[t23]
+SnapshotXmlFile=snapshot_9.xml
+RequestHeaderFile=t23_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t23_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

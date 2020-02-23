@@ -1,0 +1,22 @@
+[
+    {
+        "actionName": "vuser_end",
+        "steps": [
+            {
+                "stepId": "STEP12",
+                "stepName": "Url: login_3",
+                "infFile": "t19.inf",
+                "time": 1582466475107
+            }
+        ],
+        "transactions": [
+            {
+                "transactionName": "UC_02_Incidents_Логаут",
+                "rawStartTime": 1582466474291,
+                "rawEndTime": 1582466475108,
+                "thinkTime": 0.0,
+                "wastedTime": 0.11968183517456055
+            }
+        ]
+    }
+]

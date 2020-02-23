@@ -1,0 +1,28 @@
+[
+    {
+        "actionName": "vuser_init",
+        "steps": [
+            {
+                "stepId": "STEP1",
+                "stepName": "Custom Request: AccountLoginRequest",
+                "infFile": "t2.inf",
+                "time": 1582322189974
+            },
+            {
+                "stepId": "STEP2",
+                "stepName": "Url: load_carts",
+                "infFile": "t4.inf",
+                "time": 1582322190225
+            }
+        ],
+        "transactions": [
+            {
+                "transactionName": "UC_01_AOS_Login",
+                "rawStartTime": 1582322189272,
+                "rawEndTime": 1582322190225,
+                "thinkTime": 0.0,
+                "wastedTime": 0.2626371383666992
+            }
+        ]
+    }
+]

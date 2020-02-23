@@ -1,0 +1,23 @@
+[StartRecordingGMT]
+StartRecordingGMT_1=2020/02/21 07:11:01
+StartRecordingIsDst_1=0
+StartRecordingGMT_2=2020/02/21 07:18:05
+StartRecordingIsDst_2=0
+StartRecordingGMT_3=2020/02/21 17:12:42
+StartRecordingIsDst_3=0
+[User-Agent]
+User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103
+[Security]
+UsingPersistForAuthentication=1
+UserName_1_1=st1nkyc0de
+Password_1_1=haH1Lk8
+Realm_1_1=advantageonlineshopping.com:80
+EventId_1_1=372
+UserName_2_1=st1nkyc0de
+Password_2_1=haH1Lk8
+Realm_2_1=advantageonlineshopping.com:80
+EventId_2_1=800
+UserName_3_1=st1nkyc0de
+Password_3_1=haH1Lk8
+Realm_3_1=advantageonlineshopping.com:80
+EventId_3_1=1231

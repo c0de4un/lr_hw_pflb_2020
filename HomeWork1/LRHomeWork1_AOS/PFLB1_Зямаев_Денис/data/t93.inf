@@ -1,0 +1,11 @@
+[t93]
+FileName1=t93.xml
+URL1=http://advantageonlineshopping.com/accountservice/GetAccountPaymentPreferencesRequest
+Total=1
+RequestHeaderFile=t93_RequestHeader.txt
+RequestBodyFile=t93_RequestBody.txt
+ResponseHeaderFile=t93_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_55.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

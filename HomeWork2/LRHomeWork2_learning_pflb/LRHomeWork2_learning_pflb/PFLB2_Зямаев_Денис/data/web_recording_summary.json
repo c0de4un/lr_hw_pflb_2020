@@ -1,0 +1,1333 @@
+{
+  "FilterHeaders": [
+    {
+      "Header": "x-requested-with",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "user-agent",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "upgrade-insecure-requests",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "origin",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "dnt",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "accept-language",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept-encoding",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept",
+      "IncludeInScript": false
+    }
+  ],
+  "FilterResources": [
+    {
+      "IsNonResource": true,
+      "type": "text/html"
+    },
+    {
+      "IsNonResource": false,
+      "type": "application/octet-stream"
+    },
+    {
+      "IsNonResource": true,
+      "type": "application/json"
+    },
+    {
+      "IsNonResource": false,
+      "type": "application/javascript"
+    }
+  ],
+  "GeneralInfo": {
+    "BrowserVersion": "",
+    "IsWinInetMode": false,
+    "MaxUsedConnections": 3,
+    "RecordedBrowser": "d:\\program files\\opera\\launcher.exe",
+    "RecordingDate": "Р РЋРІР‚С›Р В Р’ВµР В Р вЂ -22-2020",
+    "RecordingDuration": 145438,
+    "RecordingMode": "N/A",
+    "RecordingTimeStamp": 1582367719,
+    "RecordingType": "Application",
+    "TotalBytesReceived": 517324,
+    "TotalBytesSent": 37771,
+    "TotalRequests": 42,
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103"
+  },
+  "HostInfo": [
+    {
+      "DomainName": "pflb.ru",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "94.159.69.182",
+          "IncludeInScript": true,
+          "Name": "learning2.pflb.ru",
+          "Port": 56902,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 31,
+              "EventId": 644,
+              "HttpStatus": 200,
+              "Size": 873,
+              "URL": "http://learning2.pflb.ru:56902/login"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 642,
+              "HttpStatus": 204,
+              "Size": 0,
+              "URL": "http://learning2.pflb.ru:56902/api/logout"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 860,
+              "EventId": 636,
+              "HttpStatus": 200,
+              "Size": 12546,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 46,
+              "EventId": 634,
+              "HttpStatus": 200,
+              "Size": 167,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/countByState/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 31,
+              "EventId": 629,
+              "HttpStatus": 200,
+              "Size": 26159,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 31,
+              "EventId": 627,
+              "HttpStatus": 200,
+              "Size": 720,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 969,
+              "EventId": 623,
+              "HttpStatus": 200,
+              "Size": 12546,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 47,
+              "EventId": 620,
+              "HttpStatus": 200,
+              "Size": 167,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/countByState/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 47,
+              "EventId": 614,
+              "HttpStatus": 200,
+              "Size": 26159,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 47,
+              "EventId": 612,
+              "HttpStatus": 200,
+              "Size": 720,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 610,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/countByState/4"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 47,
+              "EventId": 604,
+              "HttpStatus": 200,
+              "Size": 18998,
+              "URL": "http://learning2.pflb.ru:56902/director/wrapper/wrapper.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 47,
+              "EventId": 600,
+              "HttpStatus": 200,
+              "Size": 11710,
+              "URL": "http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 597,
+              "HttpStatus": 200,
+              "Size": 354,
+              "URL": "http://learning2.pflb.ru:56902/api/user/info"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 203,
+              "EventId": 593,
+              "HttpStatus": 200,
+              "Size": 43891,
+              "URL": "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367862805"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 591,
+              "HttpStatus": 200,
+              "Size": 62,
+              "URL": "http://learning2.pflb.ru:56902/api/checkLogin"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 547,
+              "EventId": 586,
+              "HttpStatus": 200,
+              "Size": 1385,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 581,
+              "HttpStatus": 200,
+              "Size": 114,
+              "URL": "http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId=2808"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 47,
+              "EventId": 578,
+              "HttpStatus": 200,
+              "Size": 5865,
+              "URL": "http://learning2.pflb.ru:56902/director/addticket.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 47,
+              "EventId": 576,
+              "HttpStatus": 200,
+              "Size": 235,
+              "URL": "http://learning2.pflb.ru:56902/api/user/catalog/breadcrumbs/148"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 31,
+              "EventId": 574,
+              "HttpStatus": 200,
+              "Size": 1727,
+              "URL": "http://learning2.pflb.ru:56902/api/user/catalog/node/148/service/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 571,
+              "HttpStatus": 200,
+              "Size": 2,
+              "URL": "http://learning2.pflb.ru:56902/api/user/catalog/node/148/children/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 47,
+              "EventId": 562,
+              "HttpStatus": 200,
+              "Size": 58186,
+              "URL": "http://learning2.pflb.ru:56902/director/catalog/catalog.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 47,
+              "EventId": 560,
+              "HttpStatus": 200,
+              "Size": 508,
+              "URL": "http://learning2.pflb.ru:56902/director/catalog/catalog.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 187,
+              "EventId": 547,
+              "HttpStatus": 200,
+              "Size": 75255,
+              "URL": "http://learning2.pflb.ru:56902/api/user/catalog/treeview"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 47,
+              "EventId": 545,
+              "HttpStatus": 200,
+              "Size": 823,
+              "URL": "http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 31,
+              "EventId": 534,
+              "HttpStatus": 200,
+              "Size": 58186,
+              "URL": "http://learning2.pflb.ru:56902/director/catalog/catalog.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 62,
+              "EventId": 532,
+              "HttpStatus": 200,
+              "Size": 508,
+              "URL": "http://learning2.pflb.ru:56902/director/catalog/catalog.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 1047,
+              "EventId": 528,
+              "HttpStatus": 200,
+              "Size": 12371,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 47,
+              "EventId": 524,
+              "HttpStatus": 200,
+              "Size": 167,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/countByState/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 31,
+              "EventId": 519,
+              "HttpStatus": 200,
+              "Size": 26159,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 47,
+              "EventId": 515,
+              "HttpStatus": 200,
+              "Size": 720,
+              "URL": "http://learning2.pflb.ru:56902/director/tickets/tickets.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 47,
+              "EventId": 513,
+              "HttpStatus": 200,
+              "Size": 0,
+              "URL": "http://learning2.pflb.ru:56902/api/ticket/countByState/4"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 31,
+              "EventId": 508,
+              "HttpStatus": 200,
+              "Size": 18998,
+              "URL": "http://learning2.pflb.ru:56902/director/wrapper/wrapper.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/octet-stream",
+              "DownloadTime": 46,
+              "EventId": 505,
+              "HttpStatus": 200,
+              "Size": 11710,
+              "URL": "http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 47,
+              "EventId": 501,
+              "HttpStatus": 200,
+              "Size": 354,
+              "URL": "http://learning2.pflb.ru:56902/api/user/info"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 46,
+              "EventId": 499,
+              "HttpStatus": 200,
+              "Size": 62,
+              "URL": "http://learning2.pflb.ru:56902/api/checkLogin"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 47,
+              "EventId": 492,
+              "HttpStatus": 200,
+              "Size": 43891,
+              "URL": "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 359,
+              "EventId": 488,
+              "HttpStatus": 200,
+              "Size": 98,
+              "URL": "http://learning2.pflb.ru:56902/api/login"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 47,
+              "EventId": 470,
+              "HttpStatus": 200,
+              "Size": 873,
+              "URL": "http://learning2.pflb.ru:56902/login"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/javascript",
+              "DownloadTime": 203,
+              "EventId": 464,
+              "HttpStatus": 200,
+              "Size": 43891,
+              "URL": "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367811649"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 109,
+              "EventId": 462,
+              "HttpStatus": 401,
+              "Size": 164,
+              "URL": "http://learning2.pflb.ru:56902/api/checkLogin"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "operacdn.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "23.66.22.160",
+          "IncludeInScript": false,
+          "Name": "sd-images.operacdn.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 63,
+              "EventId": 252,
+              "HttpStatus": 200,
+              "Size": 18512,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/57c92cda5a40994553d04dca05531dda934219a9.png"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "opera.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.94",
+          "IncludeInScript": false,
+          "Name": "speeddials.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 109,
+              "EventId": 243,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/advantageonlineshopping.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 241,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/avatars.mds.yandex.net"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 238,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/www.telerik.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 236,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/docs.oracle.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 94,
+              "EventId": 229,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/sub-second.blogspot.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 94,
+              "EventId": 227,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/vsprasad.wordpress.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 225,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/info.ertelecom.ru"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 94,
+              "EventId": 223,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/habr.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 94,
+              "EventId": 221,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/learning2.pflb.ru"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 219,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/www.microfocus.com"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.118",
+          "IncludeInScript": false,
+          "Name": "sitecheck.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 172,
+              "EventId": 646,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 171,
+              "EventId": 589,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 188,
+              "EventId": 490,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 172,
+              "EventId": 472,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/x-protobuf",
+              "DownloadTime": 156,
+              "EventId": 457,
+              "HttpStatus": 200,
+              "Size": 28,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/x-protobuf",
+              "DownloadTime": 203,
+              "EventId": 416,
+              "HttpStatus": 200,
+              "Size": 33,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/x-protobuf",
+              "DownloadTime": 172,
+              "EventId": 63,
+              "HttpStatus": 200,
+              "Size": 28,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/x-protobuf",
+              "DownloadTime": 156,
+              "EventId": 53,
+              "HttpStatus": 200,
+              "Size": 38,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.94",
+          "IncludeInScript": false,
+          "Name": "extension-updates.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/xhtml+xml",
+              "DownloadTime": 62,
+              "EventId": 332,
+              "HttpStatus": 200,
+              "Size": 711,
+              "URL": "https://extension-updates.opera.com/api/omaha/update/?os=win&arch=x64&os_arch=x86_64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=Stable&prodversion=79.0.3945.130&lang=ru&acceptformat=crx3&x=id%3Dbbkekonodcdmedgffkkbgmnnekbainbg%26v%3D8.4.4%26installedby%3Dinternal%26uc&x=id%3Dbopfaehpakahokaelnomggbohfbimcia%26v%3D3.3.4%26installedby%3Dinternal%26uc&x=id%3Dkipjbhgniklcnglfaldilecjomjaddfi%26v%3D2.5.9%26installedby%3Dinternal%26uc&x=id%3Dldfkcgjipgfchpnojicdgpgiocoeelik%26v%3D2020.2.19%26installedby%3Dinternal%26uc&x=id%3Ddknfpcdpbkjijldegonllfnnfhabjpde%26v%3D3.21.10%26installedby%3Dinternal%26uc"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/xhtml+xml",
+              "DownloadTime": 94,
+              "EventId": 316,
+              "HttpStatus": 200,
+              "Size": 234,
+              "URL": "https://extension-updates.opera.com/api/omaha/update/?os=win&arch=x64&os_arch=x86_64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=Stable&prodversion=79.0.3945.130&lang=ru&acceptformat=crx3&x=id%3Dcom.opera.crx.blacklist%26v%3D2020.2.22%26uc"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.111",
+          "IncludeInScript": false,
+          "Name": "exchange.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 55,
+              "HttpStatus": 200,
+              "Size": 6766,
+              "URL": "https://exchange.opera.com/api/v1/nbu/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 141,
+              "EventId": 49,
+              "HttpStatus": 200,
+              "Size": 1666,
+              "URL": "https://exchange.opera.com/api/v1/ecb/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 125,
+              "EventId": 47,
+              "HttpStatus": 200,
+              "Size": 38015,
+              "URL": "https://exchange.opera.com/api/v1/cmc/"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.95",
+          "IncludeInScript": false,
+          "Name": "autoupdate.geo.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 469,
+              "EventId": 370,
+              "HttpStatus": 200,
+              "Size": 230,
+              "URL": "https://autoupdate.geo.opera.com/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 45,
+              "HttpStatus": 200,
+              "Size": 46,
+              "URL": "https://autoupdate.geo.opera.com/geolocation/"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.106",
+          "IncludeInScript": false,
+          "Name": "af.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 584,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZBonTzPxnOFMjLf_EddckIy20N7w8JCMt_ZrOciQUExntXZHXhqFg5CMtrBvSPCQjLZ3DHDgkIy3Tw1_WJCMtYcYOsSQjLVMsTskkIy0Y7l-UJCMt3x1u2yQjLZSQkvokIy2UkJL6JCMt9KhFeiQjLZSQkvokIy2UkJL6JBQ="
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 557,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZGelk_XasgcEjLawb0jwkIy2dwxw4JCMt08Nf1iQjLWHGDrEkIy1TLE7JJCMtGO5flCQjLd8dbtskIy2UkJL6JCMtlJCS-iQjLfSoRXokIy2UkJL6JCMtlJCS-iQjLWdns_4kFA=="
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 526,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZMdP17Mp-KuAjLawb0jwkIy2dwxw4JCMt08Nf1iQjLWHGDrEkIy1TLE7JJCMtGO5flCQjLd8dbtskIy2UkJL6JCMtlJCS-iQjLfSoRXokIy2UkJL6JCMtlJCS-iQjLfk_UTIkIy2UkJL6JBQ="
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 517,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZ7V2R14ahYOQjLawb0jwkIy2dwxw4JCMt08Nf1iQjLWHGDrEkIy1TLE7JJCMtGO5flCQjLd8dbtskIy2UkJL6JCMtlJCS-iQjLfSoRXokIy2UkJL6JCMtlJCS-iQU"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 156,
+              "EventId": 503,
+              "HttpStatus": 200,
+              "Size": 4,
+              "URL": "https://af.opera.com/api/upload?"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 63,
+              "EventId": 486,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZnQoIz7QemnAjLShLLYkkIy3OQUx6JBQ="
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "opera-api.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "107.167.110.216",
+          "IncludeInScript": false,
+          "Name": "features.opera-api.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 157,
+              "EventId": 361,
+              "HttpStatus": 200,
+              "Size": 209,
+              "URL": "https://features.opera-api.com/api/v1/features?country=RU&language=ru&uuid=5f3e2f1f-c487-4794-98b2-b39055ab8f02"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "microfocus.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "52.85.242.73",
+          "IncludeInScript": false,
+          "Name": "admhelp.microfocus.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 734,
+              "EventId": 454,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Resources/Scripts/require.config.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 921,
+              "EventId": 452,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Fluid/Stylesheets/Tablet.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 781,
+              "EventId": 448,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Fluid/Stylesheets/Mobile.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 781,
+              "EventId": 446,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Default/Stylesheets/Components/Styles.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 444,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Content/Resources/_TopNav/Images/_TopNav_ic-logo_120x30.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 442,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Resources/Scripts/MadCapAll.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 440,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Resources/Scripts/plugins.min.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 109,
+              "EventId": 438,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Resources/Scripts/foundation.6.2.3_custom.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 265,
+              "EventId": 436,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Fluid/Stylesheets/Styles.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 94,
+              "EventId": 434,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Resources/Scripts/custom.modernizr.js"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 500,
+              "EventId": 432,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Default/Stylesheets/TextEffects.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 234,
+              "EventId": 430,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Default/Stylesheets/Components/Tablet.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 125,
+              "EventId": 426,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Default/Stylesheets/Components/Mobile.css"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 204,
+              "EventId": 422,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://admhelp.microfocus.com/vugen/en/2020/help/WebHelp/Skins/Default/Stylesheets/Topic.css"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "ghostery.net",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "52.55.243.214",
+          "IncludeInScript": false,
+          "Name": "safe-browsing-quorum.privacy.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 157,
+              "EventId": 182,
+              "HttpStatus": 200,
+              "Size": 36,
+              "URL": "https://safe-browsing-quorum.privacy.ghostery.net/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "18.185.78.15",
+          "IncludeInScript": false,
+          "Name": "offers-api.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 348,
+              "HttpStatus": 200,
+              "Size": 32,
+              "URL": "https://offers-api.ghostery.net/api/v1/categories?last_rev=null&country=ru&t_eng_ver=24&channel=ghostery"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "52.45.85.77",
+          "IncludeInScript": false,
+          "Name": "collector-hpn.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "br",
+              "DataType": "application/json",
+              "DownloadTime": 140,
+              "EventId": 212,
+              "HttpStatus": 200,
+              "Size": 2733,
+              "URL": "https://collector-hpn.ghostery.net/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "18.195.57.168",
+          "IncludeInScript": false,
+          "Name": "api.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 107,
+              "HttpStatus": 200,
+              "Size": 609,
+              "URL": "https://api.ghostery.net/api/v1/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "ghostery.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "52.204.65.106",
+          "IncludeInScript": false,
+          "Name": "cmp-cdn.ghostery.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 141,
+              "EventId": 124,
+              "HttpStatus": 200,
+              "Size": 53,
+              "URL": "https://cmp-cdn.ghostery.com/abtestcheck?os=win&install_date=2020-02-02&ir=72&gv=8.4.4&si=0&ua=opera&v=1066&l=en"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 111,
+              "HttpStatus": 204,
+              "Size": 0,
+              "URL": "https://cmp-cdn.ghostery.com/check?os=win&offers=1&hw=1&install_date=2020-02-02&ir=72&gv=8.4.4&si=0&ua=opera&lc=1581658775&v=1066&l=en"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "ertelecom.ru",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "5.3.3.25",
+          "IncludeInScript": false,
+          "Name": "info.ertelecom.ru",
+          "Port": 80,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "image/x-icon",
+              "DownloadTime": 62,
+              "EventId": 312,
+              "HttpStatus": 200,
+              "Size": 15086,
+              "URL": "http://info.ertelecom.ru/favicon.ico"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "font/woff",
+              "DownloadTime": 47,
+              "EventId": 274,
+              "HttpStatus": 200,
+              "Size": 130340,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/fonts/FedraSansAltProMedium/FedraSansAltPro-Medium.woff"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "font/woff",
+              "DownloadTime": 31,
+              "EventId": 271,
+              "HttpStatus": 200,
+              "Size": 128000,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/fonts/FedraSansAltProBook/FedraSansAltPro-Book.woff"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 31,
+              "EventId": 215,
+              "HttpStatus": 200,
+              "Size": 1793,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/img/red-action.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 47,
+              "EventId": 168,
+              "HttpStatus": 200,
+              "Size": 1922,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/img/image935.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 78,
+              "EventId": 163,
+              "HttpStatus": 200,
+              "Size": 1487,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/img/red-ether.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 78,
+              "EventId": 128,
+              "HttpStatus": 200,
+              "Size": 1666,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/img/logo-dom-1.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/jpeg",
+              "DownloadTime": 78,
+              "EventId": 126,
+              "HttpStatus": 200,
+              "Size": 38999,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/img/umka-2.jpg"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/javascript",
+              "DownloadTime": 47,
+              "EventId": 114,
+              "HttpStatus": 200,
+              "Size": 35051,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/publish/script.min.js"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "text/css",
+              "DownloadTime": 47,
+              "EventId": 104,
+              "HttpStatus": 200,
+              "Size": 3825,
+              "URL": "http://info.ertelecom.ru/templates/id-32793-umka-0619/default/publish/style.min.css"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "text/html",
+              "DownloadTime": 1046,
+              "EventId": 89,
+              "HttpStatus": 200,
+              "Size": 3102,
+              "URL": "http://info.ertelecom.ru/?campId=24368&machine=izhevsk&ourl=http%3A%2F%2Fadvantageonlineshopping.com%2F&u=8713A3771244D07C8193FF18F782D1ACF71D7B531C8B1D70&timestamp$c=1582367755&sid$c=53465d37ba47c6112b195cefcfe9af4d"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "domru.ru",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "5.3.5.18",
+          "IncludeInScript": false,
+          "Name": "eqstat.domru.ru",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 109,
+              "EventId": 334,
+              "HttpStatus": 200,
+              "Size": 53,
+              "URL": "https://eqstat.domru.ru/record?campId=24368&machine=izhevsk&ourl=http%3A%2F%2Fadvantageonlineshopping.com%2F&u=8713A3771244D07C8193FF18F782D1ACF71D7B531C8B1D70&timestamp$c=1582367755&sid$c=53465d37ba47c6112b195cefcfe9af4d"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 110,
+              "EventId": 259,
+              "HttpStatus": 200,
+              "Size": 53,
+              "URL": "https://eqstat.domru.ru/record?campId=24368&machine=izhevsk&ourl=http%3A%2F%2Fadvantageonlineshopping.com%2F&u=8713A3771244D07C8193FF18F782D1ACF71D7B531C8B1D70&timestamp$c=1582367755&sid$c=53465d37ba47c6112b195cefcfe9af4d"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 110,
+              "EventId": 245,
+              "HttpStatus": 200,
+              "Size": 53,
+              "URL": "https://eqstat.domru.ru/record?campId=24368&machine=izhevsk&ourl=http%3A%2F%2Fadvantageonlineshopping.com%2F&u=8713A3771244D07C8193FF18F782D1ACF71D7B531C8B1D70&timestamp$c=1582367755&sid$c=53465d37ba47c6112b195cefcfe9af4d"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "text/html",
+              "DownloadTime": 47,
+              "EventId": 156,
+              "HttpStatus": 200,
+              "Size": 3053,
+              "URL": "https://eqstat.domru.ru/js/v1"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "advantageonlineshopping.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "107.23.171.213",
+          "IncludeInScript": false,
+          "Name": "advantageonlineshopping.com",
+          "Port": 80,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 31,
+              "EventId": 29,
+              "HttpStatus": 303,
+              "Size": 15,
+              "URL": "http://advantageonlineshopping.com/"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    }
+  ],
+  "WebSocket": {
+    "IncludeInScript": false,
+    "IsScriptIncludeWebSocket": false
+  },
+  "NumberOfCorrelations": 0
+}

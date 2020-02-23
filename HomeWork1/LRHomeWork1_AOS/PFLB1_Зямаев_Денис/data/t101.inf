@@ -1,0 +1,11 @@
+[t101]
+FileName1=t101.json
+URL1=http://advantageonlineshopping.com/order/api/v1/carts/386165654
+Total=1
+RequestHeaderFile=t101_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t101_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_63.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

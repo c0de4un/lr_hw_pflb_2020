@@ -1,0 +1,927 @@
+{
+  "FilterHeaders": [
+    {
+      "Header": "x-requested-with",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "user-agent",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "upgrade-insecure-requests",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "soapaction",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "origin",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "if-none-match",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "if-modified-since",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "authorization",
+      "IncludeInScript": true
+    },
+    {
+      "Header": "accept-language",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept-encoding",
+      "IncludeInScript": false
+    },
+    {
+      "Header": "accept",
+      "IncludeInScript": false
+    }
+  ],
+  "FilterResources": [
+    {
+      "IsNonResource": true,
+      "type": "text/xml"
+    },
+    {
+      "IsNonResource": true,
+      "type": "application/json"
+    }
+  ],
+  "GeneralInfo": {
+    "BrowserVersion": "",
+    "IsWinInetMode": false,
+    "MaxUsedConnections": 4,
+    "RecordedBrowser": "d:\\program files\\opera\\launcher.exe",
+    "RecordingDate": "РЎвЂћР ВµР Р†-21-2020",
+    "RecordingDuration": 79266,
+    "RecordingMode": "N/A",
+    "RecordingTimeStamp": 1582269061,
+    "RecordingType": "Application",
+    "TotalBytesReceived": 30477,
+    "TotalBytesSent": 25274,
+    "TotalRequests": 32,
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103"
+  },
+  "HostInfo": [
+    {
+      "DomainName": "operacdn.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "23.66.22.160",
+          "IncludeInScript": false,
+          "Name": "sd-images.operacdn.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 125,
+              "EventId": 1221,
+              "HttpStatus": 200,
+              "Size": 2401,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/935aecfbfc3bee7c70d797174571d219a4ad51f5.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 109,
+              "EventId": 1219,
+              "HttpStatus": 200,
+              "Size": 17675,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/64d953fd6083164899563f544ad047a374c3f191.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 78,
+              "EventId": 1212,
+              "HttpStatus": 200,
+              "Size": 6373,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/c365ee10170ce3ca3130e53ac3432c2e7407bad4.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 62,
+              "EventId": 1209,
+              "HttpStatus": 200,
+              "Size": 21386,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/8cc7e2eec61fdae498020e3ca9d73ab29c31b6ab.png"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "image/png",
+              "DownloadTime": 78,
+              "EventId": 1204,
+              "HttpStatus": 200,
+              "Size": 10749,
+              "URL": "https://sd-images.operacdn.com/api/v1/images/d483e807862a217a4ae17a204ee658abc0130fdb.png"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "opera.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.94",
+          "IncludeInScript": false,
+          "Name": "speeddials.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 594,
+              "EventId": 1216,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/ru.wikipedia.org"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 63,
+              "EventId": 1201,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/www.cyberforum.ru"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 140,
+              "EventId": 1196,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/metanit.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 125,
+              "EventId": 1194,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/es-provodnik-app.ru"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 109,
+              "EventId": 1192,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/cybern.ru"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 125,
+              "EventId": 1184,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/java-master.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 110,
+              "EventId": 1182,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/www.java67.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 110,
+              "EventId": 1180,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/pastebin.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 78,
+              "EventId": 1177,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/xn----htbdsuo3h.xn--p1ai"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 63,
+              "EventId": 1175,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/codereview.stackexchange.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 79,
+              "EventId": 1171,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/fooobar.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 141,
+              "EventId": 1169,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/habr.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 125,
+              "EventId": 1165,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/docs.oracle.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 109,
+              "EventId": 1163,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/avatars.mds.yandex.net"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 94,
+              "EventId": 1161,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/advantageonlineshopping.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 79,
+              "EventId": 1159,
+              "HttpStatus": 404,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/www.telerik.com"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/html",
+              "DownloadTime": 79,
+              "EventId": 1157,
+              "HttpStatus": 302,
+              "Size": 0,
+              "URL": "https://speeddials.opera.com/api/v1/thumbnails/stackoverflow.com"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.118",
+          "IncludeInScript": false,
+          "Name": "sitecheck.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/x-protobuf",
+              "DownloadTime": 172,
+              "EventId": 919,
+              "HttpStatus": 200,
+              "Size": 38,
+              "URL": "https://sitecheck.opera.com/api/v2/check"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.93",
+          "IncludeInScript": false,
+          "Name": "extension-updates.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/xhtml+xml",
+              "DownloadTime": 63,
+              "EventId": 1070,
+              "HttpStatus": 200,
+              "Size": 711,
+              "URL": "https://extension-updates.opera.com/api/omaha/update/?os=win&arch=x64&os_arch=x86_64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=Stable&prodversion=79.0.3945.130&lang=ru&acceptformat=crx3&x=id%3Dbbkekonodcdmedgffkkbgmnnekbainbg%26v%3D8.4.4%26installedby%3Dinternal%26uc&x=id%3Dbopfaehpakahokaelnomggbohfbimcia%26v%3D3.3.4%26installedby%3Dinternal%26uc&x=id%3Dkipjbhgniklcnglfaldilecjomjaddfi%26v%3D2.5.9%26installedby%3Dinternal%26uc&x=id%3Dldfkcgjipgfchpnojicdgpgiocoeelik%26v%3D2020.2.19%26installedby%3Dinternal%26uc&x=id%3Ddknfpcdpbkjijldegonllfnnfhabjpde%26v%3D3.21.10%26installedby%3Dinternal%26uc"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/xhtml+xml",
+              "DownloadTime": 62,
+              "EventId": 1054,
+              "HttpStatus": 200,
+              "Size": 234,
+              "URL": "https://extension-updates.opera.com/api/omaha/update/?os=win&arch=x64&os_arch=x86_64&nacl_arch=x86-64&prod=chromiumcrx&prodchannel=Stable&prodversion=79.0.3945.130&lang=ru&acceptformat=crx3&x=id%3Dcom.opera.crx.blacklist%26v%3D2020.2.21%26uc"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.111",
+          "IncludeInScript": false,
+          "Name": "exchange.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 941,
+              "HttpStatus": 200,
+              "Size": 6766,
+              "URL": "https://exchange.opera.com/api/v1/nbu/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 125,
+              "EventId": 938,
+              "HttpStatus": 200,
+              "Size": 1666,
+              "URL": "https://exchange.opera.com/api/v1/ecb/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 125,
+              "EventId": 935,
+              "HttpStatus": 200,
+              "Size": 37914,
+              "URL": "https://exchange.opera.com/api/v1/cmc/"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.105",
+          "IncludeInScript": false,
+          "Name": "autoupdate.geo.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 187,
+              "EventId": 1256,
+              "HttpStatus": 200,
+              "Size": 230,
+              "URL": "https://autoupdate.geo.opera.com/"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 78,
+              "EventId": 917,
+              "HttpStatus": 200,
+              "Size": 46,
+              "URL": "https://autoupdate.geo.opera.com/geolocation/"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.106",
+          "IncludeInScript": false,
+          "Name": "af.opera.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 1253,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZLSQMyGRLP90jLeeNQA4kIy3OQUx6JCMteG8SGSQjLQ8WviskIy3vv41zJCMtAKALyiQjLXMQPlokIy1FLVZMJCMtRmcVfSQjLZTUWx4kIy1u1ykLJCMtjKpmfSQjLbCcDgwkIy1-3NXUJCMto4qzhCQjLRksxIokIy03PHMEJCMtk6gDlSQjLV7r9L0kFA=="
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 1235,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZ0Xs_p1jDrUwjLeeNQA4kIy3OQUx6JCMteG8SGSQjLQ8WviskIy3yF2yJJBQ="
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 78,
+              "EventId": 1087,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZOO23NVc2h2sjLeeNQA4kIy3OQUx6JCMteG8SGSQjLQ8WviskIy2E5pjgJCMt9nKYWSQjLcd2OFAkIy1axjztJCMtcpdcLyQU"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 62,
+              "EventId": 1048,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "https://af.opera.com/api/query?q=Chc2LjEuMTcxNS4xNDQyL2VuIChHR0xMKRMZhQcVyuR5wvgjLeeNQA4kIy3OQUx6JCMteG8SGSQjLQ8WviskFA=="
+            }
+          ],
+          "SSLCipher": "",
+          "SSLVersion": ""
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "opera-api.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "185.26.182.94",
+          "IncludeInScript": false,
+          "Name": "features.opera-api.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 94,
+              "EventId": 1190,
+              "HttpStatus": 200,
+              "Size": 209,
+              "URL": "https://features.opera-api.com/api/v1/features?country=RU&language=ru&uuid=5f3e2f1f-c487-4794-98b2-b39055ab8f02"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "ghostery.net",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "54.174.186.229",
+          "IncludeInScript": false,
+          "Name": "safe-browsing-quorum.privacy.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 157,
+              "EventId": 1004,
+              "HttpStatus": 200,
+              "Size": 34,
+              "URL": "https://safe-browsing-quorum.privacy.ghostery.net/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "54.93.41.251",
+          "IncludeInScript": false,
+          "Name": "offers-api.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 63,
+              "EventId": 1109,
+              "HttpStatus": 200,
+              "Size": 32,
+              "URL": "https://offers-api.ghostery.net/api/v1/categories?last_rev=null&country=ru&t_eng_ver=24&channel=ghostery"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "34.203.110.202",
+          "IncludeInScript": false,
+          "Name": "collector-hpn.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "br",
+              "DataType": "application/json",
+              "DownloadTime": 141,
+              "EventId": 1023,
+              "HttpStatus": 200,
+              "Size": 2736,
+              "URL": "https://collector-hpn.ghostery.net/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        },
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "18.195.57.168",
+          "IncludeInScript": false,
+          "Name": "api.ghostery.net",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 62,
+              "EventId": 972,
+              "HttpStatus": 200,
+              "Size": 609,
+              "URL": "https://api.ghostery.net/api/v1/config"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "ghostery.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "3.213.186.114",
+          "IncludeInScript": false,
+          "Name": "cmp-cdn.ghostery.com",
+          "Port": 443,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "application/json",
+              "DownloadTime": 140,
+              "EventId": 999,
+              "HttpStatus": 200,
+              "Size": 53,
+              "URL": "https://cmp-cdn.ghostery.com/abtestcheck?os=win&install_date=2020-02-02&ir=72&gv=8.4.4&si=0&ua=opera&v=1066&l=en"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 996,
+              "HttpStatus": 204,
+              "Size": 0,
+              "URL": "https://cmp-cdn.ghostery.com/check?os=win&offers=1&hw=1&install_date=2020-02-02&ir=72&gv=8.4.4&si=0&ua=opera&lc=1581658775&v=1066&l=en"
+            }
+          ],
+          "SSLCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "SSLVersion": "TLS1.2"
+        }
+      ],
+      "IncludeInScript": true
+    },
+    {
+      "DomainName": "advantageonlineshopping.com",
+      "Domains": [
+        {
+          "HTTPVersion": "HTTP/1.1",
+          "IP": "107.23.171.213",
+          "IncludeInScript": true,
+          "Name": "advantageonlineshopping.com",
+          "Port": 80,
+          "Requests": [
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 359,
+              "EventId": 1286,
+              "HttpStatus": 200,
+              "Size": 402,
+              "URL": "http://advantageonlineshopping.com/accountservice/AccountLogoutRequest"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 157,
+              "EventId": 1279,
+              "HttpStatus": 200,
+              "Size": 66,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/carts/386165654"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 297,
+              "EventId": 1276,
+              "HttpStatus": 200,
+              "Size": 148,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/orders/users/386165654"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 297,
+              "EventId": 1274,
+              "HttpStatus": 200,
+              "Size": 414,
+              "URL": "http://advantageonlineshopping.com/accountservice/UpdateSafePayMethodRequest"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 344,
+              "EventId": 1269,
+              "HttpStatus": 200,
+              "Size": 125,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/shippingcost/"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 282,
+              "EventId": 1266,
+              "HttpStatus": 200,
+              "Size": 233,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/carts/386165654"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 297,
+              "EventId": 1262,
+              "HttpStatus": 200,
+              "Size": 413,
+              "URL": "http://advantageonlineshopping.com/accountservice/AccountUpdateRequest"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "text/xml",
+              "DownloadTime": 12125,
+              "EventId": 1259,
+              "HttpStatus": 200,
+              "Size": 4177,
+              "URL": "http://advantageonlineshopping.com/accountservice/GetCountriesRequest"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 156,
+              "EventId": 1250,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/app/order/views/orderPayment-page.html"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 297,
+              "EventId": 1248,
+              "HttpStatus": 200,
+              "Size": 498,
+              "URL": "http://advantageonlineshopping.com/accountservice/GetAccountPaymentPreferencesRequest"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 187,
+              "EventId": 1246,
+              "HttpStatus": 200,
+              "Size": 125,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/shippingcost/"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 250,
+              "EventId": 1244,
+              "HttpStatus": 200,
+              "Size": 233,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/carts/386165654"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 172,
+              "EventId": 1242,
+              "HttpStatus": 200,
+              "Size": 1194,
+              "URL": "http://advantageonlineshopping.com/accountservice/GetAccountByIdNewRequest"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 312,
+              "EventId": 1239,
+              "HttpStatus": 200,
+              "Size": 1259,
+              "URL": "http://advantageonlineshopping.com/accountservice/GetAccountByIdRequest"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 390,
+              "EventId": 1237,
+              "HttpStatus": 201,
+              "Size": 196,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/carts/386165654/product/3/color/3683D1?quantity=1"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 1233,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/app/views/product-page.html"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 156,
+              "EventId": 1231,
+              "HttpStatus": 200,
+              "Size": 111,
+              "URL": "http://advantageonlineshopping.com/order/api/v1/carts/386165654"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 391,
+              "EventId": 1229,
+              "HttpStatus": 200,
+              "Size": 799,
+              "URL": "http://advantageonlineshopping.com/accountservice/AccountLoginRequest"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 140,
+              "EventId": 1091,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.woff"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 156,
+              "EventId": 1089,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 3563,
+              "EventId": 1084,
+              "HttpStatus": 200,
+              "Size": 8469,
+              "URL": "http://advantageonlineshopping.com/catalog/api/v1/categories/all_data"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 156,
+              "EventId": 1074,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/app/views/home-page.html"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 140,
+              "EventId": 1072,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/app/tempFiles/popularProducts.json"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 250,
+              "EventId": 1068,
+              "HttpStatus": 200,
+              "Size": 351,
+              "URL": "http://advantageonlineshopping.com/catalog/api/v1/deals/search?dealOfTheDay=true"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 266,
+              "EventId": 1045,
+              "HttpStatus": 200,
+              "Size": 4463,
+              "URL": "http://advantageonlineshopping.com/catalog/api/v1/categories"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "text/xml",
+              "DownloadTime": 328,
+              "EventId": 1039,
+              "HttpStatus": 200,
+              "Size": 821,
+              "URL": "http://advantageonlineshopping.com/accountservice/GetAccountConfigurationRequest"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 1037,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/css/fonts/roboto_light_macroman/Roboto-Light-webfont.woff"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 172,
+              "EventId": 1028,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 1025,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff"
+            },
+            {
+              "CompressionType": "gzip",
+              "DataType": "application/json",
+              "DownloadTime": 156,
+              "EventId": 1007,
+              "HttpStatus": 200,
+              "Size": 5980,
+              "URL": "http://advantageonlineshopping.com/catalog/api/v1/DemoAppConfig/parameters/by_tool/ALL"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 156,
+              "EventId": 974,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/services.properties"
+            },
+            {
+              "CompressionType": "",
+              "DataType": "",
+              "DownloadTime": 141,
+              "EventId": 911,
+              "HttpStatus": 304,
+              "Size": 0,
+              "URL": "http://advantageonlineshopping.com/"
+            }
+          ],
+          "SSLCipher": "None",
+          "SSLVersion": "None"
+        }
+      ],
+      "IncludeInScript": true
+    }
+  ],
+  "WebSocket": {
+    "IncludeInScript": false,
+    "IsScriptIncludeWebSocket": false
+  },
+  "NumberOfCorrelations": 1
+}
