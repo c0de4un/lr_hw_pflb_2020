@@ -17,10 +17,10 @@ int res = -1;
 **/
 int getRnd( int pMin, int pMax )
 {
-	if ( pMax < 1 )
+	if ( pMax < 1 || pMax > 32766 )
 		return 0; // Div by 0 exception.
 	
-	return rand() % pMax + pMin;
+	return (rand() % pMax) + pMin;
 }
 
 vuser_init()

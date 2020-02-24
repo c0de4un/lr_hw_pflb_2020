@@ -1,4 +1,4 @@
-Virtual User Script started at: 23.02.2020 18:01:10
+Virtual User Script started at: 24.02.2020 5:55:32
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -31,8 +31,8 @@ vuser_init.c(103): web_url("4") was successful, 26879 body bytes, 1031 header by
 vuser_init.c(114): web_url("countByState") started  	[MsgId: MMSG-26355]
 vuser_init.c(114): web_url("countByState") was successful, 167 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 vuser_init.c(123): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
-vuser_init.c(123): web_custom_request("ticket") was successful, 14271 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(135): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" ended with a "Pass" status (Duration: 2,5884 Wasted Time: 0,4594).
+vuser_init.c(123): web_custom_request("ticket") was successful, 13592 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(135): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" ended with a "Pass" status (Duration: 3,8671 Wasted Time: 0,8069).
 Ending action vuser_init.
 Running Vuser...
 Starting iteration 1.
@@ -63,7 +63,7 @@ Action.c(162): web_url("children_2") started  	[MsgId: MMSG-26355]
 Action.c(162): web_url("children_2") was successful, 1323 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(184): Lvl2 Size:4
 Action.c(185): Lvl2 Node Index:4
-Action.c(186): Lvl2 ID: 216
+Action.c(186): Lvl2 ID: 207
 Action.c(200): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(200): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(209): web_url("children_3") started  	[MsgId: MMSG-26355]
@@ -73,17 +73,17 @@ Action.c(247): Lvll3 doesn't have sub-nodes, only services.
 Action.c(256): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(256): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(265): web_url("children_4") started  	[MsgId: MMSG-26355]
-Action.c(265): web_url("children_4") was successful, 204 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(265): web_url("children_4") was successful, 884 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(290): Lvl4 Size:4
 Action.c(291): Lvl4 Node Index:4
-Action.c(292): Lvl4 ID: 3196
+Action.c(292): Lvl4 ID: 2994
 Action.c(316): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
 Action.c(316): web_url("inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
 Action.c(325): web_add_header("Origin") started  	[MsgId: MMSG-26355]
 Action.c(325): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
 Action.c(334): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
-Action.c(334): web_custom_request("ticket_2") was successful, 1256 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(425): Notify: Transaction "UC_02_Incidents_\xffffffc4\xffffffee\xffffffe1\xffffffe0\xffffffe2\xffffffeb\xffffffe5\xffffffed\xffffffe8\xffffffe5_\xffffffe8\xffffffed\xfffffff6\xffffffe8\xffffffe4\xffffffe5\xffffffed\xfffffff2\xffffffe0" ended with a "Pass" status (Duration: 1,6156 Wasted Time: 0,2818).
+Action.c(334): web_custom_request("ticket_2") was successful, 1380 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(425): Notify: Transaction "UC_02_Incidents_\xffffffc4\xffffffee\xffffffe1\xffffffe0\xffffffe2\xffffffeb\xffffffe5\xffffffed\xffffffe8\xffffffe5_\xffffffe8\xffffffed\xfffffff6\xffffffe8\xffffffe4\xffffffe5\xffffffed\xfffffff2\xffffffe0" ended with a "Pass" status (Duration: 2,0763 Wasted Time: 0,4920).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...
@@ -108,6 +108,6 @@ vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.c
 vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
 vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
 vuser_end.c(30): web_url("login_3") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
-vuser_end.c(40): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe0\xfffffff3\xfffffff2" ended with a "Pass" status (Duration: 0,8165 Wasted Time: 0,1197).
+vuser_end.c(40): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe0\xfffffff3\xfffffff2" ended with a "Pass" status (Duration: 0,9280 Wasted Time: 0,2018).
 Ending action vuser_end.
 Vuser Terminated.

@@ -1,2 +1,3 @@
-"{"text":"Че, рандом пацаны","header":"Уничтожение клопов","tick"
-"etStateId":0,"serviceId":"3196","files":[],"inventoryNumberId":null}"
+"{"text":"PerformanceLab забряли мо�\xB9 паспорт, помогите","header":"P"
+"erformanceLab забряли мо�\xB9 паспорт, помогите","ticketStateId":0,"se"
+"rviceId":"2994","files":[],"inventoryNumberId":null}"

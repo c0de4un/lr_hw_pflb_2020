@@ -1,4 +1,4 @@
-Virtual User Script started at: 23.02.2020 18:00:34
+Virtual User Script started at: 24.02.2020 5:54:03
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -16,102 +16,10 @@ vuser_init.c(60): web_add_auto_header("X-Requested-With") was successful  	[MsgI
 vuser_init.c(63): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
 vuser_init.c(63): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
 vuser_init.c(68): web_submit_data("login_2") started  	[MsgId: MMSG-26355]
-vuser_init.c(68): Downloading resource "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874" (specified by argument number 18)  	[MsgId: MMSG-26577]
-vuser_init.c(68): web_submit_data("login_2") was successful, 43989 body bytes, 535 header bytes  	[MsgId: MMSG-26386]
-vuser_init.c(82): web_url("checkLogin") started  	[MsgId: MMSG-26355]
-vuser_init.c(82): web_url("checkLogin") was successful, 62 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(91): web_url("info") started  	[MsgId: MMSG-26355]
-vuser_init.c(91): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
-vuser_init.c(91): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
-vuser_init.c(91): web_url("info") was successful, 31062 body bytes, 1088 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(103): web_url("4") started  	[MsgId: MMSG-26355]
-vuser_init.c(103): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.dust" (specified by argument number 8)  	[MsgId: MMSG-26577]
-vuser_init.c(103): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.js" (specified by argument number 11)  	[MsgId: MMSG-26577]
-vuser_init.c(103): web_url("4") was successful, 26879 body bytes, 1031 header bytes  	[MsgId: MMSG-26386]
-vuser_init.c(114): web_url("countByState") started  	[MsgId: MMSG-26355]
-vuser_init.c(114): web_url("countByState") was successful, 167 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(123): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
-vuser_init.c(123): web_custom_request("ticket") was successful, 14127 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(135): Error: Cannot start transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed". This Vuser already started a transaction with the same name, and has not yet processed the corresponding lr_end_transaction statement.
-Ending action vuser_init.
-Running Vuser...
-Starting iteration 1.
-Warning -27077: The "vuser_init" section contains web function(s) when the "Simulate a new user on each iteration" Runtime Setting is ON.  This may produce unpredictable results with multiple iterations  	[MsgId: MWAR-27077]
-Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
-Starting action Action.
-Action.c(62): Notify: Transaction "UC_02_Incidents_\xffffffc4\xffffffee\xffffffe1\xffffffe0\xffffffe2\xffffffeb\xffffffe5\xffffffed\xffffffe8\xffffffe5_\xffffffe8\xffffffed\xfffffff6\xffffffe8\xffffffe4\xffffffe5\xffffffed\xfffffff2\xffffffe0" started.
-Action.c(67): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(67): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(69): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(69): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(72): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
-Action.c(72): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
-Action.c(94): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(94): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(102): web_url("children") started  	[MsgId: MMSG-26355]
-Action.c(102): web_url("children") was successful, 823 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(124): Root Size:4
-Action.c(125): Root Node Index:2
-Action.c(126): ID: 117
-Action.c(135): web_url("treeview") started  	[MsgId: MMSG-26355]
-Action.c(135): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
-Action.c(135): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
-Action.c(135): web_url("treeview") was successful, 133949 body bytes, 1086 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(148): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(148): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(162): web_url("children_2") started  	[MsgId: MMSG-26355]
-Action.c(162): web_url("children_2") was successful, 1977 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(184): Lvl2 Size:4
-Action.c(185): Lvl2 Node Index:2
-Action.c(186): Lvl2 ID: 139
-Action.c(200): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(200): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(209): web_url("children_3") started  	[MsgId: MMSG-26355]
-Action.c(209): web_url("children_3") was successful, 525 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(234): Lvl3 Size:4
-Action.c(235): Lvl3 Node Index:2
-Action.c(236): Lvl3 ID: 197
-Action.c(256): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(256): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(265): web_url("children_4") started  	[MsgId: MMSG-26355]
-Action.c(265): web_url("children_4") was successful, 580 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(290): Lvl4 Size:4
-Action.c(291): Lvl4 Node Index:2
-Action.c(292): Lvl4 ID: 2936
-Action.c(316): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
-Action.c(316): web_url("inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(325): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(325): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(334): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
-Action.c(334): web_custom_request("ticket_2") was successful, 1500 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(425): Notify: Transaction "UC_02_Incidents_\xffffffc4\xffffffee\xffffffe1\xffffffe0\xffffffe2\xffffffeb\xffffffe5\xffffffed\xffffffe8\xffffffe5_\xffffffe8\xffffffed\xfffffff6\xffffffe8\xffffffe4\xffffffe5\xffffffed\xfffffff2\xffffffe0" ended with a "Pass" status (Duration: 1,6277 Wasted Time: 0,2618).
-Ending action Action.
-Ending iteration 1.
-Ending Vuser...
-Starting action vuser_end.
-vuser_end.c(7): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe0\xfffffff3\xfffffff2" started.
-vuser_end.c(10): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-vuser_end.c(10): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(13): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
-vuser_end.c(13): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(19): web_url("logout") started  	[MsgId: MMSG-26355]
-vuser_end.c(19): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
-vuser_end.c(27): web_add_header("Upgrade-Insecure-Requests") started  	[MsgId: MMSG-26355]
-vuser_end.c(27): web_add_header("Upgrade-Insecure-Requests") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(30): web_url("login_3") started  	[MsgId: MMSG-26355]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/css/style.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/legacy.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/dust.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(30): web_url("login_3") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
-vuser_end.c(40): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe0\xfffffff3\xfffffff2" ended with a "Pass" status (Duration: 0,9135 Wasted Time: 0,1211).
-Error: Vuser started transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed", but did not reach a corresponding end transaction statement. The transaction ended automatically with status 'fail'.
-Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" ended with a "Fail" status (Duration: 5,0154 Wasted Time: 0,9068).
-Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" has 0 error message(s).
-Ending action vuser_end.
-Vuser Terminated.
+vuser_init.c(68): Error -27794: Could not resolve address of host learning2.pflb.ru  	[MsgId: MERR-27794]
+vuser_init.c(68): Warning -26200: At least one of the resources specified by EXTRARES has not been downloaded due to the above error(s)  	[MsgId: MWAR-26200]
+vuser_init.c(68): web_submit_data("login_2") highest severity level was "ERROR", 0 body bytes, 0 header bytes  	[MsgId: MMSG-26388]
+vuser_init.c(68): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" ended with a "Fail" status (Duration: 12,2927 Wasted Time: 0,1900).
+vuser_init.c(68): Notify: Transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" has 1 error message(s).
+vuser_init.c(68): Notify: The 1st error message associated with transaction "UC_02_Incidents_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" is "Error -27794: Could not resolve address of host learning2.pflb.ru"
+Abort was called from an action.

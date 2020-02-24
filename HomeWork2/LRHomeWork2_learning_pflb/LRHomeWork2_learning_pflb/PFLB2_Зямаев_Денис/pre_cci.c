@@ -2612,10 +2612,10 @@ int res = -1;
 
 int getRnd( int pMin, int pMax )
 {
-	if ( pMax < 1 )
+	if ( pMax < 1 || pMax > 32766 )
 		return 0;  
 	
-	return rand() % pMax + pMin;
+	return (rand() % pMax) + pMin;
 }
 
 vuser_init()
@@ -3049,7 +3049,7 @@ Action()
 	lr_think_time(7);
 	
 	 
-	lr_convert_string_encoding( lr_eval_string("{incident_custom_description}"), "utf-8", "utf-8", "utf8Msg" );
+	 
 
 	 
 	web_custom_request("ticket_2", 
@@ -3061,7 +3061,7 @@ Action()
 		"Snapshot=t31.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=UTF-8", 
-		"BodyBinary={\"text\":\"{incident_custom_description}\",\"header\":\"\\xD0\\xA3\\xD0\\xBD\\xD0\\xB8\\xD1\\x87\\xD1\\x82\\xD0\\xBE\\xD0\\xB6\\xD0\\xB5\\xD0\\xBD\\xD0\\xB8\\xD0\\xB5 \\xD0\\xBA\\xD0\\xBB\\xD0\\xBE\\xD0\\xBF\\xD0\\xBE\\xD0\\xB2\",\"ticketStateId\":0,\"serviceId\":\"{service_id}\",\"files\":[],\"inventoryNumberId\":null}", 
+		"BodyBinary={\"text\":\"{incident_custom_description}\",\"header\":\"{incident_custom_description}\",\"ticketStateId\":0,\"serviceId\":\"{service_id}\",\"files\":[],\"inventoryNumberId\":null}", 
 		"LAST");
 
 	 

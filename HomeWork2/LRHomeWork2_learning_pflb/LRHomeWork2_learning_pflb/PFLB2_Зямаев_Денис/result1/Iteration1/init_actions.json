@@ -6,34 +6,34 @@
                 "stepId": "STEP1",
                 "stepName": "Url: checkLogin",
                 "infFile": "t2.inf",
-                "time": 1582466471117
+                "time": 1582509333935
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Url: info",
                 "infFile": "t3.inf",
-                "time": 1582466471391
+                "time": 1582509334241
             },
             {
                 "stepId": "STEP3",
                 "stepName": "Url: countByState",
                 "infFile": "t5.inf",
-                "time": 1582466471758
+                "time": 1582509335433
             },
             {
                 "stepId": "STEP4",
                 "stepName": "Custom Request: ticket",
                 "infFile": "t6.inf",
-                "time": 1582466472642
+                "time": 1582509336492
             }
         ],
         "transactions": [
             {
                 "transactionName": "UC_02_Incidents_Логин",
-                "rawStartTime": 1582466470053,
-                "rawEndTime": 1582466472642,
+                "rawStartTime": 1582509332625,
+                "rawEndTime": 1582509336492,
                 "thinkTime": 0.0,
-                "wastedTime": 0.45937323570251467
+                "wastedTime": 0.8068768978118897
             }
         ]
     }

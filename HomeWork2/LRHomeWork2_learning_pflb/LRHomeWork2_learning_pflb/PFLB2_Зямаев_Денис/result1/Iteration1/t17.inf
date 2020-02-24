@@ -1,6 +1,6 @@
 [t17]
 FileName2=t9_6_catalog.UNK
-RawStepEndTime=1582466474261
+RawStepEndTime=1582509338613
 FileName5=t4_3_tickets.UNK
 FileName4=t4_4_tickets.UNK
 FileName7=t3_1_wrapper.UNK
@@ -10,8 +10,8 @@ RequestBodyFile=t17_RequestBody.txt
 RawStepName=ticket_2
 ContentType=application/json
 URL1=http://learning2.pflb.ru:56902/api/ticket/
-URL2=http://learning2.pflb.ru:56902/director/catalog/catalog.dust
-URL3=http://learning2.pflb.ru:56902/director/catalog/catalog.js
+URL2=http://learning2.pflb.ru:56902/director/catalog/catalog.js
+URL3=http://learning2.pflb.ru:56902/director/catalog/catalog.dust
 ResponseHeaderFile=t17_ResponseHeader.txt
 URL4=http://learning2.pflb.ru:56902/director/tickets/tickets.dust
 URL5=http://learning2.pflb.ru:56902/director/tickets/tickets.js
@@ -21,7 +21,7 @@ URL8=http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874
 SnapshotXmlFile=snapshot_13.xml
 RequestHeaderFile=t17_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582466473762
+RawStepStartTime=1582509338035
 Total=8
 StepName=Custom Request: ticket_2
 FileName1=t17.json

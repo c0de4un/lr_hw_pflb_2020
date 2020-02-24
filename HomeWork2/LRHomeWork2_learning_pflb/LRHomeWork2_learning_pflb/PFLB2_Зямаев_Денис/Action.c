@@ -327,8 +327,8 @@ Action()
 
 	lr_think_time(7);
 	
-	//
-	lr_convert_string_encoding( lr_eval_string("{incident_custom_description}"), LR_ENC_UTF8, LR_ENC_UTF8, "utf8Msg" );
+	// Not really required, but, if input is CP-1251 and output is UTF-8.
+	//lr_convert_string_encoding( lr_eval_string("{incident_custom_description}"), LR_ENC_UTF8, LR_ENC_UTF8, "utf8Msg" );
 
 	// Request Random Service (Level#4: root.node.node.node).
 	web_custom_request("ticket_2", 
@@ -340,7 +340,7 @@ Action()
 		"Snapshot=t31.inf", 
 		"Mode=HTML", 
 		"EncType=application/json; charset=UTF-8", 
-		"BodyBinary={\"text\":\"{incident_custom_description}\",\"header\":\"\\xD0\\xA3\\xD0\\xBD\\xD0\\xB8\\xD1\\x87\\xD1\\x82\\xD0\\xBE\\xD0\\xB6\\xD0\\xB5\\xD0\\xBD\\xD0\\xB8\\xD0\\xB5 \\xD0\\xBA\\xD0\\xBB\\xD0\\xBE\\xD0\\xBF\\xD0\\xBE\\xD0\\xB2\",\"ticketStateId\":0,\"serviceId\":\"{service_id}\",\"files\":[],\"inventoryNumberId\":null}", 
+		"BodyBinary={\"text\":\"{incident_custom_description}\",\"header\":\"{incident_custom_description}\",\"ticketStateId\":0,\"serviceId\":\"{service_id}\",\"files\":[],\"inventoryNumberId\":null}", 
 		LAST);
 
 	// Not Required.
