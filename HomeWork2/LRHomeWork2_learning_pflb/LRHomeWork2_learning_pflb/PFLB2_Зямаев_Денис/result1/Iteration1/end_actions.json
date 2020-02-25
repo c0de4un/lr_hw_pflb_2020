@@ -6,16 +6,23 @@
                 "stepId": "STEP12",
                 "stepName": "Url: login_3",
                 "infFile": "t19.inf",
-                "time": 1582509339578
+                "time": 1582617595491
             }
         ],
         "transactions": [
             {
-                "transactionName": "UC_02_Incidents_Логаут",
-                "rawStartTime": 1582509338650,
-                "rawEndTime": 1582509339578,
+                "transactionName": "UC_02_15_logout",
+                "rawStartTime": 1582617594674,
+                "rawEndTime": 1582617594794,
                 "thinkTime": 0.0,
-                "wastedTime": 0.20178532600402833
+                "wastedTime": 0.0473170280456543
+            },
+            {
+                "transactionName": "UC_02_16_login_3",
+                "rawStartTime": 1582617594796,
+                "rawEndTime": 1582617595491,
+                "thinkTime": 0.0,
+                "wastedTime": 0.08533382415771485
             }
         ]
     }

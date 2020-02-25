@@ -6,22 +6,29 @@
                 "stepId": "STEP1",
                 "stepName": "Custom Request: AccountLoginRequest",
                 "infFile": "t2.inf",
-                "time": 1582322189974
+                "time": 1582618090700
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Url: load_carts",
                 "infFile": "t4.inf",
-                "time": 1582322190225
+                "time": 1582618090947
             }
         ],
         "transactions": [
             {
-                "transactionName": "UC_01_AOS_Login",
-                "rawStartTime": 1582322189272,
-                "rawEndTime": 1582322190225,
+                "transactionName": "UC_01_01_AOS_Login",
+                "rawStartTime": 1582618090112,
+                "rawEndTime": 1582618090711,
                 "thinkTime": 0.0,
-                "wastedTime": 0.2626371383666992
+                "wastedTime": 0.1934187412261963
+            },
+            {
+                "transactionName": "UC_01_02_AOS_Load_Carts",
+                "rawStartTime": 1582618090714,
+                "rawEndTime": 1582618090947,
+                "thinkTime": 0.0,
+                "wastedTime": 0.04223036766052246
             }
         ]
     }

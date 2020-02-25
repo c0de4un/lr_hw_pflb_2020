@@ -2622,28 +2622,6 @@ vuser_init()
 {
 	
 	 
-
-	 
-	lr_start_transaction("UC_02_Incidents_Логин");
-
-	
-	 
-	 
-	
-	 
-	 
-	
-	 
-	 
-	
-	 
-	 
-	
-	 
-	 
-	
-	 
-	 
 	
 	web_add_cookie("sessionExpired=false; DOMAIN=learning2.pflb.ru");
 
@@ -2658,7 +2636,11 @@ vuser_init()
 	web_add_auto_header("dnt", 
 		"1");
 
-	lr_think_time(4);
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_01_IncidentsDirector_Логин");
 
 	web_submit_data("login_2", 
 		"Action=http://learning2.pflb.ru:56902/api/login", 
@@ -2674,6 +2656,15 @@ vuser_init()
 		"Url=../js/core/jqueryformplugin.js?_=1582367837874", "Referer=http://learning2.pflb.ru:56902/", "ENDITEM", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_01_IncidentsDirector_Логин", 2);
+
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_02_IncidentsDirector_checkLogin");
+	
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
 		"Resource=0", 
@@ -2682,7 +2673,16 @@ vuser_init()
 		"Snapshot=t4.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	 
+	lr_end_transaction("UC_02_02_IncidentsDirector_checkLogin", 2);
 
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_03_IncidentsDirector_Get_UserInfo");
+	
 	web_url("info", 
 		"URL=http://learning2.pflb.ru:56902/api/user/info", 
 		"Resource=0", 
@@ -2695,6 +2695,15 @@ vuser_init()
 		"Url=/director/wrapper/wrapper.js", "Referer=http://learning2.pflb.ru:56902/", "ENDITEM", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_03_IncidentsDirector_Get_UserInfo", 2);
+
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_04_IncidentsDirector_countByState_4");
+	
 	web_url("4", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/4", 
 		"Resource=0", 
@@ -2706,6 +2715,15 @@ vuser_init()
 		"Url=/director/tickets/tickets.js", "Referer=http://learning2.pflb.ru:56902/", "ENDITEM", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_04_IncidentsDirector_countByState_4", 2);
+	
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_05_IncidentsDirector_ticket_countByState");
+	
 	web_url("countByState", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/", 
 		"Resource=0", 
@@ -2714,7 +2732,16 @@ vuser_init()
 		"Snapshot=t7.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	 
+	lr_end_transaction("UC_02_05_IncidentsDirector_ticket_countByState", 2);
 
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_06_IncidentsDirector_get_ticket");
+	
 	web_custom_request("ticket", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
@@ -2725,9 +2752,9 @@ vuser_init()
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
 		"LAST");
-
+	
 	 
-	lr_end_transaction("UC_02_Incidents_Логин", 2);
+	lr_end_transaction("UC_02_06_IncidentsDirector_get_ticket", 2);
 
 	 
 	
@@ -2778,9 +2805,6 @@ Action()
 {
 
 	 
-	
-	 
-	lr_start_transaction("UC_02_Incidents_Добавление_инцидента");
 
 	 
 	srand(_time32(0));
@@ -2792,24 +2816,6 @@ Action()
 
 	web_add_auto_header("dnt", 
 		"1");
-
-	 
- 
- 
- 
- 
- 
- 
- 
-
-	 
- 
- 
- 
- 
- 
- 
- 
 	
 	 
 	web_reg_save_param_json(
@@ -2818,6 +2824,12 @@ Action()
 		"SelectAll=Yes",
 		"SEARCH_FILTERS",
 		"LAST");
+	
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_07_get_root");
 	
 	 
 	web_url("children", 
@@ -2829,6 +2841,10 @@ Action()
 		"Mode=HTML", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_07_get_root", 2);
+
+	
 	 
 	rootNodesNum = atoi(lr_eval_string("{Root_IDs_count}")) - 1;  
 	
@@ -2853,6 +2869,12 @@ Action()
 	lr_save_string( lr_eval_string(nodeIndexStr), "node_idx");
 	
 	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_08_get_treeview");
+	
+	 
 	web_url("treeview", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/treeview", 
 		"Resource=0", 
@@ -2864,6 +2886,9 @@ Action()
 		"Url=/director/catalog/catalog.dust", "Referer=http://learning2.pflb.ru:56902/", "ENDITEM", 
 		"Url=/director/catalog/catalog.js", "Referer=http://learning2.pflb.ru:56902/", "ENDITEM", 
 		"LAST");
+	
+	 
+	lr_end_transaction("UC_02_08_get_treeview", 2);
 	
 	 
 	web_reg_save_param_json(
@@ -2880,6 +2905,12 @@ Action()
 	 
 	
 	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_09_get_lvl2");
+	
+	 
 	web_url("children_2", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/children/", 
 		"Resource=0", 
@@ -2889,6 +2920,9 @@ Action()
 		"Mode=HTML", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_09_get_lvl2", 2);
+	
 	 
 	lvl2NodesNum = atoi(lr_eval_string("{Lvl2_IDs_count}"));
 	
@@ -2927,6 +2961,12 @@ Action()
 		"LAST");
 	
 	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_10_get_lvl3_nodes");
+	
+	 
 	web_url("children_3", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/children/", 
 		"Resource=0", 
@@ -2935,6 +2975,9 @@ Action()
 		"Snapshot=t27.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	 
+	lr_end_transaction("UC_02_10_get_lvl3_nodes", 2);
 	
 	 
 	lvl3NodesNum = atoi(lr_eval_string("{Lvl3_IDs_count}"));
@@ -2983,6 +3026,12 @@ Action()
 		"LAST");
 	
 	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_11_get_services");
+	
+	 
 	web_url("children_4", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/service/", 
 		"Resource=0", 
@@ -2991,6 +3040,9 @@ Action()
 		"Snapshot=t28.inf", 
 		"Mode=HTML", 
 		"LAST");
+	
+	 
+	lr_end_transaction("UC_02_11_get_services", 2);
 	
 	 
 	lvl4NodesNum = atoi(lr_eval_string("{Lvl4_IDs_count}"));
@@ -3034,6 +3086,12 @@ Action()
  
  
 
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_12_get_inventoryNumbers_for_service");
+	
 	web_url("inventoryNumbers", 
 		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId={service_id}", 
 		"Resource=0", 
@@ -3043,6 +3101,9 @@ Action()
 		"Mode=HTML", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_12_get_inventoryNumbers_for_service", 2);
+
 	web_add_header("Origin", 
 		"http://learning2.pflb.ru:56902");
 
@@ -3051,6 +3112,12 @@ Action()
 	 
 	 
 
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_13_post_ticket");
+	
 	 
 	web_custom_request("ticket_2", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/", 
@@ -3065,85 +3132,86 @@ Action()
 		"LAST");
 
 	 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+	lr_end_transaction("UC_02_13_post_ticket", 2);
+
 	
 	 
-	lr_end_transaction("UC_02_Incidents_Добавление_инцидента", 2);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 	 
 	
@@ -3158,10 +3226,6 @@ vuser_end()
 
 	 
 	
-	 
-	lr_start_transaction("UC_02_Incidents_Логаут");
-
-	
 	web_add_header("X-Requested-With", 
 		"XMLHttpRequest");
 
@@ -3169,8 +3233,11 @@ vuser_end()
 		"1");
 
 	 
-	lr_think_time( getRnd(1, 5));
-
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_15_logout");
+	
 	web_url("logout", 
 		"URL=http://learning2.pflb.ru:56902/api/logout", 
 		"Resource=0", 
@@ -3179,9 +3246,19 @@ vuser_end()
 		"Mode=HTML", 
 		"LAST");
 
+	 
+	lr_end_transaction("UC_02_15_logout", 2);
+
+	
 	web_add_header("Upgrade-Insecure-Requests", 
 		"1");
 
+	 
+	lr_think_time( getRnd(1, 100) );
+	
+	 
+	lr_start_transaction("UC_02_16_login_3");
+	
 	web_url("login_3", 
 		"URL=http://learning2.pflb.ru:56902/login", 
 		"Resource=0", 
@@ -3190,11 +3267,11 @@ vuser_end()
 		"Snapshot=t40.inf", 
 		"Mode=HTML", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_02_Incidents_Логаут", 2);
-
 	
+	 
+	lr_end_transaction("UC_02_16_login_3", 2);
+
+
 	 
 	
 	return 0;

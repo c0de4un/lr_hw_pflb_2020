@@ -1,124 +1,156 @@
-Virtual User Script started at: 22.02.2020 1:56:29
+Virtual User Script started at: 25.02.2020 12:08:10
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
 Replay user agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103  	[MsgId: MMSG-26988]
 Runtime Settings file: "D:\Downloads\Performance.Lab\HomeWork.LoadRunner\HomeWork1\LRHomeWork1_AOS\PFLB1_Зямаев_Денис\\default.cfg"  	[MsgId: MMSG-27141]
-vuser_init.c(11): Notify: Transaction "UC_01_AOS_Login" started.
-vuser_init.c(13): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-vuser_init.c(13): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(16): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-vuser_init.c(16): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(19): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-vuser_init.c(19): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(23): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
-vuser_init.c(23): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
-vuser_init.c(31): web_reg_save_param started  	[MsgId: MMSG-26355]
-vuser_init.c(31): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
-vuser_init.c(37): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
-vuser_init.c(37): web_custom_request("AccountLoginRequest") was successful, 800 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
-vuser_init.c(49): web_set_sockets_option started  	[MsgId: MMSG-26355]
-vuser_init.c(49): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
-vuser_init.c(52): web_reg_save_param_regexp started  	[MsgId: MMSG-26355]
-vuser_init.c(52): Registering web_reg_save_param_regexp was successful  	[MsgId: MMSG-26390]
-vuser_init.c(59): web_url("load_carts") started  	[MsgId: MMSG-26355]
-vuser_init.c(59): web_url("load_carts") was successful, 110 body bytes, 347 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(67): Notify: Transaction "UC_01_AOS_Login" ended with a "Pass" status (Duration: 0,9536 Wasted Time: 0,2626).
+vuser_init.c(21): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+vuser_init.c(21): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(24): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+vuser_init.c(24): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(27): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+vuser_init.c(27): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(31): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
+vuser_init.c(31): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
+vuser_init.c(39): web_reg_save_param started  	[MsgId: MMSG-26355]
+vuser_init.c(39): Registering web_reg_save_param was successful  	[MsgId: MMSG-26390]
+vuser_init.c(48): Notify: Transaction "UC_01_01_AOS_Login" started.
+vuser_init.c(51): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
+vuser_init.c(51): web_custom_request("AccountLoginRequest") was successful, 798 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(63): web_set_sockets_option started  	[MsgId: MMSG-26355]
+vuser_init.c(63): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+vuser_init.c(66): Notify: Transaction "UC_01_01_AOS_Login" ended with a "Pass" status (Duration: 0,5991 Wasted Time: 0,1934).
+vuser_init.c(69): web_reg_save_param_regexp started  	[MsgId: MMSG-26355]
+vuser_init.c(69): Registering web_reg_save_param_regexp was successful  	[MsgId: MMSG-26390]
+vuser_init.c(80): Notify: Transaction "UC_01_02_AOS_Load_Carts" started.
+vuser_init.c(82): web_url("load_carts") started  	[MsgId: MMSG-26355]
+vuser_init.c(82): web_url("load_carts") was successful, 111 body bytes, 347 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(92): Notify: Transaction "UC_01_02_AOS_Load_Carts" ended with a "Pass" status (Duration: 0,2334 Wasted Time: 0,0422).
 Ending action vuser_init.
 Running Vuser...
 Starting iteration 1.
 Warning -27077: The "vuser_init" section contains web function(s) when the "Simulate a new user on each iteration" Runtime Setting is ON.  This may produce unpredictable results with multiple iterations  	[MsgId: MWAR-27077]
 Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
 Starting action Action.
-Action.c(6): Notify: Transaction "UC_01_AOS_Buy" started.
-Action.c(8): web_url("product-page.html") started  	[MsgId: MMSG-26355]
-Action.c(8): Found resource "http://advantageonlineshopping.com/css/images/review_right.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(8): Found resource "http://advantageonlineshopping.com/css/images/reviewUser.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(8): Found resource "http://advantageonlineshopping.com/css/images/review_Left_disabled.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(8): web_url("product-page.html") was successful, 5589 body bytes, 1348 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(16): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(16): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(19): web_submit_data("3683D1") started  	[MsgId: MMSG-26355]
-Action.c(19): web_submit_data("3683D1") was successful, 196 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(30): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(30): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(33): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(33): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(36): web_custom_request("GetAccountByIdRequest") started  	[MsgId: MMSG-26355]
-Action.c(36): web_custom_request("GetAccountByIdRequest") was successful, 1259 body bytes, 568 header bytes  	[MsgId: MMSG-26386]
-Action.c(48): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(48): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(51): web_custom_request("GetAccountByIdNewRequest") started  	[MsgId: MMSG-26355]
-Action.c(51): web_custom_request("GetAccountByIdNewRequest") was successful, 1194 body bytes, 568 header bytes  	[MsgId: MMSG-26386]
-Action.c(63): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(63): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
-Action.c(63): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(65): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(65): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
-Action.c(65): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(67): web_url("{tmp_uid_param}_2") started  	[MsgId: MMSG-26355]
-Action.c(67): web_url("{tmp_uid_param}_2") was successful, 232 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(76): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(76): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(79): web_custom_request("shippingcost") started  	[MsgId: MMSG-26355]
-Action.c(79): web_custom_request("shippingcost") was successful, 125 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(91): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(91): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(94): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(94): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(97): web_custom_request("GetAccountPaymentPreferencesRequest") started  	[MsgId: MMSG-26355]
-Action.c(97): web_custom_request("GetAccountPaymentPreferencesRequest") was successful, 498 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
-Action.c(109): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(109): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
-Action.c(109): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(111): web_url("orderPayment-page.html") started  	[MsgId: MMSG-26355]
-Action.c(111): web_url("orderPayment-page.html") was successful, 914 body bytes, 373 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(119): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(119): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(122): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(122): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(125): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(125): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(128): web_custom_request("GetCountriesRequest") started  	[MsgId: MMSG-26355]
-Action.c(128): web_custom_request("GetCountriesRequest") was successful, 4177 body bytes, 621 header bytes, 13 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(140): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(140): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(143): web_custom_request("AccountUpdateRequest") started  	[MsgId: MMSG-26355]
-Action.c(143): web_custom_request("AccountUpdateRequest") was successful, 413 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
-Action.c(156): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(156): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
-Action.c(156): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(158): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(158): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
-Action.c(158): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(160): web_url("{tmp_uid_param}_3") started  	[MsgId: MMSG-26355]
-Action.c(160): web_url("{tmp_uid_param}_3") was successful, 232 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(169): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(169): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(172): web_custom_request("shippingcost_2") started  	[MsgId: MMSG-26355]
-Action.c(172): web_custom_request("shippingcost_2") was successful, 125 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(184): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(184): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(187): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(187): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(190): web_custom_request("UpdateSafePayMethodRequest") started  	[MsgId: MMSG-26355]
-Action.c(190): web_custom_request("UpdateSafePayMethodRequest") was successful, 414 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
-Action.c(203): web_custom_request("{tmp_uid_param}_4") started  	[MsgId: MMSG-26355]
-Action.c(203): web_custom_request("{tmp_uid_param}_4") was successful, 147 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(217): web_custom_request("{tmp_uid_param}_5") started  	[MsgId: MMSG-26355]
-Action.c(217): web_custom_request("{tmp_uid_param}_5") was successful, 66 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(226): Notify: Transaction "UC_01_AOS_Buy" ended with a "Pass" status (Duration: 16,8637 Wasted Time: 0,9433).
+Action.c(10): Notify: Transaction "UC_01_03_AOS_Get_Product_Page" started.
+Action.c(12): web_url("product-page.html") started  	[MsgId: MMSG-26355]
+Action.c(12): Found resource "http://advantageonlineshopping.com/css/images/review_right.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(12): Found resource "http://advantageonlineshopping.com/css/images/reviewUser.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(12): Found resource "http://advantageonlineshopping.com/css/images/review_Left_disabled.png" in HTML "http://advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(12): web_url("product-page.html") was successful, 5589 body bytes, 1348 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(21): Notify: Transaction "UC_01_03_AOS_Get_Product_Page" ended with a "Pass" status (Duration: 0,5781 Wasted Time: 0,1206).
+Action.c(23): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(23): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(30): Notify: Transaction "UC_01_04_AOS_Add_to_Cart" started.
+Action.c(32): web_submit_data("3683D1") started  	[MsgId: MMSG-26355]
+Action.c(32): web_submit_data("3683D1") was successful, 196 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(44): Notify: Transaction "UC_01_04_AOS_Add_to_Cart" ended with a "Pass" status (Duration: 0,4708 Wasted Time: 0,0432).
+Action.c(46): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(46): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(49): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(49): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(56): Notify: Transaction "UC_01_05_AOS_GetAccountByIdRequest" started.
+Action.c(58): web_custom_request("GetAccountByIdRequest") started  	[MsgId: MMSG-26355]
+Action.c(58): web_custom_request("GetAccountByIdRequest") was successful, 1259 body bytes, 568 header bytes  	[MsgId: MMSG-26386]
+Action.c(71): Notify: Transaction "UC_01_05_AOS_GetAccountByIdRequest" ended with a "Pass" status (Duration: 0,2680 Wasted Time: 0,0809).
+Action.c(74): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(74): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(81): Notify: Transaction "UC_01_06_AOS_GetAccountByIdNewRequest" started.
+Action.c(83): web_custom_request("GetAccountByIdNewRequest") started  	[MsgId: MMSG-26355]
+Action.c(83): web_custom_request("GetAccountByIdNewRequest") was successful, 1194 body bytes, 568 header bytes  	[MsgId: MMSG-26386]
+Action.c(96): Notify: Transaction "UC_01_06_AOS_GetAccountByIdNewRequest" ended with a "Pass" status (Duration: 0,2745 Wasted Time: 0,0803).
+Action.c(99): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(99): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
+Action.c(99): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(101): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(101): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
+Action.c(101): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(107): Notify: Transaction "UC_01_07_AOS_Get_Carts" started.
+Action.c(109): web_url("{tmp_uid_param}_2") started  	[MsgId: MMSG-26355]
+Action.c(109): web_url("{tmp_uid_param}_2") was successful, 232 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(119): Notify: Transaction "UC_01_07_AOS_Get_Carts" ended with a "Pass" status (Duration: 0,3589 Wasted Time: 0,0327).
+Action.c(121): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(121): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(128): Notify: Transaction "UC_01_08_AOS_shippingcost" started.
+Action.c(130): web_custom_request("shippingcost") started  	[MsgId: MMSG-26355]
+Action.c(130): web_custom_request("shippingcost") was successful, 125 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(143): Notify: Transaction "UC_01_08_AOS_shippingcost" ended with a "Pass" status (Duration: 0,2422 Wasted Time: 0,0369).
+Action.c(145): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(145): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(148): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(148): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(155): Notify: Transaction "UC_01_10_AOS_GetAccountPaymentPreferencesRequest" started.
+Action.c(157): web_custom_request("GetAccountPaymentPreferencesRequest") started  	[MsgId: MMSG-26355]
+Action.c(157): web_custom_request("GetAccountPaymentPreferencesRequest") was successful, 498 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+Action.c(170): Notify: Transaction "UC_01_10_AOS_GetAccountPaymentPreferencesRequest" ended with a "Pass" status (Duration: 0,2373 Wasted Time: 0,0480).
+Action.c(172): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(172): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
+Action.c(172): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(178): Notify: Transaction "UC_01_11_AOS_Load_orderPayment_page" started.
+Action.c(180): web_url("orderPayment-page.html") started  	[MsgId: MMSG-26355]
+Action.c(180): web_url("orderPayment-page.html") was successful, 914 body bytes, 373 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(189): Notify: Transaction "UC_01_11_AOS_Load_orderPayment_page" ended with a "Pass" status (Duration: 0,2116 Wasted Time: 0,0342).
+Action.c(192): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(192): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(195): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(195): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(198): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(198): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(205): Notify: Transaction "UC_01_12_AOS_GetCountriesRequest" started.
+Action.c(207): web_custom_request("GetCountriesRequest") started  	[MsgId: MMSG-26355]
+Action.c(207): web_custom_request("GetCountriesRequest") was successful, 4177 body bytes, 621 header bytes, 13 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(220): Notify: Transaction "UC_01_12_AOS_GetCountriesRequest" ended with a "Pass" status (Duration: 11,5550 Wasted Time: 0,0488).
+Action.c(223): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(223): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(230): Notify: Transaction "UC_01_13_AOS_AccountUpdateRequest" started.
+Action.c(232): web_custom_request("AccountUpdateRequest") started  	[MsgId: MMSG-26355]
+Action.c(232): web_custom_request("AccountUpdateRequest") was successful, 413 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+Action.c(246): Notify: Transaction "UC_01_13_AOS_AccountUpdateRequest" ended with a "Pass" status (Duration: 0,2718 Wasted Time: 0,0466).
+Action.c(249): web_remove_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(249): Previous automatically added web header for "Origin" removed  	[MsgId: MMSG-26587]
+Action.c(249): web_remove/revert_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(251): web_remove_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(251): Previous automatically added web header for "X-Requested-With" removed  	[MsgId: MMSG-26587]
+Action.c(251): web_remove/revert_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(257): Notify: Transaction "UC_01_14_AOS_Get_Carts" started.
+Action.c(259): web_url("{tmp_uid_param}_3") started  	[MsgId: MMSG-26355]
+Action.c(259): web_url("{tmp_uid_param}_3") was successful, 232 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(269): Notify: Transaction "UC_01_14_AOS_Get_Carts" ended with a "Pass" status (Duration: 0,3349 Wasted Time: 0,0320).
+Action.c(272): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(272): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(279): Notify: Transaction "UC_01_15_AOS_shippingcost_2" started.
+Action.c(281): web_custom_request("shippingcost_2") started  	[MsgId: MMSG-26355]
+Action.c(281): web_custom_request("shippingcost_2") was successful, 125 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(294): Notify: Transaction "UC_01_15_AOS_shippingcost_2" ended with a "Pass" status (Duration: 0,2588 Wasted Time: 0,0376).
+Action.c(297): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(297): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(300): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(300): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(307): Notify: Transaction "UC_01_16_AOS_UpdateSafePayMethodRequest" started.
+Action.c(309): web_custom_request("UpdateSafePayMethodRequest") started  	[MsgId: MMSG-26355]
+Action.c(309): web_custom_request("UpdateSafePayMethodRequest") was successful, 414 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+Action.c(323): Notify: Transaction "UC_01_16_AOS_UpdateSafePayMethodRequest" ended with a "Pass" status (Duration: 0,2587 Wasted Time: 0,0494).
+Action.c(329): Notify: Transaction "UC_01_17_AOS_Send_Paymant_Data" started.
+Action.c(331): web_custom_request("{tmp_uid_param}_4") started  	[MsgId: MMSG-26355]
+Action.c(331): web_custom_request("{tmp_uid_param}_4") was successful, 149 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(346): Notify: Transaction "UC_01_17_AOS_Send_Paymant_Data" ended with a "Pass" status (Duration: 0,3585 Wasted Time: 0,0388).
+Action.c(352): Notify: Transaction "UC_01_18_AOS_Clear_Cart" started.
+Action.c(354): web_custom_request("{tmp_uid_param}_5") started  	[MsgId: MMSG-26355]
+Action.c(354): web_custom_request("{tmp_uid_param}_5") was successful, 66 body bytes, 267 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(365): Notify: Transaction "UC_01_18_AOS_Clear_Cart" ended with a "Pass" status (Duration: 0,2188 Wasted Time: 0,0305).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...
 Starting action vuser_end.
-vuser_end.c(3): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-vuser_end.c(3): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(6): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-vuser_end.c(6): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(9): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-vuser_end.c(9): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(14): web_custom_request("AccountLogoutRequest") started  	[MsgId: MMSG-26355]
-vuser_end.c(14): web_custom_request("AccountLogoutRequest") was successful, 402 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(6): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+vuser_end.c(6): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(9): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+vuser_end.c(9): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(12): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+vuser_end.c(12): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(21): Notify: Transaction "UC_01_19_AOS_AccountLogoutRequest" started.
+vuser_end.c(23): web_custom_request("AccountLogoutRequest") started  	[MsgId: MMSG-26355]
+vuser_end.c(23): web_custom_request("AccountLogoutRequest") was successful, 402 body bytes, 567 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(35): Notify: Transaction "UC_01_19_AOS_AccountLogoutRequest" ended with a "Pass" status (Duration: 0,2298 Wasted Time: 0,0463).
 Ending action vuser_end.
 Vuser Terminated.

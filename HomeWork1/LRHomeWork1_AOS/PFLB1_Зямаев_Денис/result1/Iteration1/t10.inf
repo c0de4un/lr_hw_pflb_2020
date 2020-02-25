@@ -1,20 +1,20 @@
 [t10]
-FileName2=t5_2_review_right.png
-RawStepEndTime=1582322192718
+FileName2=t5_2_review_Left_disabled.png
+RawStepEndTime=1582618093194
 FileName4=t5_0_reviewUser.png
 RequestBodyFile=t10_RequestBody.txt
 RawStepName=shippingcost
 ContentType=application/json
 URL1=http://advantageonlineshopping.com/order/api/v1/shippingcost/
-URL2=http://advantageonlineshopping.com/css/images/review_right.png
-URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL2=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL3=http://advantageonlineshopping.com/css/images/review_right.png
 ResponseHeaderFile=t10_ResponseHeader.txt
 URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
 SnapshotXmlFile=snapshot_8.xml
 RequestHeaderFile=t10_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582322192457
+RawStepStartTime=1582618092969
 Total=4
 StepName=Custom Request: shippingcost
 FileName1=t10.json
-FileName3=t5_1_review_Left_disabled.png
+FileName3=t5_1_review_right.png

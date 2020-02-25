@@ -6,11 +6,17 @@
 	Recorder Version   : 0
    ------------------------------------------------------------------------------- */
 
+int rand0m1z3(int pMin, int pMax)
+{
+	if ( pMax < 1 || pMin < 0 )
+		return 0;
+	
+	return (rand() % pMax) + pMin;
+}
+
 vuser_init()
 {
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	
-	lr_start_transaction("UC_01_AOS_Login");
 
 	web_add_header("Origin", 
 		"http://advantageonlineshopping.com");
@@ -35,6 +41,12 @@ vuser_init()
 		"RB=</ns2:t_authorization>",
 		LAST);
 	
+	// Pause
+	lr_think_time( rand0m1z3(1, 10) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_01_01_AOS_Login");
+	
 	// Login Request.
 	web_custom_request("AccountLoginRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/AccountLoginRequest", 
@@ -50,6 +62,9 @@ vuser_init()
 	
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
 
+	// Transaction.Finish
+	lr_end_transaction("UC_01_01_AOS_Login", LR_AUTO);
+	
 	// Extract session-id from response.	
 	web_reg_save_param_regexp(
 		"ParamName=tmp_sid_param",
@@ -57,6 +72,12 @@ vuser_init()
 		SEARCH_FILTERS,
 		"Scope=Cookies",
 		LAST);
+
+	// Pause
+	lr_think_time( rand0m1z3(1, 10) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_01_02_AOS_Load_Carts");
 
 	web_url("load_carts", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
@@ -67,7 +88,8 @@ vuser_init()
 		"Mode=HTML", 
 		LAST);
 	
-	lr_end_transaction("UC_01_AOS_Login", LR_AUTO);
+	// Transaction.Finish
+	lr_end_transaction("UC_01_02_AOS_Load_Carts", LR_AUTO);
 	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

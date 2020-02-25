@@ -27,28 +27,6 @@ vuser_init()
 {
 	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-	// Transaction.Start
-	lr_start_transaction("UC_02_Incidents_Логин");
-
-	
-	// UC_02_PFLB_RaportsSystem_FILE_Input
-	//lr_start_transaction("UC_02_PFLB_RaportsSystem_FILE_Input");
-	
-	// INFO
-	//lr_output_message("Testing file input");
-	
-	// Read file into param.
-	//res = lr_read_file("descriptions.txt", "test1", 1);
-	
-	// INFO
-	//lr_output_message("\nFile:\nReaded:%\nContent:%", res, lr_eval_string("{test1}"));
-	
-	// UC_02_PFLB_RaportsSystem_FILE_Input
-	//lr_end_transaction("UC_02_PFLB_RaportsSystem_FILE_Input", LR_AUTO);
-	
-	// Stop
-	//lr_abort();
 	
 	web_add_cookie("sessionExpired=false; DOMAIN=learning2.pflb.ru");
 
@@ -63,7 +41,11 @@ vuser_init()
 	web_add_auto_header("dnt", 
 		"1");
 
-	lr_think_time(4);
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_01_IncidentsDirector_Логин");
 
 	web_submit_data("login_2", 
 		"Action=http://learning2.pflb.ru:56902/api/login", 
@@ -79,6 +61,15 @@ vuser_init()
 		"Url=../js/core/jqueryformplugin.js?_=1582367837874", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_01_IncidentsDirector_Логин", LR_AUTO);
+
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_02_IncidentsDirector_checkLogin");
+	
 	web_url("checkLogin", 
 		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
 		"Resource=0", 
@@ -87,7 +78,16 @@ vuser_init()
 		"Snapshot=t4.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	// Transaction.Finish
+	lr_end_transaction("UC_02_02_IncidentsDirector_checkLogin", LR_AUTO);
 
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_03_IncidentsDirector_Get_UserInfo");
+	
 	web_url("info", 
 		"URL=http://learning2.pflb.ru:56902/api/user/info", 
 		"Resource=0", 
@@ -100,6 +100,15 @@ vuser_init()
 		"Url=/director/wrapper/wrapper.js", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_03_IncidentsDirector_Get_UserInfo", LR_AUTO);
+
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_04_IncidentsDirector_countByState_4");
+	
 	web_url("4", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/4", 
 		"Resource=0", 
@@ -111,6 +120,15 @@ vuser_init()
 		"Url=/director/tickets/tickets.js", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_04_IncidentsDirector_countByState_4", LR_AUTO);
+	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_05_IncidentsDirector_ticket_countByState");
+	
 	web_url("countByState", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/countByState/", 
 		"Resource=0", 
@@ -119,7 +137,16 @@ vuser_init()
 		"Snapshot=t7.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	// Transaction.Finish
+	lr_end_transaction("UC_02_05_IncidentsDirector_ticket_countByState", LR_AUTO);
 
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_06_IncidentsDirector_get_ticket");
+	
 	web_custom_request("ticket", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/?state=-1,0,1,5&page=0&size=10", 
 		"Method=GET", 
@@ -130,9 +157,9 @@ vuser_init()
 		"Mode=HTML", 
 		"EncType=application/json; charset=utf-8", 
 		LAST);
-
+	
 	// Transaction.Finish
-	lr_end_transaction("UC_02_Incidents_Логин", LR_AUTO);
+	lr_end_transaction("UC_02_06_IncidentsDirector_get_ticket", LR_AUTO);
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

@@ -1,8 +1,8 @@
 HTTP/1.1 200 
 Server: nginx/1.14.0 (Ubuntu)
-Date: Fri, 21 Feb 2020 21:56:57 GMT
+Date: Tue, 25 Feb 2020 08:08:39 GMT
 Content-Type: text/xml;charset=utf-8
-Content-Length: 800
+Content-Length: 798
 Connection: keep-alive
 Access-Control-Request-Method: POST, GET, OPTIONS, DELETE
 Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE

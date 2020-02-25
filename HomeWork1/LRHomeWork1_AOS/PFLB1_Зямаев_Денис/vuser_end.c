@@ -2,8 +2,6 @@ vuser_end()
 {
 	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	
-	lr_start_transaction("UC_01_AOS_Logout");
 
 	web_add_header("Origin", 
 		"http://advantageonlineshopping.com");
@@ -15,6 +13,12 @@ vuser_end()
 		"XMLHttpRequest");
 
 	lr_think_time(9);
+	
+	// Pause
+	lr_think_time( rand0m1z3(1, 10) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_01_19_AOS_AccountLogoutRequest");
 	
 	web_custom_request("AccountLogoutRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/AccountLogoutRequest", 
@@ -28,7 +32,7 @@ vuser_end()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>386165654</loginUser><base64Token>Basic c3Qxbmt5YzBkZTpoYUgxTGs4</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>", 
 		LAST);
 	
-	lr_end_transaction("UC_01_AOS_Logout", LR_AUTO);
+	lr_end_transaction("UC_01_19_AOS_AccountLogoutRequest", LR_AUTO);
 	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

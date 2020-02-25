@@ -1,20 +1,20 @@
 [t12]
-FileName2=t5_2_review_right.png
-RawStepEndTime=1582322193323
+FileName2=t5_2_review_Left_disabled.png
+RawStepEndTime=1582618093657
 FileName4=t5_0_reviewUser.png
 RequestBodyFile=t12_RequestBody.txt
 RawStepName=orderPayment-page.html
 ContentType=text/html
 URL1=http://advantageonlineshopping.com/app/order/views/orderPayment-page.html
-URL2=http://advantageonlineshopping.com/css/images/review_right.png
-URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL2=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL3=http://advantageonlineshopping.com/css/images/review_right.png
 ResponseHeaderFile=t12_ResponseHeader.txt
 URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
 SnapshotXmlFile=snapshot_10.xml
 RequestHeaderFile=t12_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582322193076
+RawStepStartTime=1582618093466
 Total=4
 StepName=Url: orderPayment-page.html
 FileName1=t12.html
-FileName3=t5_1_review_Left_disabled.png
+FileName3=t5_1_review_right.png

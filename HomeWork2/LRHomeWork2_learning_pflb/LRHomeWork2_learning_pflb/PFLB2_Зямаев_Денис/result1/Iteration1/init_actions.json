@@ -6,34 +6,69 @@
                 "stepId": "STEP1",
                 "stepName": "Url: checkLogin",
                 "infFile": "t2.inf",
-                "time": 1582509333935
+                "time": 1582617590748
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Url: info",
                 "infFile": "t3.inf",
-                "time": 1582509334241
+                "time": 1582617591066
             },
             {
                 "stepId": "STEP3",
                 "stepName": "Url: countByState",
                 "infFile": "t5.inf",
-                "time": 1582509335433
+                "time": 1582617591439
             },
             {
                 "stepId": "STEP4",
                 "stepName": "Custom Request: ticket",
                 "infFile": "t6.inf",
-                "time": 1582509336492
+                "time": 1582617592576
             }
         ],
         "transactions": [
             {
-                "transactionName": "UC_02_Incidents_Логин",
-                "rawStartTime": 1582509332625,
-                "rawEndTime": 1582509336492,
+                "transactionName": "UC_02_01_IncidentsDirector_Логин",
+                "rawStartTime": 1582617589731,
+                "rawEndTime": 1582617590563,
                 "thinkTime": 0.0,
-                "wastedTime": 0.8068768978118897
+                "wastedTime": 0.24831438064575196
+            },
+            {
+                "transactionName": "UC_02_02_IncidentsDirector_checkLogin",
+                "rawStartTime": 1582617590564,
+                "rawEndTime": 1582617590748,
+                "thinkTime": 0.0,
+                "wastedTime": 0.0473935604095459
+            },
+            {
+                "transactionName": "UC_02_03_IncidentsDirector_Get_UserInfo",
+                "rawStartTime": 1582617590749,
+                "rawEndTime": 1582617591067,
+                "thinkTime": 0.0,
+                "wastedTime": 0.11832451820373535
+            },
+            {
+                "transactionName": "UC_02_04_IncidentsDirector_countByState_4",
+                "rawStartTime": 1582617591067,
+                "rawEndTime": 1582617591306,
+                "thinkTime": 0.0,
+                "wastedTime": 0.0736238956451416
+            },
+            {
+                "transactionName": "UC_02_05_IncidentsDirector_ticket_countByState",
+                "rawStartTime": 1582617591306,
+                "rawEndTime": 1582617591439,
+                "thinkTime": 0.0,
+                "wastedTime": 0.036699771881103519
+            },
+            {
+                "transactionName": "UC_02_06_IncidentsDirector_get_ticket",
+                "rawStartTime": 1582617591439,
+                "rawEndTime": 1582617592577,
+                "thinkTime": 0.0,
+                "wastedTime": 0.04304838180541992
             }
         ]
     }

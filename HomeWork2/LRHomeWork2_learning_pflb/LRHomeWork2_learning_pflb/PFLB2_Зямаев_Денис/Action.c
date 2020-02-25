@@ -57,9 +57,6 @@ Action()
 {
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	
-	// Transaction.Begin
-	lr_start_transaction("UC_02_Incidents_Добавление_инцидента");
 
 	// Initialize Randomizer.
 	srand(time(NULL));
@@ -71,24 +68,6 @@ Action()
 
 	web_add_auto_header("dnt", 
 		"1");
-
-	// Not required
-//	web_url("catalog.dust", 
-//		"URL=http://learning2.pflb.ru:56902/director/catalog/catalog.dust", 
-//		"Resource=1", 
-//		"RecContentType=application/octet-stream", 
-//		"Referer=http://learning2.pflb.ru:56902/", 
-//		"Snapshot=t23.inf", 
-//		LAST);
-
-	// Not required
-//	web_url("catalog.js", 
-//		"URL=http://learning2.pflb.ru:56902/director/catalog/catalog.js", 
-//		"Resource=1", 
-//		"RecContentType=application/javascript", 
-//		"Referer=http://learning2.pflb.ru:56902/", 
-//		"Snapshot=t24.inf", 
-//		LAST);
 	
 	// Get array of root indices.
 	web_reg_save_param_json(
@@ -97,6 +76,12 @@ Action()
 		"SelectAll=Yes",
 		SEARCH_FILTERS,
 		LAST);
+	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_07_get_root");
 	
 	// Get Root-Categories. (Level #1)
 	web_url("children", 
@@ -108,6 +93,10 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_07_get_root", LR_AUTO);
+
+	
 	// Root Elements Count.
 	rootNodesNum = atoi(lr_eval_string("{Root_IDs_count}")) - 1; // Last #5 Root-Node is not functional.
 	
@@ -131,6 +120,12 @@ Action()
 	// Copy C-String with Node Index to the Param (Required for JSON-Query).
 	lr_save_string( lr_eval_string(nodeIndexStr), "node_idx");
 	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_08_get_treeview");
+	
 	// Complete Structure Request.
 	web_url("treeview", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/treeview", 
@@ -143,6 +138,9 @@ Action()
 		"Url=/director/catalog/catalog.dust", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 		"Url=/director/catalog/catalog.js", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 		LAST);
+	
+	// Transaction.Finish
+	lr_end_transaction("UC_02_08_get_treeview", LR_AUTO);
 	
 	// Get array of Level3 Nodes using JSON.
 	web_reg_save_param_json(
@@ -158,6 +156,12 @@ Action()
 	
 	// Level #2
 	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_09_get_lvl2");
+	
 	// Request Level #2 [root.node] Structure
 	web_url("children_2", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/children/", 
@@ -168,6 +172,9 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_09_get_lvl2", LR_AUTO);
+	
 	// Root.Node Elements Count.
 	lvl2NodesNum = atoi(lr_eval_string("{Lvl2_IDs_count}"));
 	
@@ -205,6 +212,12 @@ Action()
 		SEARCH_FILTERS,
 		LAST);
 	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_10_get_lvl3_nodes");
+	
 	// Level #3 [root.node.node]
 	web_url("children_3", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/children/", 
@@ -214,6 +227,9 @@ Action()
 		"Snapshot=t27.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	// Transaction.Finish
+	lr_end_transaction("UC_02_10_get_lvl3_nodes", LR_AUTO);
 	
 	// Root.Node.Node Elements Count.
 	lvl3NodesNum = atoi(lr_eval_string("{Lvl3_IDs_count}"));
@@ -261,6 +277,12 @@ Action()
 		SEARCH_FILTERS,
 		LAST);
 	
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_11_get_services");
+	
 	// Level #4 [root.node.node.node]
 	web_url("children_4", 
 		"URL=http://learning2.pflb.ru:56902/api/user/catalog/node/{node_id}/service/", 
@@ -270,6 +292,9 @@ Action()
 		"Snapshot=t28.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	// Transaction.Finish
+	lr_end_transaction("UC_02_11_get_services", LR_AUTO);
 	
 	// Root.Node.Node Elements Count.
 	lvl4NodesNum = atoi(lr_eval_string("{Lvl4_IDs_count}"));
@@ -313,6 +338,12 @@ Action()
 //		"Url=/director/addticket.dust", "Referer=http://learning2.pflb.ru:56902/", ENDITEM, 
 //		LAST);
 
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_12_get_inventoryNumbers_for_service");
+	
 	web_url("inventoryNumbers", 
 		"URL=http://learning2.pflb.ru:56902/api/inventoryNumbers?serviceId={service_id}", 
 		"Resource=0", 
@@ -322,6 +353,9 @@ Action()
 		"Mode=HTML", 
 		LAST);
 
+	// Transaction.Finish
+	lr_end_transaction("UC_02_12_get_inventoryNumbers_for_service", LR_AUTO);
+
 	web_add_header("Origin", 
 		"http://learning2.pflb.ru:56902");
 
@@ -330,6 +364,12 @@ Action()
 	// Not really required, but, if input is CP-1251 and output is UTF-8.
 	//lr_convert_string_encoding( lr_eval_string("{incident_custom_description}"), LR_ENC_UTF8, LR_ENC_UTF8, "utf8Msg" );
 
+	// Pause
+	lr_think_time( getRnd(1, 100) );
+	
+	// Transaction.Start
+	lr_start_transaction("UC_02_13_post_ticket");
+	
 	// Request Random Service (Level#4: root.node.node.node).
 	web_custom_request("ticket_2", 
 		"URL=http://learning2.pflb.ru:56902/api/ticket/", 
@@ -343,6 +383,10 @@ Action()
 		"BodyBinary={\"text\":\"{incident_custom_description}\",\"header\":\"{incident_custom_description}\",\"ticketStateId\":0,\"serviceId\":\"{service_id}\",\"files\":[],\"inventoryNumberId\":null}", 
 		LAST);
 
+	//
+	lr_end_transaction("UC_02_13_post_ticket", LR_AUTO);
+
+	
 	// Not Required.
 //	web_url("checkLogin_2", 
 //		"URL=http://learning2.pflb.ru:56902/api/checkLogin", 
@@ -420,9 +464,6 @@ Action()
 //		"Mode=HTML", 
 //		"EncType=application/json; charset=utf-8", 
 //		LAST);
-	
-	// Transaction.End
-	lr_end_transaction("UC_02_Incidents_Добавление_инцидента", LR_AUTO);
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

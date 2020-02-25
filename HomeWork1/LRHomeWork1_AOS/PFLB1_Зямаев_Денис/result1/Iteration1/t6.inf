@@ -1,20 +1,20 @@
 [t6]
-FileName2=t5_2_review_right.png
-RawStepEndTime=1582322191375
+FileName2=t5_2_review_Left_disabled.png
+RawStepEndTime=1582618091995
 FileName4=t5_0_reviewUser.png
 RequestBodyFile=t6_RequestBody.txt
 RawStepName=3683D1
 ContentType=application/json
 URL1=http://advantageonlineshopping.com/order/api/v1/carts/386165654/product/3/color/3683D1?quantity=1
-URL2=http://advantageonlineshopping.com/css/images/review_right.png
-URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL2=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL3=http://advantageonlineshopping.com/css/images/review_right.png
 ResponseHeaderFile=t6_ResponseHeader.txt
 URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
 SnapshotXmlFile=snapshot_4.xml
 RequestHeaderFile=t6_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582322190914
+RawStepStartTime=1582618091561
 Total=4
 StepName=Submit Data: 3683D1
 FileName1=t6.json
-FileName3=t5_1_review_Left_disabled.png
+FileName3=t5_1_review_right.png

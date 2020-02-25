@@ -7,6 +7,6 @@ Accept-Language: en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7
 Accept: */*
 Connection: Keep-Alive
 Host: advantageonlineshopping.com
-Cookie: JSESSIONID=F58BEB2EEA2D76D535C6B7638656A539
+Cookie: JSESSIONID=5F208F8BFB593A1AF28A38A6417E89ED
 Content-Length: 0
 

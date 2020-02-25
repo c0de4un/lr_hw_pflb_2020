@@ -1,20 +1,20 @@
 [t14]
-FileName2=t5_2_review_right.png
-RawStepEndTime=1582322205495
+FileName2=t5_2_review_Left_disabled.png
+RawStepEndTime=1582618105480
 FileName4=t5_0_reviewUser.png
 RequestBodyFile=t14_RequestBody.txt
 RawStepName=AccountUpdateRequest
 ContentType=application/xml
 URL1=http://advantageonlineshopping.com/accountservice/AccountUpdateRequest
-URL2=http://advantageonlineshopping.com/css/images/review_right.png
-URL3=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL2=http://advantageonlineshopping.com/css/images/review_Left_disabled.png
+URL3=http://advantageonlineshopping.com/css/images/review_right.png
 ResponseHeaderFile=t14_ResponseHeader.txt
 URL4=http://advantageonlineshopping.com/css/images/reviewUser.png
 SnapshotXmlFile=snapshot_12.xml
 RequestHeaderFile=t14_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582322205221
+RawStepStartTime=1582618105254
 Total=4
 StepName=Custom Request: AccountUpdateRequest
 FileName1=t14.xml
-FileName3=t5_1_review_Left_disabled.png
+FileName3=t5_1_review_right.png
