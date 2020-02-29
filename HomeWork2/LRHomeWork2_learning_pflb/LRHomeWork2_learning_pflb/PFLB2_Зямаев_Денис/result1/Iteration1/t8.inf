@@ -1,6 +1,6 @@
 [t8]
 FileName2=t4_4_tickets.UNK
-RawStepEndTime=1582617592712
+RawStepEndTime=1582660224961
 FileName5=t3_1_wrapper.UNK
 FileName4=t3_2_wrapper.UNK
 FileName6=t1_0_jqueryformplugin.UNK
@@ -8,8 +8,8 @@ RequestBodyFile=t8_RequestBody.txt
 RawStepName=children
 ContentType=application/json
 URL1=http://learning2.pflb.ru:56902/api/user/catalog/node/0/children/
-URL2=http://learning2.pflb.ru:56902/director/tickets/tickets.dust
-URL3=http://learning2.pflb.ru:56902/director/tickets/tickets.js
+URL2=http://learning2.pflb.ru:56902/director/tickets/tickets.js
+URL3=http://learning2.pflb.ru:56902/director/tickets/tickets.dust
 ResponseHeaderFile=t8_ResponseHeader.txt
 URL4=http://learning2.pflb.ru:56902/director/wrapper/wrapper.js
 URL5=http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust
@@ -17,7 +17,7 @@ URL6=http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874
 SnapshotXmlFile=snapshot_7.xml
 RequestHeaderFile=t8_RequestHeader.txt
 SaveSnapshotResources=1
-RawStepStartTime=1582617592616
+RawStepStartTime=1582660224845
 Total=6
 StepName=Url: children
 FileName1=t8.json

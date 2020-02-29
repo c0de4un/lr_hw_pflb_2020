@@ -6,94 +6,52 @@
                 "stepId": "STEP5",
                 "stepName": "Url: children",
                 "infFile": "t8.inf",
-                "time": 1582617592734
+                "time": 1582660224984
             },
             {
                 "stepId": "STEP6",
                 "stepName": "Url: treeview",
                 "infFile": "t9.inf",
-                "time": 1582617593168
+                "time": 1582660225669
             },
             {
                 "stepId": "STEP7",
                 "stepName": "Url: children_2",
                 "infFile": "t11.inf",
-                "time": 1582617593299
+                "time": 1582660225778
             },
             {
                 "stepId": "STEP8",
                 "stepName": "Url: children_3",
                 "infFile": "t13.inf",
-                "time": 1582617593450
+                "time": 1582660225927
             },
             {
                 "stepId": "STEP9",
                 "stepName": "Url: children_4",
-                "infFile": "t15.inf",
-                "time": 1582617593594
+                "infFile": "t16.inf",
+                "time": 1582660226095
             },
             {
                 "stepId": "STEP10",
                 "stepName": "Url: inventoryNumbers",
-                "infFile": "t16.inf",
-                "time": 1582617593827
+                "infFile": "t17.inf",
+                "time": 1582660226244
             },
             {
                 "stepId": "STEP11",
                 "stepName": "Custom Request: ticket_2",
-                "infFile": "t17.inf",
-                "time": 1582617594647
+                "infFile": "t18.inf",
+                "time": 1582660227531
             }
         ],
         "transactions": [
             {
-                "transactionName": "UC_02_07_get_root",
-                "rawStartTime": 1582617592615,
-                "rawEndTime": 1582617592736,
+                "transactionName": "UC_01_PFLB_Incidents_Director.03_CreateIncident",
+                "rawStartTime": 1582660224843,
+                "rawEndTime": 1582660227532,
                 "thinkTime": 0.0,
-                "wastedTime": 0.04522061347961426
-            },
-            {
-                "transactionName": "UC_02_08_get_treeview",
-                "rawStartTime": 1582617592758,
-                "rawEndTime": 1582617593170,
-                "thinkTime": 0.0,
-                "wastedTime": 0.025420665740966798
-            },
-            {
-                "transactionName": "UC_02_09_get_lvl2",
-                "rawStartTime": 1582617593179,
-                "rawEndTime": 1582617593301,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04556417465209961
-            },
-            {
-                "transactionName": "UC_02_10_get_lvl3_nodes",
-                "rawStartTime": 1582617593329,
-                "rawEndTime": 1582617593452,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04056072235107422
-            },
-            {
-                "transactionName": "UC_02_11_get_services",
-                "rawStartTime": 1582617593468,
-                "rawEndTime": 1582617593596,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04079866409301758
-            },
-            {
-                "transactionName": "UC_02_12_get_inventoryNumbers_for_service",
-                "rawStartTime": 1582617593622,
-                "rawEndTime": 1582617593828,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04620099067687988
-            },
-            {
-                "transactionName": "UC_02_13_post_ticket",
-                "rawStartTime": 1582617593837,
-                "rawEndTime": 1582617594648,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04885721206665039
+                "wastedTime": 0.2913668155670166
             }
         ]
     }

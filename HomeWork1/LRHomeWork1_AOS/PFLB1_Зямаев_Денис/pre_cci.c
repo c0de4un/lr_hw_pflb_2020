@@ -2613,8 +2613,12 @@ int rand0m1z3(int pMin, int pMax)
 
 vuser_init()
 {
+	
 	 
 
+	 
+	lr_start_transaction("UC_01_AOS");
+	
 	web_add_header("Origin", 
 		"http://advantageonlineshopping.com");
 
@@ -2642,7 +2646,7 @@ vuser_init()
 	lr_think_time( rand0m1z3(1, 10) );
 	
 	 
-	lr_start_transaction("UC_01_01_AOS_Login");
+	lr_start_transaction("UC_01_AOS.01_Login");
 	
 	 
 	web_custom_request("AccountLoginRequest", 
@@ -2657,10 +2661,10 @@ vuser_init()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\"><email></email><loginPassword>{pwd}</loginPassword><loginUser>{login}</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>", 
 		"LAST");
 	
-	web_set_sockets_option("INITIAL_AUTH", "BASIC");
-
 	 
-	lr_end_transaction("UC_01_01_AOS_Login", 2);
+	lr_end_transaction("UC_01_AOS.01_Login", 2);
+	
+	web_set_sockets_option("INITIAL_AUTH", "BASIC");
 	
 	 
 	web_reg_save_param_regexp(
@@ -2670,12 +2674,19 @@ vuser_init()
 		"Scope=Cookies",
 		"LAST");
 
+	web_reg_save_param_json(
+		"ParamName=tmp_session_id_test2",
+		"QueryString=$.sessionId",
+		"SelectAll=No",
+		"SEARCH_FILTERS",
+		"LAST");
+	
 	 
 	lr_think_time( rand0m1z3(1, 10) );
 	
 	 
-	lr_start_transaction("UC_01_02_AOS_Load_Carts");
-
+	 
+	
 	web_url("load_carts", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
 		"Resource=0", 
@@ -2686,7 +2697,8 @@ vuser_init()
 		"LAST");
 	
 	 
-	lr_end_transaction("UC_01_02_AOS_Load_Carts", 2);
+	 
+
 	
 	 
 	
@@ -2704,8 +2716,9 @@ Action()
 	lr_think_time( rand0m1z3(1, 10) );
 	
 	 
-	lr_start_transaction("UC_01_03_AOS_Get_Product_Page");
-
+	 
+	lr_start_transaction("UC_01_AOS.03_Select_and_Add_Product_Laptop_to_Cart");
+	
 	web_url("product-page.html", 
 		"URL=http://advantageonlineshopping.com/app/views/product-page.html", 
 		"Resource=0", 
@@ -2713,18 +2726,9 @@ Action()
 		"Snapshot=t87.inf", 
 		"Mode=HTML", 
 		"LAST");
-		
-	 
-	lr_end_transaction("UC_01_03_AOS_Get_Product_Page", 2);
 	
 	web_add_auto_header("Origin", 
 		"http://advantageonlineshopping.com");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_04_AOS_Add_to_Cart");
 	
 	web_submit_data("3683D1", 
 		"Action=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}/product/3/color/3683D1?quantity=1", 
@@ -2737,20 +2741,11 @@ Action()
 		"Name=sessionId", "Value={tmp_sid_param}", "ENDITEM", 
 		"LAST");
 
-	 
-	lr_end_transaction("UC_01_04_AOS_Add_to_Cart", 2);
-
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceGetAccountByIdRequest");
 
 	web_add_auto_header("X-Requested-With", 
 		"XMLHttpRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_05_AOS_GetAccountByIdRequest");
 	
 	web_custom_request("GetAccountByIdRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/GetAccountByIdRequest", 
@@ -2764,18 +2759,8 @@ Action()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountByIdRequest xmlns=\"com.advantage.online.store.accountservice\"><accountId>{tmp_uid_param}</accountId><base64Token>Basic {base_64_token}</base64Token></GetAccountByIdRequest></soap:Body></soap:Envelope>", 
 		"LAST");
 
-	 
-	lr_end_transaction("UC_01_05_AOS_GetAccountByIdRequest", 2);
-
-	
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceGetAccountByIdNewRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_06_AOS_GetAccountByIdNewRequest");
 
 	web_custom_request("GetAccountByIdNewRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/GetAccountByIdNewRequest", 
@@ -2788,20 +2773,10 @@ Action()
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountByIdNewRequest xmlns=\"com.advantage.online.store.accountservice\"><accountId>{tmp_uid_param}</accountId><base64Token>Basic {base_64_token}</base64Token></GetAccountByIdNewRequest></soap:Body></soap:Envelope>", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_06_AOS_GetAccountByIdNewRequest", 2);
-
 	
 	(web_remove_auto_header("Origin", "ImplicitGen=Yes", "LAST"));
 
 	(web_remove_auto_header("X-Requested-With", "ImplicitGen=Yes", "LAST"));
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_07_AOS_Get_Carts");
 
 	web_url("{tmp_uid_param}_2", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
@@ -2813,16 +2788,16 @@ Action()
 		"LAST");
 
 	 
-	lr_end_transaction("UC_01_07_AOS_Get_Carts", 2);
-
+	lr_end_transaction("UC_01_AOS.03_Select_and_Add_Product_Laptop_to_Cart", 2);
+	
 	web_add_auto_header("Origin", 
 		"http://advantageonlineshopping.com");
-
+	
 	 
 	lr_think_time( rand0m1z3(1, 10) );
 	
 	 
-	lr_start_transaction("UC_01_08_AOS_shippingcost");
+	lr_start_transaction("UC_01_AOS.04_Purchase_Products_from_Cart");
 	
 	web_custom_request("shippingcost",
 		"URL=http://advantageonlineshopping.com/order/api/v1/shippingcost/",
@@ -2835,21 +2810,12 @@ Action()
 		"EncType=application/json;charset=UTF-8",
 		"Body={\"seaddress\":{\"addressLine1\":\"Svobody 173\",\"addressLine2\":\"\",\"city\":\"Kazan\",\"country\":\"ru\",\"postalCode\":426000,\"state\":\"Tataria\"},\"secustomerName\":\"Denis Zaicev\",\"secustomerPhone\":\"8-800-555-4221\",\"senumberOfProducts\":1,\"setransactionType\":\"SHIPPING_COST\",\"sessionId\":\"{CorrelationParameter}\"}",
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_08_AOS_shippingcost", 2);
 	
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceGetAccountPaymentPreferencesRequest");
 
 	web_add_header("X-Requested-With", 
 		"XMLHttpRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_10_AOS_GetAccountPaymentPreferencesRequest");
 	
 	web_custom_request("GetAccountPaymentPreferencesRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/GetAccountPaymentPreferencesRequest", 
@@ -2863,16 +2829,7 @@ Action()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountPaymentPreferencesRequest xmlns=\"com.advantage.online.store.accountservice\"><accountId>{tmp_uid_param}</accountId><base64Token>Basic {base_64_token}</base64Token></GetAccountPaymentPreferencesRequest></soap:Body></soap:Envelope>", 
 		"LAST");
 
-	 
-	lr_end_transaction("UC_01_10_AOS_GetAccountPaymentPreferencesRequest", 2);
-
 	(web_remove_auto_header("Origin", "ImplicitGen=Yes", "LAST"));
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_11_AOS_Load_orderPayment_page");
 
 	web_url("orderPayment-page.html", 
 		"URL=http://advantageonlineshopping.com/app/order/views/orderPayment-page.html", 
@@ -2881,10 +2838,6 @@ Action()
 		"Snapshot=t94.inf", 
 		"Mode=HTML", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_11_AOS_Load_orderPayment_page", 2);
-
 	
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceGetCountriesRequest");
@@ -2894,12 +2847,6 @@ Action()
 
 	web_add_auto_header("X-Requested-With", 
 		"XMLHttpRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_12_AOS_GetCountriesRequest");
 	
 	web_custom_request("GetCountriesRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/GetCountriesRequest", 
@@ -2912,19 +2859,9 @@ Action()
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetCountriesRequest xmlns=\"com.advantage.online.store.accountservice\"></GetCountriesRequest></soap:Body></soap:Envelope>", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_12_AOS_GetCountriesRequest", 2);
-
 	
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceAccountUpdateRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_13_AOS_AccountUpdateRequest");
 	
 	web_custom_request("AccountUpdateRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/AccountUpdateRequest", 
@@ -2939,19 +2876,9 @@ Action()
 		">Svobody 173</address><zipcode>426000</zipcode><phoneNumber>8-800-555-4221</phoneNumber><email>{login}@yandex.ru</email><accountType>20</accountType><allowOffersPromotion>true</allowOffersPromotion></AccountUpdateRequest></soap:Body></soap:Envelope>", 
 		"LAST");
 
-	 
-	lr_end_transaction("UC_01_13_AOS_AccountUpdateRequest", 2);
-
-	
 	(web_remove_auto_header("Origin", "ImplicitGen=Yes", "LAST"));
 
 	(web_remove_auto_header("X-Requested-With", "ImplicitGen=Yes", "LAST"));
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_14_AOS_Get_Carts");
 	
 	web_url("{tmp_uid_param}_3", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
@@ -2961,19 +2888,9 @@ Action()
 		"Snapshot=t97.inf", 
 		"Mode=HTML", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_14_AOS_Get_Carts", 2);
-
 	
 	web_add_auto_header("Origin", 
 		"http://advantageonlineshopping.com");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_15_AOS_shippingcost_2");
 	
 	web_custom_request("shippingcost_2", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/shippingcost/", 
@@ -2986,22 +2903,12 @@ Action()
 		"EncType=application/json;charset=UTF-8", 
 		"Body={\"seaddress\":{\"addressLine1\":\"Svobody 173\",\"addressLine2\":\"\",\"city\":\"Kazan\",\"country\":\"ru\",\"postalCode\":426000,\"state\":\"Tataria\"},\"secustomerName\":\"Denis Zaicev\",\"secustomerPhone\":\"8-800-555-4221\",\"senumberOfProducts\":1,\"setransactionType\":\"SHIPPING_COST\",\"sessionId\":\"{sid}\"}", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_15_AOS_shippingcost_2", 2);
-
 	
 	web_add_header("SOAPAction", 
 		"com.advantage.online.store.accountserviceUpdateSafePayMethodRequest");
 
 	web_add_header("X-Requested-With", 
 		"XMLHttpRequest");
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_16_AOS_UpdateSafePayMethodRequest");
 	
 	web_custom_request("UpdateSafePayMethodRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/UpdateSafePayMethodRequest", 
@@ -3015,15 +2922,6 @@ Action()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><UpdateSafePayMethodRequest xmlns=\"com.advantage.online.store.accountservice\"><userId>{tmp_uid_param}</userId><safePayUsername>{login}</safePayUsername><safePayPassword>bb0a2425a6bf</safePayPassword><referenceId>1234567890</referenceId><base64Token>Basic "
 		"{base_64_token}</base64Token></UpdateSafePayMethodRequest></soap:Body></soap:Envelope>", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_16_AOS_UpdateSafePayMethodRequest", 2);
-
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_17_AOS_Send_Paymant_Data");
 	
 	web_custom_request("{tmp_uid_param}_4", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/orders/users/{tmp_uid_param}", 
@@ -3038,15 +2936,6 @@ Action()
 		"bb0a2425a6bf479d56ba89dbb18c5001ce0f6594\",\"Transaction_SafePay_UserName\":\"{login}\",\"Transaction_TransactionDate\":\"21022020\",\"Transaction_Type\":\"PAYMENT\"},\"orderShippingInformation\":{\"Shipping_Address_Address\":\"Svobody 173\",\"Shipping_Address_City\":\"Kazan\",\"Shipping_Address_CountryCode\":\"Russia,ru\",\"Shipping_Address_CustomerName\":\"Denis Zaicev\",\"Shipping_Address_CustomerPhone\":\"8-800-555-4221\",\"Shipping_Address_PostalCode\":426000,\"Shipping_Address_State\":\""
 		"Tataria\",\"Shipping_Cost\":449.99,\"Shipping_NumberOfProducts\":1,\"Shipping_TrackingNumber\":0},\"purchasedProducts\":[{\"hexColor\":\"3683D1\",\"productId\":3,\"quantity\":1}]}", 
 		"LAST");
-
-	 
-	lr_end_transaction("UC_01_17_AOS_Send_Paymant_Data", 2);
-	
-	 
-	lr_think_time( rand0m1z3(1, 10) );
-	
-	 
-	lr_start_transaction("UC_01_18_AOS_Clear_Cart");
 	
 	web_custom_request("{tmp_uid_param}_5", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
@@ -3057,9 +2946,9 @@ Action()
 		"Snapshot=t101.inf", 
 		"Mode=HTML", 
 		"LAST");
-
+	
 	 
-	lr_end_transaction("UC_01_18_AOS_Clear_Cart", 2);
+	lr_end_transaction("UC_01_AOS.04_Purchase_Products_from_Cart", 2);
 	
 	 
 	
@@ -3081,14 +2970,12 @@ vuser_end()
 
 	web_add_header("X-Requested-With", 
 		"XMLHttpRequest");
-
-	lr_think_time(9);
 	
 	 
 	lr_think_time( rand0m1z3(1, 10) );
 	
 	 
-	lr_start_transaction("UC_01_19_AOS_AccountLogoutRequest");
+	lr_start_transaction("UC_01_AOS.05_Logout");
 	
 	web_custom_request("AccountLogoutRequest", 
 		"URL=http://advantageonlineshopping.com/accountservice/AccountLogoutRequest", 
@@ -3102,7 +2989,11 @@ vuser_end()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>386165654</loginUser><base64Token>Basic c3Qxbmt5YzBkZTpoYUgxTGs4</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>", 
 		"LAST");
 	
-	lr_end_transaction("UC_01_19_AOS_AccountLogoutRequest", 2);
+	 
+	lr_end_transaction("UC_01_AOS.05_Logout", 2);
+	
+	 
+	lr_end_transaction("UC_01_AOS", 2);
 	
 	 
 	

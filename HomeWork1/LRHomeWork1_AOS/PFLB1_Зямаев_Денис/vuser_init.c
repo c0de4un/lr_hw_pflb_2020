@@ -16,8 +16,12 @@ int rand0m1z3(int pMin, int pMax)
 
 vuser_init()
 {
+	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+	// Script Global Transaction.
+	lr_start_transaction("UC_01_AOS");
+	
 	web_add_header("Origin", 
 		"http://advantageonlineshopping.com");
 
@@ -41,11 +45,11 @@ vuser_init()
 		"RB=</ns2:t_authorization>",
 		LAST);
 	
-	// Pause
+	// Think-Time.
 	lr_think_time( rand0m1z3(1, 10) );
 	
-	// Transaction.Start
-	lr_start_transaction("UC_01_01_AOS_Login");
+	// Start Transaction: UC_01_AOS_01_Login
+	lr_start_transaction("UC_01_AOS.01_Login");
 	
 	// Login Request.
 	web_custom_request("AccountLoginRequest", 
@@ -60,10 +64,10 @@ vuser_init()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\"><email></email><loginPassword>{pwd}</loginPassword><loginUser>{login}</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>", 
 		LAST);
 	
+	// Finish Transaction: UC_01_AOS_01_Login
+	lr_end_transaction("UC_01_AOS.01_Login", LR_AUTO);
+	
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
-
-	// Transaction.Finish
-	lr_end_transaction("UC_01_01_AOS_Login", LR_AUTO);
 	
 	// Extract session-id from response.	
 	web_reg_save_param_regexp(
@@ -73,12 +77,19 @@ vuser_init()
 		"Scope=Cookies",
 		LAST);
 
-	// Pause
+	web_reg_save_param_json(
+		"ParamName=tmp_session_id_test2",
+		"QueryString=$.sessionId",
+		"SelectAll=No",
+		SEARCH_FILTERS,
+		LAST);
+	
+	// Think-Time.
 	lr_think_time( rand0m1z3(1, 10) );
 	
-	// Transaction.Start
-	lr_start_transaction("UC_01_02_AOS_Load_Carts");
-
+	// Start Transaction: UC_01_AOS.02_Browse_Products
+	//lr_start_transaction("UC_01_AOS.02_Browse_Products");
+	
 	web_url("load_carts", 
 		"URL=http://advantageonlineshopping.com/order/api/v1/carts/{tmp_uid_param}", 
 		"Resource=0", 
@@ -88,8 +99,9 @@ vuser_init()
 		"Mode=HTML", 
 		LAST);
 	
-	// Transaction.Finish
-	lr_end_transaction("UC_01_02_AOS_Load_Carts", LR_AUTO);
+	// Finish Transaction: UC_01_AOS.02_Browse_Products
+	//lr_end_transaction("UC_01_AOS.02_Browse_Products", LR_AUTO);
+
 	
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

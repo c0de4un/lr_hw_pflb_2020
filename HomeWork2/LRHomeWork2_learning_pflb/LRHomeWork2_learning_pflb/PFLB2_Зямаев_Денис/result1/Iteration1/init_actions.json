@@ -6,69 +6,41 @@
                 "stepId": "STEP1",
                 "stepName": "Url: checkLogin",
                 "infFile": "t2.inf",
-                "time": 1582617590748
+                "time": 1582660216576
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Url: info",
                 "infFile": "t3.inf",
-                "time": 1582617591066
+                "time": 1582660216909
             },
             {
                 "stepId": "STEP3",
                 "stepName": "Url: countByState",
                 "infFile": "t5.inf",
-                "time": 1582617591439
+                "time": 1582660217409
             },
             {
                 "stepId": "STEP4",
                 "stepName": "Custom Request: ticket",
                 "infFile": "t6.inf",
-                "time": 1582617592576
+                "time": 1582660224802
             }
         ],
         "transactions": [
             {
-                "transactionName": "UC_02_01_IncidentsDirector_Логин",
-                "rawStartTime": 1582617589731,
-                "rawEndTime": 1582617590563,
+                "transactionName": "UC_01_PFLB_Incidents_Director.01_Login",
+                "rawStartTime": 1582660215818,
+                "rawEndTime": 1582660216576,
                 "thinkTime": 0.0,
-                "wastedTime": 0.24831438064575196
+                "wastedTime": 0.24080395698547364
             },
             {
-                "transactionName": "UC_02_02_IncidentsDirector_checkLogin",
-                "rawStartTime": 1582617590564,
-                "rawEndTime": 1582617590748,
+                "transactionName": "UC_01_PFLB_Incidents_Director.02_BrowseIncidents",
+                "rawStartTime": 1582660216577,
+                "rawEndTime": 1582660224802,
                 "thinkTime": 0.0,
-                "wastedTime": 0.0473935604095459
-            },
-            {
-                "transactionName": "UC_02_03_IncidentsDirector_Get_UserInfo",
-                "rawStartTime": 1582617590749,
-                "rawEndTime": 1582617591067,
-                "thinkTime": 0.0,
-                "wastedTime": 0.11832451820373535
-            },
-            {
-                "transactionName": "UC_02_04_IncidentsDirector_countByState_4",
-                "rawStartTime": 1582617591067,
-                "rawEndTime": 1582617591306,
-                "thinkTime": 0.0,
-                "wastedTime": 0.0736238956451416
-            },
-            {
-                "transactionName": "UC_02_05_IncidentsDirector_ticket_countByState",
-                "rawStartTime": 1582617591306,
-                "rawEndTime": 1582617591439,
-                "thinkTime": 0.0,
-                "wastedTime": 0.036699771881103519
-            },
-            {
-                "transactionName": "UC_02_06_IncidentsDirector_get_ticket",
-                "rawStartTime": 1582617591439,
-                "rawEndTime": 1582617592577,
-                "thinkTime": 0.0,
-                "wastedTime": 0.04304838180541992
+                "wastedTime": 0.33364391326904299
             }
         ]
     }

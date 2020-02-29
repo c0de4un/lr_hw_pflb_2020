@@ -8,9 +8,9 @@ FileName2=t1_0_jqueryformplugin.UNK
 RequestHeaderFile=t2_RequestHeader.txt
 SaveSnapshotResources=1
 ResponseHeaderFile=t2_ResponseHeader.txt
-RawStepEndTime=1582617590675
+RawStepEndTime=1582660216560
 RawStepName=checkLogin
 RequestBodyFile=t2_RequestBody.txt
-RawStepStartTime=1582617590564
+RawStepStartTime=1582660216473
 URL1=http://learning2.pflb.ru:56902/api/checkLogin
 URL2=http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874

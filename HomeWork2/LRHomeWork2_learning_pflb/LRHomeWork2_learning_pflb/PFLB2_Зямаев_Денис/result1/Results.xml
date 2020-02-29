@@ -138,8 +138,8 @@
 <Step rID="T3">
 <Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>sessionExpired=false; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:49]]></Time>
-<TimeTick>1582617589</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:15]]></Time>
+<TimeTick>1582660215</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="6" >
 <Disp><![CDATA[Service: Add Cookie]]></Disp>
 </NodeArgs>
@@ -147,8 +147,8 @@
 <Step rID="T4">
 <Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>PFLB.pre.login.link=null; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:49]]></Time>
-<TimeTick>1582617589</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:15]]></Time>
+<TimeTick>1582660215</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="7" >
 <Disp><![CDATA[Service: Add Cookie]]></Disp>
 </NodeArgs>
@@ -156,8 +156,8 @@
 <Step rID="T5">
 <Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://learning2.pflb.ru:56902</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:49]]></Time>
-<TimeTick>1582617589</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:15]]></Time>
+<TimeTick>1582660215</TimeTick>
 <NodeArgs eType="General" icon="4" nRep="8" >
 <Disp><![CDATA[Service: Add Header]]></Disp>
 </NodeArgs>
@@ -165,8 +165,8 @@
 <Step rID="T6">
 <Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:49]]></Time>
-<TimeTick>1582617589</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:15]]></Time>
+<TimeTick>1582660215</TimeTick>
 <NodeArgs eType="General" icon="5" nRep="9" >
 <Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
@@ -174,8 +174,8 @@
 <Step rID="T7">
 <Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:49]]></Time>
-<TimeTick>1582617589</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:15]]></Time>
+<TimeTick>1582660215</TimeTick>
 <NodeArgs eType="General" icon="5" nRep="10" >
 <Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
@@ -183,8 +183,8 @@
 <Step rID="T8">
 <Obj plainTxt="False" ><![CDATA[Submit Data: login_2]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:50]]></Time>
-<TimeTick>1582617590</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:16]]></Time>
+<TimeTick>1582660216</TimeTick>
 <NodeArgs eType="General" icon="6" nRep="11" status="Passed" >
 <Disp><![CDATA[Submit Data: login_2]]></Disp>
 </NodeArgs>
@@ -192,8 +192,8 @@
 <Step rID="T9">
 <Obj plainTxt="False" ><![CDATA[Url: checkLogin]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:50]]></Time>
-<TimeTick>1582617590</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:16]]></Time>
+<TimeTick>1582660216</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="12" status="Passed" >
 <Disp><![CDATA[Url: checkLogin]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -204,8 +204,8 @@
 <Step rID="T10">
 <Obj plainTxt="False" ><![CDATA[Url: info]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:51]]></Time>
-<TimeTick>1582617591</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:16]]></Time>
+<TimeTick>1582660216</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="13" status="Passed" >
 <Disp><![CDATA[Url: info]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -216,8 +216,8 @@
 <Step rID="T11">
 <Obj plainTxt="False" ><![CDATA[Url: 4]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:51]]></Time>
-<TimeTick>1582617591</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:17]]></Time>
+<TimeTick>1582660217</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="14" status="Passed" >
 <Disp><![CDATA[Url: 4]]></Disp>
 </NodeArgs>
@@ -225,8 +225,8 @@
 <Step rID="T12">
 <Obj plainTxt="False" ><![CDATA[Url: countByState]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:51]]></Time>
-<TimeTick>1582617591</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:17]]></Time>
+<TimeTick>1582660217</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="15" status="Passed" >
 <Disp><![CDATA[Url: countByState]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -237,8 +237,8 @@
 <Step rID="T13">
 <Obj plainTxt="False" ><![CDATA[Custom Request: ticket]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="8" nRep="16" status="Passed" >
 <Disp><![CDATA[Custom Request: ticket]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -246,7 +246,7 @@
 </BtmPane>
 </NodeArgs>
 </Step>
-<Summary sTime="25.02.2020 - 11:59:49" eTime="25.02.2020 - 11:59:52" passed="6" failed="0" warnings="0" ></Summary>
+<Summary sTime="25.02.2020 - 23:50:15" eTime="25.02.2020 - 23:50:24" passed="6" failed="0" warnings="0" ></Summary>
 <NodeArgs eType="StartAction" icon="2" nRep="5" status="Passed" >
 <Disp><![CDATA[vuser_init Summary]]></Disp>
 </NodeArgs>
@@ -257,8 +257,8 @@
 <Step rID="T16">
 <Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>filterSetting=%7B%22page%22%3A%22http%3A%2F%2Flearning2.pflb.ru%3A56902%2F%23tickets%3Fstate%3Dopened%26page%3D1%22%2C%22smho%22%3Anull%2C%22dateStart%22%3A%22%22%2C%22dateEnd%22%3A%22%22%2C%22cat1%22%3Anull%2C%22cat2%22%3Anull%2C%22cat3%22%3Anull%2C%22cat4%22%3Anull%2C%22theme%22%3Anull%2C%22overdue%22%3Afalse%2C%22filters%22%3A%7B%22newCheckbox%22%3Atrue%2C%22appointedCheckbox%22%3Atrue%2C%22performedCheckbox%22%3Atrue%2C%22controlCheckbox%22%3Atrue%7D%7D; DOMAIN=learning2.pflb.ru</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="20" >
 <Disp><![CDATA[Service: Add Cookie]]></Disp>
 </NodeArgs>
@@ -266,8 +266,8 @@
 <Step rID="T17">
 <Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="5" nRep="21" >
 <Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
@@ -275,8 +275,8 @@
 <Step rID="T18">
 <Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="5" nRep="22" >
 <Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
@@ -284,8 +284,8 @@
 <Step rID="T19">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Root_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="10" nRep="23" >
 <Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
@@ -293,8 +293,8 @@
 <Step rID="T20">
 <Obj plainTxt="False" ><![CDATA[Url: children]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:52]]></Time>
-<TimeTick>1582617592</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:24]]></Time>
+<TimeTick>1582660224</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="24" status="Passed" >
 <Disp><![CDATA[Url: children]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -305,8 +305,8 @@
 <Step rID="T21">
 <Obj plainTxt="False" ><![CDATA[Url: treeview]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="25" status="Passed" >
 <Disp><![CDATA[Url: treeview]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -317,8 +317,8 @@
 <Step rID="T22">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl2_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="10" nRep="26" >
 <Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
@@ -326,8 +326,8 @@
 <Step rID="T23">
 <Obj plainTxt="False" ><![CDATA[Url: children_2]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="27" status="Passed" >
 <Disp><![CDATA[Url: children_2]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -338,8 +338,8 @@
 <Step rID="T24">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl3_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="10" nRep="28" >
 <Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
@@ -347,8 +347,8 @@
 <Step rID="T25">
 <Obj plainTxt="False" ><![CDATA[Url: children_3]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="29" status="Passed" >
 <Disp><![CDATA[Url: children_3]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -359,58 +359,67 @@
 <Step rID="T26">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>Lvl4_IDs</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].id</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
 <NodeArgs eType="General" icon="10" nRep="30" >
 <Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T27">
-<Obj plainTxt="False" ><![CDATA[Url: children_4]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="31" status="Passed" >
-<Disp><![CDATA[Url: children_4]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t15.inf]]></Path>
-</BtmPane>
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>ServiceNames</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.[*].name</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:25]]></Time>
+<TimeTick>1582660225</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="31" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T28">
-<Obj plainTxt="False" ><![CDATA[Url: inventoryNumbers]]></Obj>
+<Obj plainTxt="False" ><![CDATA[Url: children_4]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
+<Time><![CDATA[25.02.2020 - 23:50:26]]></Time>
+<TimeTick>1582660226</TimeTick>
 <NodeArgs eType="General" icon="7" nRep="32" status="Passed" >
-<Disp><![CDATA[Url: inventoryNumbers]]></Disp>
+<Disp><![CDATA[Url: children_4]]></Disp>
 <BtmPane vType="HTMLSNSH" >
 <Path><![CDATA[\Iteration1\t16.inf]]></Path>
 </BtmPane>
 </NodeArgs>
 </Step>
 <Step rID="T29">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://learning2.pflb.ru:56902</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:53]]></Time>
-<TimeTick>1582617593</TimeTick>
-<NodeArgs eType="General" icon="4" nRep="33" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T30">
-<Obj plainTxt="False" ><![CDATA[Custom Request: ticket_2]]></Obj>
+<Obj plainTxt="False" ><![CDATA[Url: inventoryNumbers]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:54]]></Time>
-<TimeTick>1582617594</TimeTick>
-<NodeArgs eType="General" icon="8" nRep="34" status="Passed" >
-<Disp><![CDATA[Custom Request: ticket_2]]></Disp>
+<Time><![CDATA[25.02.2020 - 23:50:26]]></Time>
+<TimeTick>1582660226</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="33" status="Passed" >
+<Disp><![CDATA[Url: inventoryNumbers]]></Disp>
 <BtmPane vType="HTMLSNSH" >
 <Path><![CDATA[\Iteration1\t17.inf]]></Path>
 </BtmPane>
 </NodeArgs>
 </Step>
-<Summary sTime="25.02.2020 - 11:59:52" eTime="25.02.2020 - 11:59:54" passed="7" failed="0" warnings="0" ></Summary>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://learning2.pflb.ru:56902</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:26]]></Time>
+<TimeTick>1582660226</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="34" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T31">
+<Obj plainTxt="False" ><![CDATA[Custom Request: ticket_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:27]]></Time>
+<TimeTick>1582660227</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="35" status="Passed" >
+<Disp><![CDATA[Custom Request: ticket_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t18.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="25.02.2020 - 23:50:24" eTime="25.02.2020 - 23:50:27" passed="7" failed="0" warnings="0" ></Summary>
 <NodeArgs eType="StartAction" icon="2" nRep="19" status="Passed" >
 <Disp><![CDATA[Action Summary]]></Disp>
 </NodeArgs>
@@ -419,62 +428,62 @@
 <Disp><![CDATA[PFLB2_Зямаев_Денис Iteration 1 (Row 1)]]></Disp>
 </NodeArgs>
 </DIter>
-<Action rID="T31">
+<Action rID="T32">
 <AName><![CDATA[vuser_end]]></AName>
-<Step rID="T32">
+<Step rID="T33">
 <Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:54]]></Time>
-<TimeTick>1582617594</TimeTick>
-<NodeArgs eType="General" icon="4" nRep="38" >
+<Time><![CDATA[25.02.2020 - 23:50:27]]></Time>
+<TimeTick>1582660227</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="39" >
 <Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T33">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:54]]></Time>
-<TimeTick>1582617594</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="39" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T34">
-<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:54]]></Time>
-<TimeTick>1582617594</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="40" status="Passed" >
-<Disp><![CDATA[Url: logout]]></Disp>
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>dnt: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:27]]></Time>
+<TimeTick>1582660227</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="40" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T35">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Upgrade-Insecure-Requests: 1</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:54]]></Time>
-<TimeTick>1582617594</TimeTick>
-<NodeArgs eType="General" icon="4" nRep="41" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
+<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Resource of content type ""DummyContentType"" loaded successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:27]]></Time>
+<TimeTick>1582660227</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="41" status="Passed" >
+<Disp><![CDATA[Url: logout]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T36">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Upgrade-Insecure-Requests: 1</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[25.02.2020 - 23:50:27]]></Time>
+<TimeTick>1582660227</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="42" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T37">
 <Obj plainTxt="False" ><![CDATA[Url: login_3]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 11:59:55]]></Time>
-<TimeTick>1582617595</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="42" status="Passed" >
+<Time><![CDATA[25.02.2020 - 23:50:28]]></Time>
+<TimeTick>1582660228</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="43" status="Passed" >
 <Disp><![CDATA[Url: login_3]]></Disp>
 <BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t19.inf]]></Path>
+<Path><![CDATA[\Iteration1\t20.inf]]></Path>
 </BtmPane>
 </NodeArgs>
 </Step>
-<Summary sTime="25.02.2020 - 11:59:54" eTime="25.02.2020 - 11:59:55" passed="2" failed="0" warnings="0" ></Summary>
-<NodeArgs eType="StartAction" icon="2" nRep="37" status="Passed" >
+<Summary sTime="25.02.2020 - 23:50:27" eTime="25.02.2020 - 23:50:28" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="38" status="Passed" >
 <Disp><![CDATA[vuser_end Summary]]></Disp>
 </NodeArgs>
 </Action>
-<Summary sTime="25.02.2020 - 11:59:49" eTime="25.02.2020 - 11:59:55" passed="15" failed="0" warnings="0" ></Summary>
+<Summary sTime="25.02.2020 - 23:50:15" eTime="25.02.2020 - 23:50:28" passed="15" failed="0" warnings="0" ></Summary>
 <NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
 <Disp><![CDATA[Test PFLB2_Зямаев_Денис Summary]]></Disp>
 </NodeArgs>

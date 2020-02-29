@@ -138,8 +138,8 @@
 <Step rID="T3">
 <Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="6" >
 <Disp><![CDATA[Service: Add Header]]></Disp>
 </NodeArgs>
@@ -147,8 +147,8 @@
 <Step rID="T4">
 <Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceAccountLoginRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="7" >
 <Disp><![CDATA[Service: Add Header]]></Disp>
 </NodeArgs>
@@ -156,8 +156,8 @@
 <Step rID="T5">
 <Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="3" nRep="8" >
 <Disp><![CDATA[Service: Add Header]]></Disp>
 </NodeArgs>
@@ -165,8 +165,8 @@
 <Step rID="T6">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param XPath]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>tmp_uid_param</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>/SOAP-ENV:Envelope[1]/SOAP-ENV:Body[1]/ns2:AccountLoginResponse[1]/ns2:StatusMessage[1]/ns2:userId[1]/text()[1]</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="4" nRep="9" >
 <Disp><![CDATA[Service: Reg Save Param XPath]]></Disp>
 </NodeArgs>
@@ -174,8 +174,8 @@
 <Step rID="T7">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName =<STRONG><FONT COLOR=#00AF00>base_64_token</FONT></STRONG><BR>Left Boundary = <STRONG><FONT COLOR=#00AF00>LB=<ns2:t_authorization></FONT></STRONG><BR>Right Boundary = <STRONG><FONT COLOR=#00AF00>RB=</ns2:t_authorization></FONT></STRONG><BR>Instance = <STRONG><FONT COLOR=#00AF00></FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="4" nRep="10" >
 <Disp><![CDATA[Service: Reg Save Param]]></Disp>
 </NodeArgs>
@@ -183,8 +183,8 @@
 <Step rID="T8">
 <Obj plainTxt="False" ><![CDATA[Custom Request: AccountLoginRequest]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="5" nRep="11" status="Passed" >
 <Disp><![CDATA[Custom Request: AccountLoginRequest]]></Disp>
 <BtmPane vType="HTMLSNSH" >
@@ -195,8 +195,8 @@
 <Step rID="T9">
 <Obj plainTxt="False" ><![CDATA[Service: Set Sockets Option]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>Set socket option <STRONG><FONT COLOR=#00AF00>INITIAL_AUTH</FONT></STRONG> with value <STRONG><FONT COLOR=#00AF00>BASIC</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="6" nRep="12" >
 <Disp><![CDATA[Service: Set Sockets Option]]></Disp>
 </NodeArgs>
@@ -204,439 +204,48 @@
 <Step rID="T10">
 <Obj plainTxt="False" ><![CDATA[Service: Reg Save Param RegExp]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>tmp_sid_param</FONT></STRONG><BR>RegExp = <STRONG><FONT COLOR=#00AF00>JSESSIONID=(\w+);</FONT></STRONG><BR>Instance = <STRONG><FONT COLOR=#00AF00>[param not passed in call]</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
 <NodeArgs eType="General" icon="4" nRep="13" >
 <Disp><![CDATA[Service: Reg Save Param RegExp]]></Disp>
 </NodeArgs>
 </Step>
 <Step rID="T11">
-<Obj plainTxt="False" ><![CDATA[Url: load_carts]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:10]]></Time>
-<TimeTick>1582618090</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="14" status="Passed" >
-<Disp><![CDATA[Url: load_carts]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t4.inf]]></Path>
-</BtmPane>
+<Obj plainTxt="False" ><![CDATA[Service: Reg Save Param Json]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>ParamName = <STRONG><FONT COLOR=#00AF00>tmp_session_id_test2</FONT></STRONG><BR>QueryString = <STRONG><FONT COLOR=#00AF00>$.sessionId</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[28.02.2020 - 12:11:09]]></Time>
+<TimeTick>1582877469</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="14" >
+<Disp><![CDATA[Service: Reg Save Param Json]]></Disp>
 </NodeArgs>
 </Step>
-<Summary sTime="25.02.2020 - 12:08:10" eTime="25.02.2020 - 12:08:10" passed="2" failed="0" warnings="0" ></Summary>
-<NodeArgs eType="StartAction" icon="2" nRep="5" status="Passed" >
-<Disp><![CDATA[vuser_init Summary]]></Disp>
-</NodeArgs>
-</Action>
-<DIter rID="T12" iterID="1" >
-<Action rID="T13">
-<AName><![CDATA[Action]]></AName>
-<Step rID="T14">
-<Obj plainTxt="False" ><![CDATA[Url: product-page.html]]></Obj>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Url: load_carts]]></Obj>
 <Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:11]]></Time>
-<TimeTick>1582618091</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="18" status="Passed" >
-<Disp><![CDATA[Url: product-page.html]]></Disp>
+<Time><![CDATA[28.02.2020 - 12:11:13]]></Time>
+<TimeTick>1582877473</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="15" status="Passed" >
+<Disp><![CDATA[Url: load_carts]]></Disp>
 <BtmPane vType="HTMLSNSH" >
 <Path><![CDATA[\Iteration1\t5.inf]]></Path>
 </BtmPane>
 </NodeArgs>
 </Step>
-<Step rID="T15">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:11]]></Time>
-<TimeTick>1582618091</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="19" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Script Aborted!]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Pass</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[28.02.2020 - 12:13:05]]></Time>
+<TimeTick>1582877585</TimeTick>
+<NodeArgs eType="General" icon="1" nRep="16" >
+<Disp><![CDATA[Script Aborted!]]></Disp>
 </NodeArgs>
 </Step>
-<Step rID="T16">
-<Obj plainTxt="False" ><![CDATA[Submit Data: 3683D1]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="10" nRep="20" status="Passed" >
-<Disp><![CDATA[Submit Data: 3683D1]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t6.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T17">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceGetAccountByIdRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="21" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T18">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="22" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T19">
-<Obj plainTxt="False" ><![CDATA[Custom Request: GetAccountByIdRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="23" status="Passed" >
-<Disp><![CDATA[Custom Request: GetAccountByIdRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t7.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T20">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceGetAccountByIdNewRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="24" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T21">
-<Obj plainTxt="False" ><![CDATA[Custom Request: GetAccountByIdNewRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="25" status="Passed" >
-<Disp><![CDATA[Custom Request: GetAccountByIdNewRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t8.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T22">
-<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>Origin</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="6" nRep="26" >
-<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T23">
-<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>X-Requested-With</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="6" nRep="27" >
-<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T24">
-<Obj plainTxt="False" ><![CDATA[Url: {tmp_uid_param}_2]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="28" status="Passed" >
-<Disp><![CDATA[Url: {tmp_uid_param}_2]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t9.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T25">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:12]]></Time>
-<TimeTick>1582618092</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="29" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T26">
-<Obj plainTxt="False" ><![CDATA[Custom Request: shippingcost]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="30" status="Passed" >
-<Disp><![CDATA[Custom Request: shippingcost]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t10.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T27">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceGetAccountPaymentPreferencesRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="31" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T28">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="32" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T29">
-<Obj plainTxt="False" ><![CDATA[Custom Request: GetAccountPaymentPreferencesRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="33" status="Passed" >
-<Disp><![CDATA[Custom Request: GetAccountPaymentPreferencesRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t11.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T30">
-<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>Origin</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="6" nRep="34" >
-<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T31">
-<Obj plainTxt="False" ><![CDATA[Url: orderPayment-page.html]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="35" status="Passed" >
-<Disp><![CDATA[Url: orderPayment-page.html]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t12.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T32">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceGetCountriesRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="36" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T33">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="37" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T34">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:13]]></Time>
-<TimeTick>1582618093</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="38" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T35">
-<Obj plainTxt="False" ><![CDATA[Custom Request: GetCountriesRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="39" status="Passed" >
-<Disp><![CDATA[Custom Request: GetCountriesRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t13.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T36">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceAccountUpdateRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="40" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T37">
-<Obj plainTxt="False" ><![CDATA[Custom Request: AccountUpdateRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="41" status="Passed" >
-<Disp><![CDATA[Custom Request: AccountUpdateRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t14.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T38">
-<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>Origin</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="6" nRep="42" >
-<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T39">
-<Obj plainTxt="False" ><![CDATA[Service: Remove/Revert Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Remove/revert <BR><STRONG><FONT COLOR=#00AF00>X-Requested-With</FONT></STRONG> header, implicit generation: <STRONG>Yes</STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="6" nRep="43" >
-<Disp><![CDATA[Service: Remove/Revert Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T40">
-<Obj plainTxt="False" ><![CDATA[Url: {tmp_uid_param}_3]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="7" nRep="44" status="Passed" >
-<Disp><![CDATA[Url: {tmp_uid_param}_3]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t15.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T41">
-<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:25]]></Time>
-<TimeTick>1582618105</TimeTick>
-<NodeArgs eType="General" icon="9" nRep="45" >
-<Disp><![CDATA[Service: Add Auto Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T42">
-<Obj plainTxt="False" ><![CDATA[Custom Request: shippingcost_2]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="46" status="Passed" >
-<Disp><![CDATA[Custom Request: shippingcost_2]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t16.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T43">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceUpdateSafePayMethodRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="47" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T44">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="48" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T45">
-<Obj plainTxt="False" ><![CDATA[Custom Request: UpdateSafePayMethodRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="49" status="Passed" >
-<Disp><![CDATA[Custom Request: UpdateSafePayMethodRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t17.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T46">
-<Obj plainTxt="False" ><![CDATA[Custom Request: {tmp_uid_param}_4]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="50" status="Passed" >
-<Disp><![CDATA[Custom Request: {tmp_uid_param}_4]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t18.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Step rID="T47">
-<Obj plainTxt="False" ><![CDATA[Custom Request: {tmp_uid_param}_5]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:26]]></Time>
-<TimeTick>1582618106</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="51" status="Passed" >
-<Disp><![CDATA[Custom Request: {tmp_uid_param}_5]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t19.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Summary sTime="25.02.2020 - 12:08:10" eTime="25.02.2020 - 12:08:26" passed="15" failed="0" warnings="0" ></Summary>
-<NodeArgs eType="StartAction" icon="2" nRep="17" status="Passed" >
-<Disp><![CDATA[Action Summary]]></Disp>
+<Summary sTime="28.02.2020 - 12:11:09" eTime="28.02.2020 - 12:13:05" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" status="Passed" >
+<Disp><![CDATA[vuser_init Summary]]></Disp>
 </NodeArgs>
 </Action>
-<NodeArgs eType="StartIteration" icon="8" nRep="16" status="Passed" >
-<Disp><![CDATA[PFLB1_Зямаев_Денис Iteration 1 (Row 1)]]></Disp>
-</NodeArgs>
-</DIter>
-<Action rID="T48">
-<AName><![CDATA[vuser_end]]></AName>
-<Step rID="T49">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Origin: http://advantageonlineshopping.com</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:27]]></Time>
-<TimeTick>1582618107</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="55" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T50">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>SOAPAction: com.advantage.online.store.accountserviceAccountLogoutRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:27]]></Time>
-<TimeTick>1582618107</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="56" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T51">
-<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>X-Requested-With: XMLHttpRequest</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:27]]></Time>
-<TimeTick>1582618107</TimeTick>
-<NodeArgs eType="General" icon="3" nRep="57" >
-<Disp><![CDATA[Service: Add Header]]></Disp>
-</NodeArgs>
-</Step>
-<Step rID="T52">
-<Obj plainTxt="False" ><![CDATA[Custom Request: AccountLogoutRequest]]></Obj>
-<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
-<Time><![CDATA[25.02.2020 - 12:08:27]]></Time>
-<TimeTick>1582618107</TimeTick>
-<NodeArgs eType="General" icon="5" nRep="58" status="Passed" >
-<Disp><![CDATA[Custom Request: AccountLogoutRequest]]></Disp>
-<BtmPane vType="HTMLSNSH" >
-<Path><![CDATA[\Iteration1\t20.inf]]></Path>
-</BtmPane>
-</NodeArgs>
-</Step>
-<Summary sTime="25.02.2020 - 12:08:27" eTime="25.02.2020 - 12:08:27" passed="1" failed="0" warnings="0" ></Summary>
-<NodeArgs eType="StartAction" icon="2" nRep="54" status="Passed" >
-<Disp><![CDATA[vuser_end Summary]]></Disp>
-</NodeArgs>
-</Action>
-<Summary sTime="25.02.2020 - 12:08:10" eTime="25.02.2020 - 12:08:27" passed="18" failed="0" warnings="0" ></Summary>
+<Summary sTime="28.02.2020 - 12:11:08" eTime="28.02.2020 - 12:13:05" passed="2" failed="0" warnings="0" ></Summary>
 <NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
 <Disp><![CDATA[Test PFLB1_Зямаев_Денис Summary]]></Disp>
 </NodeArgs>

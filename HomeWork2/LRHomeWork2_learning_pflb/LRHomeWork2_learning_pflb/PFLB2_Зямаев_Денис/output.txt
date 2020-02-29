@@ -1,111 +1,96 @@
-Virtual User Script started at: 25.02.2020 11:59:49
+Virtual User Script started at: 25.02.2020 23:50:15
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (��� 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
 Replay user agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.103  	[MsgId: MMSG-26988]
 Runtime Settings file: "D:\Downloads\Performance.Lab\HomeWork.LoadRunner\HomeWork2\LRHomeWork2_learning_pflb\LRHomeWork2_learning_pflb\PFLB2_������_�����\\default.cfg"  	[MsgId: MMSG-27141]
-vuser_init.c(31): web_add_cookie started  	[MsgId: MMSG-26355]
-vuser_init.c(31): web_add_cookie was successful  	[MsgId: MMSG-26392]
-vuser_init.c(33): web_add_cookie started  	[MsgId: MMSG-26355]
-vuser_init.c(33): web_add_cookie was successful  	[MsgId: MMSG-26392]
-vuser_init.c(35): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-vuser_init.c(35): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(38): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-vuser_init.c(38): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(41): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
-vuser_init.c(41): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
-vuser_init.c(48): Notify: Transaction "UC_02_01_IncidentsDirector_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" started.
-vuser_init.c(50): web_submit_data("login_2") started  	[MsgId: MMSG-26355]
-vuser_init.c(50): Downloading resource "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874" (specified by argument number 18)  	[MsgId: MMSG-26577]
-vuser_init.c(50): web_submit_data("login_2") was successful, 43989 body bytes, 535 header bytes  	[MsgId: MMSG-26386]
-vuser_init.c(65): Notify: Transaction "UC_02_01_IncidentsDirector_\xffffffcb\xffffffee\xffffffe3\xffffffe8\xffffffed" ended with a "Pass" status (Duration: 0,8319 Wasted Time: 0,2483).
-vuser_init.c(71): Notify: Transaction "UC_02_02_IncidentsDirector_checkLogin" started.
-vuser_init.c(73): web_url("checkLogin") started  	[MsgId: MMSG-26355]
-vuser_init.c(73): web_url("checkLogin") was successful, 62 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(83): Notify: Transaction "UC_02_02_IncidentsDirector_checkLogin" ended with a "Pass" status (Duration: 0,1844 Wasted Time: 0,0474).
-vuser_init.c(89): Notify: Transaction "UC_02_03_IncidentsDirector_Get_UserInfo" started.
-vuser_init.c(91): web_url("info") started  	[MsgId: MMSG-26355]
-vuser_init.c(91): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
-vuser_init.c(91): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
-vuser_init.c(91): web_url("info") was successful, 31062 body bytes, 1088 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(104): Notify: Transaction "UC_02_03_IncidentsDirector_Get_UserInfo" ended with a "Pass" status (Duration: 0,3178 Wasted Time: 0,1183).
-vuser_init.c(110): Notify: Transaction "UC_02_04_IncidentsDirector_countByState_4" started.
-vuser_init.c(112): web_url("4") started  	[MsgId: MMSG-26355]
-vuser_init.c(112): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.dust" (specified by argument number 8)  	[MsgId: MMSG-26577]
-vuser_init.c(112): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.js" (specified by argument number 11)  	[MsgId: MMSG-26577]
-vuser_init.c(112): web_url("4") was successful, 26879 body bytes, 1031 header bytes  	[MsgId: MMSG-26386]
-vuser_init.c(124): Notify: Transaction "UC_02_04_IncidentsDirector_countByState_4" ended with a "Pass" status (Duration: 0,2387 Wasted Time: 0,0736).
-vuser_init.c(130): Notify: Transaction "UC_02_05_IncidentsDirector_ticket_countByState" started.
-vuser_init.c(132): web_url("countByState") started  	[MsgId: MMSG-26355]
-vuser_init.c(132): web_url("countByState") was successful, 167 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(142): Notify: Transaction "UC_02_05_IncidentsDirector_ticket_countByState" ended with a "Pass" status (Duration: 0,1326 Wasted Time: 0,0367).
-vuser_init.c(148): Notify: Transaction "UC_02_06_IncidentsDirector_get_ticket" started.
-vuser_init.c(150): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
-vuser_init.c(150): web_custom_request("ticket") was successful, 12894 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
-vuser_init.c(162): Notify: Transaction "UC_02_06_IncidentsDirector_get_ticket" ended with a "Pass" status (Duration: 1,1373 Wasted Time: 0,0430).
+vuser_init.c(32): Notify: Transaction "UC_01_PFLB_Incidents_Director" started.
+vuser_init.c(34): web_add_cookie started  	[MsgId: MMSG-26355]
+vuser_init.c(34): web_add_cookie was successful  	[MsgId: MMSG-26392]
+vuser_init.c(36): web_add_cookie started  	[MsgId: MMSG-26355]
+vuser_init.c(36): web_add_cookie was successful  	[MsgId: MMSG-26392]
+vuser_init.c(38): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+vuser_init.c(38): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(41): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+vuser_init.c(41): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(44): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
+vuser_init.c(44): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
+vuser_init.c(51): Notify: Transaction "UC_01_PFLB_Incidents_Director.01_Login" started.
+vuser_init.c(53): web_submit_data("login_2") started  	[MsgId: MMSG-26355]
+vuser_init.c(53): Downloading resource "http://learning2.pflb.ru:56902/js/core/jqueryformplugin.js?_=1582367837874" (specified by argument number 18)  	[MsgId: MMSG-26577]
+vuser_init.c(53): web_submit_data("login_2") was successful, 43989 body bytes, 535 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(67): web_url("checkLogin") started  	[MsgId: MMSG-26355]
+vuser_init.c(67): web_url("checkLogin") was successful, 62 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(77): Notify: Transaction "UC_01_PFLB_Incidents_Director.01_Login" ended with a "Pass" status (Duration: 0,7577 Wasted Time: 0,2408).
+vuser_init.c(83): Notify: Transaction "UC_01_PFLB_Incidents_Director.02_BrowseIncidents" started.
+vuser_init.c(85): web_url("info") started  	[MsgId: MMSG-26355]
+vuser_init.c(85): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
+vuser_init.c(85): Downloading resource "http://learning2.pflb.ru:56902/director/wrapper/wrapper.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
+vuser_init.c(85): web_url("info") was successful, 31062 body bytes, 1088 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(97): web_url("4") started  	[MsgId: MMSG-26355]
+vuser_init.c(97): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.dust" (specified by argument number 8)  	[MsgId: MMSG-26577]
+vuser_init.c(97): Downloading resource "http://learning2.pflb.ru:56902/director/tickets/tickets.js" (specified by argument number 11)  	[MsgId: MMSG-26577]
+vuser_init.c(97): web_url("4") was successful, 26879 body bytes, 1031 header bytes  	[MsgId: MMSG-26386]
+vuser_init.c(108): web_url("countByState") started  	[MsgId: MMSG-26355]
+vuser_init.c(108): web_url("countByState") was successful, 167 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(117): web_custom_request("ticket") started  	[MsgId: MMSG-26355]
+vuser_init.c(117): web_custom_request("ticket") was successful, 12497 body bytes, 316 header bytes, 21 chunking overhead bytes  	[MsgId: MMSG-26385]
+vuser_init.c(129): Notify: Transaction "UC_01_PFLB_Incidents_Director.02_BrowseIncidents" ended with a "Pass" status (Duration: 8,2257 Wasted Time: 0,3336).
 Ending action vuser_init.
 Running Vuser...
 Starting iteration 1.
 Warning -27077: The "vuser_init" section contains web function(s) when the "Simulate a new user on each iteration" Runtime Setting is ON.  This may produce unpredictable results with multiple iterations  	[MsgId: MWAR-27077]
 Maximum number of concurrent connections per server: 6  	[MsgId: MMSG-26989]
 Starting action Action.
-Action.c(64): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(64): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(66): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(66): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(69): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
-Action.c(69): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
-Action.c(73): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(73): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(84): Notify: Transaction "UC_02_07_get_root" started.
-Action.c(87): web_url("children") started  	[MsgId: MMSG-26355]
-Action.c(87): web_url("children") was successful, 823 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(97): Notify: Transaction "UC_02_07_get_root" ended with a "Pass" status (Duration: 0,1217 Wasted Time: 0,0452).
-Action.c(113): Root Size:4
-Action.c(114): Root Node Index:4
-Action.c(115): ID: 142
-Action.c(127): Notify: Transaction "UC_02_08_get_treeview" started.
-Action.c(130): web_url("treeview") started  	[MsgId: MMSG-26355]
-Action.c(130): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
-Action.c(130): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
-Action.c(130): web_url("treeview") was successful, 133949 body bytes, 1086 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(143): Notify: Transaction "UC_02_08_get_treeview" ended with a "Pass" status (Duration: 0,4115 Wasted Time: 0,0254).
-Action.c(146): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(146): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(163): Notify: Transaction "UC_02_09_get_lvl2" started.
-Action.c(166): web_url("children_2") started  	[MsgId: MMSG-26355]
-Action.c(166): web_url("children_2") was successful, 1323 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(176): Notify: Transaction "UC_02_09_get_lvl2" ended with a "Pass" status (Duration: 0,1222 Wasted Time: 0,0456).
-Action.c(191): Lvl2 Size:4
-Action.c(192): Lvl2 Node Index:4
-Action.c(193): Lvl2 ID: 216
-Action.c(207): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(207): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(219): Notify: Transaction "UC_02_10_get_lvl3_nodes" started.
-Action.c(222): web_url("children_3") started  	[MsgId: MMSG-26355]
-Action.c(222): Warning -35060: No matches were found for the specified query: "$.[*].id"  	[MsgId: MWAR-35060]
-Action.c(222): web_url("children_3") highest severity level was "warning", 2 body bytes, 316 header bytes, 10 chunking overhead bytes  	[MsgId: MMSG-26387]
-Action.c(232): Notify: Transaction "UC_02_10_get_lvl3_nodes" ended with a "Pass" status (Duration: 0,1227 Wasted Time: 0,0406).
-Action.c(263): Lvll3 doesn't have sub-nodes, only services.
-Action.c(272): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(272): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(284): Notify: Transaction "UC_02_11_get_services" started.
-Action.c(287): web_url("children_4") started  	[MsgId: MMSG-26355]
-Action.c(287): web_url("children_4") was successful, 204 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(297): Notify: Transaction "UC_02_11_get_services" ended with a "Pass" status (Duration: 0,1273 Wasted Time: 0,0408).
-Action.c(315): Lvl4 Size:4
-Action.c(316): Lvl4 Node Index:4
-Action.c(317): Lvl4 ID: 3196
-Action.c(345): Notify: Transaction "UC_02_12_get_inventoryNumbers_for_service" started.
-Action.c(347): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
-Action.c(347): web_url("inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(357): Notify: Transaction "UC_02_12_get_inventoryNumbers_for_service" ended with a "Pass" status (Duration: 0,2062 Wasted Time: 0,0462).
-Action.c(359): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(359): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(371): Notify: Transaction "UC_02_13_post_ticket" started.
-Action.c(374): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
-Action.c(374): web_custom_request("ticket_2") was successful, 1304 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
-Action.c(387): Notify: Transaction "UC_02_13_post_ticket" ended with a "Pass" status (Duration: 0,8111 Wasted Time: 0,0489).
+Action.c(70): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(70): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(72): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(72): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(75): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
+Action.c(75): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
+Action.c(79): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(79): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(90): Notify: Transaction "UC_01_PFLB_Incidents_Director.03_CreateIncident" started.
+Action.c(93): web_url("children") started  	[MsgId: MMSG-26355]
+Action.c(93): web_url("children") was successful, 823 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(115): Root Size:4
+Action.c(116): Root Node Index:1
+Action.c(117): ID: 116
+Action.c(126): web_url("treeview") started  	[MsgId: MMSG-26355]
+Action.c(126): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.dust" (specified by argument number 9)  	[MsgId: MMSG-26577]
+Action.c(126): Downloading resource "http://learning2.pflb.ru:56902/director/catalog/catalog.js" (specified by argument number 12)  	[MsgId: MMSG-26577]
+Action.c(126): web_url("treeview") was successful, 133949 body bytes, 1086 header bytes, 84 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(139): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(139): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(150): web_url("children_2") started  	[MsgId: MMSG-26355]
+Action.c(150): web_url("children_2") was successful, 1352 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(172): Lvl2 Size:4
+Action.c(173): Lvl2 Node Index:1
+Action.c(174): Lvl2 ID: 122
+Action.c(185): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(185): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(194): web_url("children_3") started  	[MsgId: MMSG-26355]
+Action.c(194): web_url("children_3") was successful, 266 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(219): Lvl3 Size:4
+Action.c(220): Lvl3 Node Index:1
+Action.c(221): Lvl3 ID: 151
+Action.c(238): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(238): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(247): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(247): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(256): web_url("children_4") started  	[MsgId: MMSG-26355]
+Action.c(256): web_url("children_4") was successful, 243 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(285): Lvl4 Size:4
+Action.c(286): Lvl4 Node Index:1
+Action.c(287): Lvl4 ID: 2814
+Action.c(288): Lvl4 Title(Name,Header): Требуется вывезти отработанные люминесцентные лампы
+Action.c(300): web_url("inventoryNumbers") started  	[MsgId: MMSG-26355]
+Action.c(300): web_url("inventoryNumbers") was successful, 114 body bytes, 316 header bytes, 11 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(309): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(309): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(316): web_custom_request("ticket_2") started  	[MsgId: MMSG-26355]
+Action.c(316): web_custom_request("ticket_2") was successful, 1398 body bytes, 316 header bytes, 12 chunking overhead bytes  	[MsgId: MMSG-26385]
+Action.c(329): Notify: Transaction "UC_01_PFLB_Incidents_Director.03_CreateIncident" ended with a "Pass" status (Duration: 2,6891 Wasted Time: 0,2914).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...
@@ -114,24 +99,23 @@ vuser_end.c(6): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
 vuser_end.c(6): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
 vuser_end.c(9): web_add_auto_header("dnt") started  	[MsgId: MMSG-26355]
 vuser_end.c(9): web_add_auto_header("dnt") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(16): Notify: Transaction "UC_02_15_logout" started.
-vuser_end.c(18): web_url("logout") started  	[MsgId: MMSG-26355]
-vuser_end.c(18): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
-vuser_end.c(27): Notify: Transaction "UC_02_15_logout" ended with a "Pass" status (Duration: 0,1193 Wasted Time: 0,0473).
-vuser_end.c(30): web_add_header("Upgrade-Insecure-Requests") started  	[MsgId: MMSG-26355]
-vuser_end.c(30): web_add_header("Upgrade-Insecure-Requests") was successful  	[MsgId: MMSG-26392]
-vuser_end.c(37): Notify: Transaction "UC_02_16_login_3" started.
-vuser_end.c(39): web_url("login_3") started  	[MsgId: MMSG-26355]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/css/style.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/core/legacy.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/core/dust.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
-vuser_end.c(39): web_url("login_3") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
-vuser_end.c(49): Notify: Transaction "UC_02_16_login_3" ended with a "Pass" status (Duration: 0,6957 Wasted Time: 0,0853).
+vuser_end.c(13): Notify: Transaction "UC_01_PFLB_Incidents_Director.04_Logout" started.
+vuser_end.c(15): web_url("logout") started  	[MsgId: MMSG-26355]
+vuser_end.c(15): web_url("logout") was successful, 0 body bytes, 421 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(23): web_add_header("Upgrade-Insecure-Requests") started  	[MsgId: MMSG-26355]
+vuser_end.c(23): web_add_header("Upgrade-Insecure-Requests") was successful  	[MsgId: MMSG-26392]
+vuser_end.c(26): web_url("login_3") started  	[MsgId: MMSG-26355]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/css/core/material_icons.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/css/core/materialize.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/css/style.css" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/core/legacy.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/core/jquery-3.1.1.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/core/dust.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/core/jquery.cookie.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/core/materialize.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): Found resource "http://learning2.pflb.ru:56902/js/page/authorisation.js" in HTML "http://learning2.pflb.ru:56902/login"  	[MsgId: MMSG-26659]
+vuser_end.c(26): web_url("login_3") was successful, 1012641 body bytes, 2125 header bytes  	[MsgId: MMSG-26386]
+vuser_end.c(36): Notify: Transaction "UC_01_PFLB_Incidents_Director.04_Logout" ended with a "Pass" status (Duration: 0,8434 Wasted Time: 0,1134).
+vuser_end.c(40): Notify: Transaction "UC_01_PFLB_Incidents_Director" ended with a "Pass" status (Duration: 12,5896 Wasted Time: 0,9826).
 Ending action vuser_end.
 Vuser Terminated.

@@ -8,13 +8,10 @@ vuser_end()
 
 	web_add_auto_header("dnt", 
 		"1");
+	
+	// Start Transaction: UC_01_PFLB_Incidents_Director.04_Logout
+	lr_start_transaction("UC_01_PFLB_Incidents_Director.04_Logout");
 
-	// Pause
-	lr_think_time( getRnd(1, 100) );
-	
-	// Transaction.Start
-	lr_start_transaction("UC_02_15_logout");
-	
 	web_url("logout", 
 		"URL=http://learning2.pflb.ru:56902/api/logout", 
 		"Resource=0", 
@@ -22,19 +19,9 @@ vuser_end()
 		"Snapshot=t39.inf", 
 		"Mode=HTML", 
 		LAST);
-
-	// Transaction.Finish
-	lr_end_transaction("UC_02_15_logout", LR_AUTO);
-
 	
 	web_add_header("Upgrade-Insecure-Requests", 
 		"1");
-
-	// Pause
-	lr_think_time( getRnd(1, 100) );
-	
-	// Transaction.Start
-	lr_start_transaction("UC_02_16_login_3");
 	
 	web_url("login_3", 
 		"URL=http://learning2.pflb.ru:56902/login", 
@@ -45,9 +32,12 @@ vuser_end()
 		"Mode=HTML", 
 		LAST);
 	
-	// Transaction.Finish
-	lr_end_transaction("UC_02_16_login_3", LR_AUTO);
+	// Finish UC_01_PFLB_Incidents_Director.04_Logout
+	lr_end_transaction("UC_01_PFLB_Incidents_Director.04_Logout", LR_AUTO);
 
+
+	// End Script Global Transaction: UC_01_PFLB_Incidents_Director
+	lr_end_transaction("UC_01_PFLB_Incidents_Director", LR_AUTO);
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	

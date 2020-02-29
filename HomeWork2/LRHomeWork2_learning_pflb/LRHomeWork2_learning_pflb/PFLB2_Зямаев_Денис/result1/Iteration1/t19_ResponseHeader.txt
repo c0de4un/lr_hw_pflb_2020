@@ -1,14 +1,11 @@
-HTTP/1.1 200 
+HTTP/1.1 204 
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: SAMEORIGIN
-Last-Modified: Tue, 27 Nov 2018 14:03:43 GMT
-Accept-Ranges: bytes
-Content-Type: text/html;charset=UTF-8
-Content-Language: en-US
-Content-Length: 873
-Date: Tue, 25 Feb 2020 08:00:23 GMT
+Set-Cookie: PFLB.remember.me=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: SESSION=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/; HttpOnly
+Date: Tue, 25 Feb 2020 19:50:55 GMT
 
